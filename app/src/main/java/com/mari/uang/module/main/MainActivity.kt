@@ -34,13 +34,15 @@ class MainActivity : BaseSimpleActivity() {
     }
 
 
-    private fun initIntent(){
+    private fun initIntent() {
     }
 
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
-        switchTab(0)
+        var index = intent?.getIntExtra("index", 0) ?: 0
+        switchTab(index)
     }
+
     override fun onResume() {
         super.onResume()
         setStatusBarTextColor(window, false)
@@ -111,14 +113,13 @@ class MainActivity : BaseSimpleActivity() {
 
     }
 
-    private fun goLoginActivity(){
+    private fun goLoginActivity() {
         val intent = Intent(
             this@MainActivity,
             LoginActivity::class.java
         )
         startActivity(intent)
     }
-
 
 
 }

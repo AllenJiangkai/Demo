@@ -24,6 +24,16 @@ object UserManager : DelegateSharedPreferences("userInfo") {
         smsMaxId =userInfo.smsMaxId?:0
     }
 
+    fun cleanUserInfo(){
+        uid =""
+        username =""
+        realname =""
+        token =""
+        sessionid =""
+        isOld =""
+        smsMaxId =0
+    }
+
     fun isLogin(): Boolean {
         return uid.isNotEmpty()
     }

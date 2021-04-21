@@ -14,6 +14,16 @@ android {
         compileSdkVersion build_versions.target_sdk
         versionCode build_versions.versionCode
         versionName build_versions.versionName
+
+        buildConfigField("String", "APP_URL_TEST", "\"http://47.103.73.105:9001\"")
+        buildConfigField("String", "H5_URL_TEST", "\"http://47.103.73.105:9003\"")
+
+        buildConfigField("String", "APP_URL_UAT", "\"http://147.139.166.117\"")
+        buildConfigField("String", "H5_URL_UAT", "\"http://147.139.166.182\"")
+
+        buildConfigField("String", "APP_URL_PRO", "\"https://api.mariuang.com\"")
+        buildConfigField("String", "H5_URL_PRO", "\"http://147.139.135.121\"")
+
         testInstrumentationRunner dependent.test.AndroidJUnitRunner
 
         multiDexEnabled true //防止方法数超过65536
@@ -31,6 +41,8 @@ android {
                 keyPassword "123456"
             }
         }
+
+
 
 
     }

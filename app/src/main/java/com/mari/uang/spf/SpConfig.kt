@@ -9,6 +9,7 @@ object SpConfig : DelegateSharedPreferences("spConfig") {
     var redDotData by DelegatePreference(this, "RedDotData", "")
     var orderType1 by DelegatePreference(this, "OrderType1", "")
     var orderType2 by DelegatePreference(this, "OrderType2", "")
+    var gps_adid by DelegatePreference(this, "GPS_ADID", "")
 
 
 }

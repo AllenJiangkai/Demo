@@ -15,6 +15,7 @@ import com.mari.uang.module.set.SettingActivity
 import com.coupang.common.network.DTO
 import com.coupang.common.user.UserManager.isLogin
 import com.coupang.common.utils.ContextUtils
+import com.mari.uang.module.web.NewWebActivity
 import java.net.URLDecoder
 import java.util.*
 
@@ -31,7 +32,7 @@ object RouterUtil {
         val bundle = Bundle()
         bundle.putString(WEB_URL_KEY, url)
         bundle.putString(TITLE_KEY, title)
-        var intent = Intent()
+        var intent = Intent(context,NewWebActivity::class.java)
         context?.startActivity(intent)
     }
 

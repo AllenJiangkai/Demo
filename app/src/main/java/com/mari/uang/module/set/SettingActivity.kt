@@ -6,6 +6,7 @@ import android.provider.Settings
 import androidx.lifecycle.Observer
 import com.coupang.common.base.BaseSimpleActivity
 import com.coupang.common.extentions.createViewModel
+import com.coupang.common.user.UserManager.cleanUserInfo
 import com.coupang.common.utils.strings
 import com.mari.uang.BuildConfig
 import com.mari.uang.R
@@ -31,25 +32,28 @@ class SettingActivity : BaseSimpleActivity() {
         }
         tv_version.text= "V${BuildConfig.VERSION_NAME}"
 
-        TipsDialog(this).isCancelable(false).setTitle(strings(R.string.set_login_out)+" " +strings(R.string.app_name) )
-            .setMessage(getString(R.string.setting_dialog_message))
-            .setNegativeButton(strings(R.string.dialog_cancel)){
-                finish()
-                true
-            }
-            .setPositiveButton(strings(R.string.dialog_confirm)){
-             viewModel.loginOut()
-                false
-            }.show ()
+        bt_submit.setOnClickListener {
 
+            TipsDialog(this).isCancelable(true).setTitle(strings(R.string.set_login_out)+" " +strings(R.string.app_name) )
+                .setMessage(getString(R.string.setting_dialog_message))
+                .setNegativeButton(strings(R.string.dialog_cancel)){
+                    finish()
+                    true
+                }
+                .setPositiveButton(strings(R.string.dialog_confirm)){
+                    viewModel.loginOut()
+                    false
+                }.show ()
+        }
     }
 
     override fun registerObserver() {
         registerLiveDataCommonObserver(viewModel)
         viewModel.loginOut.observe(this, Observer {
+            cleanUserInfo()
+            finish()
             startActivity(Intent(this,MainActivity::class.java))
         })
-
     }
 
     override fun initData() {

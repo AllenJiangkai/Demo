@@ -20,6 +20,7 @@ import com.coupang.common.base.BaseSimpleActivity
 import com.coupang.common.base.LazyLoadFragment
 import com.coupang.common.extentions.createViewModel
 import com.coupang.common.extentions.gone
+import com.mari.uang.util.RouterUtil
 import kotlinx.android.synthetic.main.fragment_other.*
 
 
@@ -98,17 +99,9 @@ class ProfileFragment : LazyLoadFragment(), SwipeRefreshLayout.OnRefreshListener
     private fun initRecyclerView() {
         rcv_content.adapter = adapter
         rcv_content.layoutManager = LinearLayoutManager(activity)
-        //点击事件
-//        adapter.setOnItemChildClickListener { adapter, view, position ->
-//            when (view.id) {
-//                R.id.rl_status -> {
-//                }
-//            }
-//        }
 
         adapter.setOnItemClickListener { adapter, view, position ->
-
-//            adapter.data[position]
+           RouterUtil.router(context,(adapter.data[position] as ItemInfo ).linkUrl,false)
         }
     }
 

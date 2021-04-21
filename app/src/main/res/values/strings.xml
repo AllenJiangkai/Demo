@@ -45,6 +45,7 @@
 
     <string name="dialog_cancel">Batal</string>
     <string name="dialog_confirm">TentuKan</string>
+    <string name="dialog_continue">Terus</string>
 
     <!--splash permission-->
     <string name="dialog_per_splash_right">Aktifkan</string>
@@ -98,4 +99,6 @@
     <string name="set_login_out">Logout</string>
     <string name="set_title">Pengaturan</string>
     <string name="setting_dialog_message">Apakah anda yakin ingin logout</string>
+    <string name="web_dialog_continue">Lanjutkan</string>
+    <string name="web_dialog_left">Menyerah</string>
 </resources>

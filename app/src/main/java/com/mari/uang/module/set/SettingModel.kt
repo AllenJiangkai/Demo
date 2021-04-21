@@ -17,13 +17,16 @@ class SettingModel : BaseViewModel<SettingRepository>() {
 
 
     fun loginOut( ) {
+        showLoading()
         viewModelScope.launch {
             val result = repository.logOut()
             if (result is Result.Success) {
                 loginOut.value=true
-            }else {
+            }else if(result is Result.GeneralError){
+                showToast.value=result.message
                 networkError.value=true
             }
+            hideLoading()
         }
     }
 
