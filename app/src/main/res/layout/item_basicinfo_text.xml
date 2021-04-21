@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/dp_23"
+    android:paddingTop="@dimen/dp_10"
+    android:paddingRight="@dimen/dp_23">
+
+    <TextView
+        android:id="@+id/tvDes"
+        style="@style/auth_item_des_text_style"
+        tools:ignore="MissingConstraints" />
+
+
+    <EditText
+        android:id="@+id/etContent"
+        style="@style/face_item_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:imeOptions="actionDone"
+        android:minHeight="@dimen/auth_item_height"
+        android:paddingLeft="@dimen/dp_7"
+        android:paddingTop="@dimen/dp_7"
+        android:paddingRight="@dimen/dp_7"
+        android:paddingBottom="@dimen/dp_7"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/tvDes"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

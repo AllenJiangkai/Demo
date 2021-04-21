@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="75dp"
+    android:orientation="vertical"
+    android:background="@color/main_color"
+    >
+
+    <com.mari.uang.widget.StatusBarView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginStart="21dp"
+            android:layout_width="46dp"
+            android:layout_height="25dp"
+            android:text="@string/main_title"
+            android:textColor="#ffffffff"
+            android:textSize="18sp"
+            />
+
+        <ImageView
+            android:id="@+id/img_right"
+            android:layout_marginEnd="27dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerInParent="true"
+            android:scaleType="center" />
+
+    </RelativeLayout>
+
+</LinearLayout>

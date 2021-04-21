@@ -1,0 +1,103 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+
+android {
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        applicationId "com.mari.uang"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        compileSdkVersion build_versions.target_sdk
+        versionCode build_versions.versionCode
+        versionName build_versions.versionName
+        testInstrumentationRunner dependent.test.AndroidJUnitRunner
+
+        multiDexEnabled true //防止方法数超过65536
+
+        ndk {
+            abiFilters 'armeabi-v7a' //只生成armv7的so
+        }
+
+        signingConfigs{
+            debug {}
+            release {
+                storeFile file("ksp16.keystore")
+                storePassword "123456"
+                keyAlias "ksp16"
+                keyPassword "123456"
+            }
+        }
+
+
+    }
+
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("boolean", "NET_CONFIG", "false")
+
+            buildConfigField('String', 'livenessAccessKey', key_value.livenessAccessKey)
+            buildConfigField('String', 'livenessSecretKey', key_value.livenessSecretKey)
+            buildConfigField('String', 'AF_KEY', key_value.afKey)
+
+            signingConfig signingConfigs.release
+        }
+
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("boolean", "NET_CONFIG", "false")
+
+            buildConfigField('String', 'livenessAccessKey', key_value.livenessAccessKey)
+            buildConfigField('String', 'livenessSecretKey',  key_value.livenessSecretKey)
+            buildConfigField('String', 'AF_KEY',  key_value.afKey)
+
+            signingConfig signingConfigs.release
+        }
+    }
+
+
+    lintOptions {
+        abortOnError false
+        disable 'MissingTranslation'
+        disable 'ExtraTranslation'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+}
+repositories {
+    flatDir {
+        dirs project(':liveness').file('libs')
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api project(":lib_common")
+    api project(":liveness")
+    implementation (name: 'guardian_core_v1.6', ext: 'aar')
+    implementation (name: 'liveness_lib_v1.1.7', ext: 'aar')
+    api dependent.multidex.multidex
+    api "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30"
+    api "com.github.hackware1993:MagicIndicator:1.5.0"
+    api 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
+    api 'com.yanzhenjie:permission:2.0.3'
+    api 'com.contrarywind:Android-PickerView:3.2.5'
+    api 'org.greenrobot:eventbus:3.1.1'
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.6.1'
+}

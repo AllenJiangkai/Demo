@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/dp_23"
+    android:paddingTop="@dimen/dp_23"
+    android:paddingRight="@dimen/dp_23">
+
+    <TextView
+        android:id="@+id/tvDes"
+        style="@style/auth_item_des_text_style"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/tvContent"
+        style="@style/face_item_text"
+        android:paddingLeft="@dimen/dp_7"
+        android:paddingRight="@dimen/dp_27"
+        android:textColor="@color/color_333333"
+        android:textColorHint="@color/color_999999"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/tvDes"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/ivJT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_7"
+        android:background="@drawable/svg_info_auth_down_jt"
+        app:layout_constraintBottom_toBottomOf="@id/tvContent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvContent"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

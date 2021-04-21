@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: :guardian_core_v1.6:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ba29bc282901750edc45c03586f8a338/jetified-guardian_core_v1.6/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ba29bc282901750edc45c03586f8a338/jetified-guardian_core_v1.6/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ba29bc282901750edc45c03586f8a338/jetified-guardian_core_v1.6/jars/libs/guardian-event_v1.1.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ba29bc282901750edc45c03586f8a338/jetified-guardian_core_v1.6/jars/libs/guardian-common_v1.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

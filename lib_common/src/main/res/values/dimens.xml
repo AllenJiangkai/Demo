@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_dialog_vertical_margin">52dp</dimen>
+    <dimen name="common_dialog_horizontal_margin">32dp</dimen>
+    <dimen name="common_dialog_max_width">300dp</dimen>
+    <dimen name="common_loading_dialog_width">120dp</dimen>
+    <dimen name="common_loading_dialog_height">92dp</dimen>
+</resources>

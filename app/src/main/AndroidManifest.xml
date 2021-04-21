@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mari.uang">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+
+
+
+    <application
+        android:name="com.mari.uang.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:requestLegacyExternalStorage="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Splash">
+<!--        android:theme="@style/SplashTheme"-->
+        <activity
+            android:theme="@style/AppTheme.NoActionBar"
+            android:name="com.mari.uang.module.main.MainActivity"
+            android:launchMode="singleTask"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:theme="@style/Splash"
+            android:name="com.mari.uang.module.splash.SplashActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.mari.uang.module.order.OrderActivity"
+            android:label="@string/app_name"/>
+        <activity
+            android:name="com.mari.uang.module.login.LoginActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.mari.uang.module.auth.AuthFaceActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.mari.uang.module.product.ProductActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.mari.uang.module.contact.ContactActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".module.set.SettingActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".module.basic.AuthBasicInfoActivity"
+            android:label="@string/app_name" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/mu_file_path_provider" />
+        </provider>
+
+    </application>
+
+</manifest>

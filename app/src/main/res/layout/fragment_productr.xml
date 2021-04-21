@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/main_color"
+                    android:orientation="vertical">
+
+                    <com.mari.uang.widget.TitleBarView
+                        android:id="@+id/title_bar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/tv_amount_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:textColor="#ffffffff"
+                        android:textSize="12sp"
+                        tools:text="Jumlah(Rp)" />
+
+                    <TextView
+                        android:id="@+id/tv_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:drawableEnd="@drawable/bg_svg_down"
+                        android:drawablePadding="5dp"
+                        android:textColor="#ffffffff"
+                        android:textSize="32sp"
+                        tools:text="5.000.000" />
+
+                    <TextView
+                        android:id="@+id/tv_cycle_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="12dp"
+                        android:textColor="#ffffffff"
+                        android:textSize="12sp"
+                        tools:text="Waktu(Hari)" />
+
+                    <TextView
+                        android:id="@+id/tv_cycle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:drawableEnd="@drawable/bg_svg_down"
+                        android:drawablePadding="5dp"
+                        android:textColor="#ffffffff"
+                        android:textSize="32sp"
+                        tools:text="91" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="30dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_tag1_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#ffffffff"
+                                android:textSize="10sp"
+                                tools:text="Jumlah(Rp)" />
+
+                            <TextView
+                                android:id="@+id/tv_tag1_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#ffffffff"
+                                android:textSize="20sp"
+                                tools:text="5.227.500" />
+                        </LinearLayout>
+
+                        <View
+                            style="@style/common_input_bottom_line"
+                            android:layout_width="1dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="50dp"
+                            android:layout_marginEnd="50dp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_tag2_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#ffffffff"
+                                android:textSize="10sp"
+                                tools:text="Jumlah(Rp)" />
+
+                            <TextView
+                                android:id="@+id/tv_tag2_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#ffffffff"
+                                android:textSize="20sp"
+                                tools:text="5.227.500" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="13dp"
+                    android:text="@string/product_proses_peminjaman"
+                    android:textColor="#ff4f4f4f"
+                    android:textSize="15sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="23dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll_check"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/check_box"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="@drawable/check_box"
+                            android:button="@null"
+                            android:checked="true" />
+
+                        <TextView
+                            android:id="@+id/tv_agreement"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="-3dp"
+                            android:text="@string/login_saya"
+                            android:textColor="#ff333333"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+
+
+                    <TextView
+                        tools:visibility="visible"
+                        android:visibility="gone"
+                        android:id="@+id/tv_ksp"
+                        android:layout_width="241dp"
+                        android:layout_height="18dp"
+                        android:layout_below="@id/ll_check"
+                        android:layout_marginStart="26dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/product_ksp"
+                        android:textColor="#ff0cce65"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/tv_tips"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_ksp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginStart="26dp"
+                        android:textColor="#ff999999"
+                        android:textSize="10sp"
+                        tools:text="Pinjaman ini disediakan oleh perusahaan xxxxxx" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    <Button
+        android:id="@+id/bt_submit"
+        style="@style/common_button"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="@string/product_submit" />
+</LinearLayout>

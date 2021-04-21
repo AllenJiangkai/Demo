@@ -1,0 +1,94 @@
+/**
+ * Shared file between builds so that they can all use the same dependencies and
+ * maven repositories.
+ **/
+def build_versions = [:]
+build_versions.min_sdk = 29
+build_versions.target_sdk = 29
+build_versions.build_tools = "29.0.2"
+build_versions.kotlin_version = "1.3.61"
+build_versions.versionCode = 1
+build_versions.versionName = "1.0"
+ext.build_versions = build_versions
+
+def key_value = [:]
+key_value.livenessAccessKey='"9a72603dd3cb3dff"'//此处填写发送给您的 accessKey
+key_value.livenessSecretKey= '"e9bd6c4d56df8cc1"'//此处填写发送给您的 secretKey
+key_value.afKey            = '"xBjSQGpd5DLVBtusyW5qCN"'//此处填写发送给您的 secretKey
+ext.key_value = key_value
+
+
+def dependent = [:]
+
+def test = [:]
+test.junit = "junit:junit:4.12"
+test.test = 'androidx.test.ext:junit:1.1.1'
+test.espresso = "com.android.support.test.espresso:espresso-core:3.2.0"
+test.AndroidJUnitRunner = "android.support.test.runner.AndroidJUnitRunner"
+dependent.test = test
+
+def androidx = [:]
+androidx.appcompat = "androidx.appcompat:appcompat:1.1.0"
+androidx.core = "androidx.core:core-ktx:1.2.0"
+androidx.constraintlayout = 'androidx.constraintlayout:constraintlayout:1.1.3'
+dependent.androidx = androidx
+
+def android = [:]
+android.material = 'com.google.android.material:material:1.1.0'
+dependent.android = android
+
+def jetbrains = [:]
+jetbrains.kotlin_stalib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+dependent.jetbrains = jetbrains
+
+def squareup = [:]
+squareup.retrofit = "com.squareup.retrofit2:retrofit:2.7.1"
+squareup.retrofit_gson = "com.squareup.retrofit2:converter-gson:2.7.1"
+squareup.retrofit_moshi = "com.squareup.retrofit2:converter-moshi:2.7.1"
+squareup.retrofit_rxjava = "com.squareup.retrofit2:adapter-rxjava2:2.7.1"
+squareup.retrofit_okhttp = "com.squareup.okhttp3:logging-interceptor:4.2.2"
+dependent.squareup = squareup
+
+
+def lottie = [:]
+lottie.lottie = "com.airbnb.android:lottie:3.0.7"
+dependent.lottie = lottie
+
+def eventBus = [:]
+eventBus.verson = "org.greenrobot:eventbus:3.1.1"
+dependent.eventBus = eventBus
+
+
+
+def lifecycle = [:]
+lifecycle.runtime = "android.arch.lifecycle:runtime:2.1.0"
+lifecycle.extensions = "android.arch.lifecycle:extensions:2.1.0"
+lifecycle.viewmodel = "android.arch.lifecycle:viewmodel:2.0.0"
+dependent.lifecycle = lifecycle
+
+def rxJava = [:]
+rxJava.rxjava = "io.reactivex.rxjava2:rxjava:2.2.14"
+rxJava.rxAndroid = "io.reactivex.rxjava2:rxandroid:2.1.1"
+dependent.rxJava = rxJava
+
+def kotlin = [:]
+kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$build_versions.kotlin_version"
+android.core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8"
+dependent.kotlin = kotlin
+
+def glide = [:]
+glide.bumptech_glide = "com.github.bumptech.glide:glide:4.11.0"
+glide.complier = "annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'"
+dependent.glide = glide
+
+def gson = [:]
+gson.gson = "com.google.code.gson:gson:2.8.6"
+dependent.gson = gson
+
+def multidex = [:]
+multidex.multidex = "com.android.support:multidex:1.0.3"
+dependent.multidex = multidex
+
+
+ext.dependent = dependent
+

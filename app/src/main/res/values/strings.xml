@@ -1,0 +1,101 @@
+<resources>
+
+    <string name="channel_name_short" translatable="false">mari_uang</string>
+    <string name="channel_merchant_number" translatable="false">@string/mu_channel_name_short</string>
+    <string name="application_id" translatable="false">com.mari.uang</string>
+    <string name="app_scheme" translatable="false">ksp16://uang.mari.com</string>
+    <string name="app_mark" translatable="false">mariuang-mu</string>
+
+    <string name="app_name">Business</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First</string>
+    <string name="second_fragment_label">Second</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_order">CashCashNow</string>
+    <string name="order_empty_message">Tidak ada lagi konten\nPergi dan ajukan pinjaman</string>
+    <string name="order_empty_button">Ajukan Pinjaman</string>
+    <string name="order_status_semua">Semua</string>
+    <string name="order_status_belum">Belum selesai</string>
+    <string name="order_status_dana">Dana cair</string>
+    <string name="order_status_sudah">Sudah lunas</string>
+    <string name="order_list_amount">Jumlah Pinjaman</string>
+    <string name="order_list_term">Durasi Pinjaman</string>
+    <string name="order_list_time">Tanggal Pinjaman</string>
+    <string name="order_list_repay_time">Tanggal Pinjaman</string>
+    <string name="login_phone_hint">Nomor Telepon</string>
+    <string name="login_phone_code">Masukkan Kode</string>
+    <string name="login_kirim_kode">Kirim Kode</string>
+    <string name="login_tidak_menerima_sms">Tidak menerima SMS？</string>
+    <string name="login_button_login">LOGIN</string>
+    <string name="login_saya">Saya telah membaca dan setuju</string>
+    <string name="login_kebijakan">Kebijakan Privasi KSP Cash Cash Now</string>
+
+
+    <!--splash permission-->
+    <string name="dialog_per_prompt">Prompt</string>
+    <string name="dialog_per_left">Keluar</string>
+    <string name="dialog_per_right">Pergi ke mengatur</string>
+    <string name="dialog_per_right_again">Mengizinkan</string>
+    <string name="dialog_per_message">Mohon berikan secara manual%sAkses ke izin Anda</string>
+
+    <string name="dialog_cancel">Batal</string>
+    <string name="dialog_confirm">TentuKan</string>
+
+    <!--splash permission-->
+    <string name="dialog_per_splash_right">Aktifkan</string>
+    <string name="dialog_per_splash_left">Keluar</string>
+    <string name="dialog_per_message_splash">Tidak menemukan lokasi , silakan aktifkan layanan lokasi</string>
+
+    <!--splash permission-->
+    <string name="splash_permission_title">Permission</string>
+    <string name="splash_permission_message">Untuk menyelesaikan proses pinjaman Anda secara efisien dan cepat, kami memerlukan izin ini.</string>
+    <string name="splash_permission_contact">Daftar kontak:</string>
+    <string name="splash_permission_contact_content">Kami akan mengumpulkan daftar kontak Anda untuk mendapatkan informasi kontak Anda, termasuk nomor telepon, nama kontak, waktu ketika kontak ditambahkan, jumlah kontak dengan kontak tersebut, dan durasi panggilan terakhir, dan mengunggahnya ke server kami. Data tersebut akan digunakan untuk secara otomatis mengisi data selama proses pinjaman dan menilai risiko kredit pengguna, sehingga pengguna dapat dengan cepat menyelesaikan proses peminjaman dan menilai risiko kredit pengguna. Penilaian kredit dapat sangat meningkatkan kecepatan persetujuan pinjaman. Data ini akan dienkripsi dengan ketat dan tidak akan diungkapkan kepada pihak ketiga mana pun.</string>
+    <string name="splash_permission_applist">Daftar aplikasi terinstal:</string>
+    <string name="splash_permission_applist_content">Kami akan mengumpulkan daftar aplikasi yang Anda instal untuk mendapatkan nama aplikasi, nomor versi aplikasi, waktu instalasi aplikasi, dan mengunggahnya ke server kami. Data ini akan digunakan untuk mengidentifikasi pengguna yang melakukan penipuan dan mencegah pengguna melakukan pinjaman dengan maksud jahat. Data tersebut akan dienkripsi dengan ketat dan tidak akan bocor ke pihak ketiga mana pun.</string>
+    <string name="splash_permission_submit">Izinkan</string>
+    <string name="main_title">INDO</string>
+    <string name="porfile_belum_selesai">Belum selesai</string>
+    <string name="profile_dana_cair">Dana cair</string>
+    <string name="profile_sudah">Sudah lunas</string>
+    <string name="product_proses_peminjaman">Proses Peminjaman</string>
+    <string name="product_ksp">Kebijakan Privasi KSP Pinjam Tunai</string>
+    <string name="product_submit">Mulai Pinjam</string>
+    <string name="product_tips">Pinjaman ini disediakan oleh perusahaan <Data><![CDATA[<font color="#ffd500"><b>Mari Uang</b></font>]]></Data></string>
+    <string name="auth_face_submit">SIMPAN</string>
+    <string name="auth_face_nomor">Nomor Telepon</string>
+    <string name="auth_face_warning">Informasi identitas tidak dapat dirubah setalah verifikasi</string>
+    <string name="auth_face_upload">UPLPAD</string>
+    <string name="auth_face_face_tips">Foto Memegang KTP</string>
+    <string name="auth_face_card_tips">Tampak Depan KTP</string>
+    <string name="auth_face_tips">Tips: Foto KTP yang jelas akan meningkatkan tingkat persetujuan<![CDATA[<font color="#FA3649"><b>*</b></font>]]></string>
+    <string name="title_auth_face">Informasi Identitas</string>
+    <string name="auth_face_dialog_title">Prompt</string>
+    <string name="auth_face_dialog_upload">Unggah kembali</string>
+    <string name="berkutnya">Berkutnya</string>
+
+    <string name="dialog_confirm_idcard_title">Informasi Identitas</string>
+    <string name="dialog_confirm_idcard_str1">Name Sesuai KTP：</string>
+    <string name="dialog_confirm_idcard_str2">Nomor KTP：</string>
+    <string name="dialog_confirm_idcard_str3">Tgl Lahir：</string>
+    <string name="dialog_ktp_name">Nama sesuai KTP</string>
+    <string name="dialog_ktp_nomor">Nomor KTP</string>
+    <string name="auth_face_save_success">Berhasil disimpan</string>
+    <string name="auth_face_cardinfo_null">Harap simpan setelah menyelesaikan semua data informasi</string>
+    <string name="contact_darurat_1">Hubungan Dengan Kontak Darurat 1</string>
+    <string name="contact_darurat_2">Hubungan Dengan Kontak Darurat 2</string>
+    <string name="contact_nama_kontak">Nama Kontak Darurat</string>
+    <string name="contact_informasi">Informasi Pribadi</string>
+
+    <string name="please_select">Silakan pilih</string>
+
+    <string name="toast_incomplete_information">Harap simpan setelah menyelesaikan semua data informasi</string>
+    <string name="set_login_out">Logout</string>
+    <string name="set_title">Pengaturan</string>
+    <string name="setting_dialog_message">Apakah anda yakin ingin logout</string>
+</resources>

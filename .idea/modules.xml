@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Business.iml" filepath="$PROJECT_DIR$/.idea/modules/Business.iml" group="Business" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="Business/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_common/lib_common.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_common/lib_common.iml" group="Business/lib_common" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_utils/lib_utils.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_utils/lib_utils.iml" group="Business/lib_utils" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/liveness/liveness.iml" filepath="$PROJECT_DIR$/.idea/modules/liveness/liveness.iml" group="Business/liveness" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/bg_shape_white_r8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:scaleType="centerCrop"
+                tools:background="#000000" />
+
+            <TextView
+                android:id="@+id/tv_product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                tools:text="CashCashNow"
+                android:textColor="@color/color_666666"
+                android:textSize="13sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:id="@+id/tv_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Menunggu penambahan data"
+                android:textColor="@color/color_0cce65"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_amount_title"
+                android:layout_width="90dp"
+                android:layout_height="16dp"
+                android:text="@string/order_list_amount"
+                android:textColor="@color/color_999999"
+                android:textSize="11sp"
+                />
+
+            <TextView
+                android:id="@+id/tv_amount_value"
+                android:layout_width="67dp"
+                android:layout_height="16dp"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/color_999999"
+                android:textSize="11sp"
+                tools:text="Rp2.000.000" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_term_title"
+                android:layout_width="90dp"
+                android:layout_height="16dp"
+                android:text="@string/order_list_term"
+                android:textColor="@color/color_999999"
+                android:textSize="11sp"
+                />
+            <TextView
+                android:id="@+id/tv_term_value"
+                android:layout_alignParentEnd="true"
+                android:layout_width="67dp"
+                android:layout_height="16dp"
+                tools:text="Rp2.000.000"
+                android:textColor="@color/color_999999"
+                android:textSize="11sp"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="90dp"
+                android:layout_height="16dp"
+                android:text="@string/order_list_time"
+                android:textColor="@color/color_999999"
+                android:textSize="11sp"
+                />
+            <TextView
+                android:id="@+id/tv_time_value"
+                android:layout_alignParentEnd="true"
+                android:layout_width="67dp"
+                android:layout_height="16dp"
+                tools:text="Rp2.000.000"
+                android:textColor="@color/color_999999"
+                android:textSize="11sp"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="90dp"
+                android:layout_height="16dp"
+                android:text="@string/order_list_repay_time"
+                android:textColor="@color/color_999999"
+                android:textSize="11sp"
+                />
+            <TextView
+                android:id="@+id/tv_repay_time_value"
+                android:layout_alignParentEnd="true"
+                android:layout_width="67dp"
+                android:layout_height="16dp"
+                tools:text="Rp2.000.000"
+                android:textColor="@color/color_999999"
+                android:textSize="11sp"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

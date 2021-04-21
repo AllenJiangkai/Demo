@@ -1,0 +1,61 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
+
+
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode build_versions.versionCode
+        versionName build_versions.versionName
+
+        testInstrumentationRunner dependent.test.AndroidJUnitRunner
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //lib dependent
+    api project(':lib_utils')
+    api files('libs/x5-4.3.0.3.jar')
+    // core dependent
+    implementation dependent.kotlin.stdlib
+    api dependent.test.junit
+    api dependent.test.test
+    api dependent.test.espresso
+    api dependent.androidx.appcompat
+    api dependent.androidx.core
+    api dependent.androidx.constraintlayout
+    api dependent.android.material
+    api dependent.jetbrains.kotlin_stalib
+    api dependent.lifecycle.viewmodel
+    api dependent.lifecycle.runtime
+    api dependent.lifecycle.extensions
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    api dependent.rxJava.rxjava
+    api dependent.rxJava.rxAndroid
+    api dependent.squareup.retrofit
+    api dependent.squareup.retrofit_gson
+    api dependent.squareup.retrofit_rxjava
+    api dependent.squareup.retrofit_okhttp
+    api  "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8"
+    api  "com.github.bumptech.glide:glide:4.9.0"
+    api 'com.alibaba:fastjson:1.1.71.android'
+    api  'com.just.agentweb:agentweb:4.1.4'
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.3.61"
+
+}

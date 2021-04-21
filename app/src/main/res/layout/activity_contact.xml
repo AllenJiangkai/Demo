@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f4f5f6"
+    android:orientation="vertical">
+
+    <com.mari.uang.widget.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="33dp">
+
+            <View style="@style/contact_title_line_sty" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="21dp"
+                android:layout_marginStart="15dp"
+                android:text="@string/contact_darurat_1"
+                android:textColor="@color/color_333333"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_contact_1"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="33dp"
+            android:paddingEnd="24dp"
+            tools:ignore="RtlSymmetry">
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:background="@drawable/bg_shape_main_r12" />
+
+            <TextView
+                android:id="@+id/tv_contact_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:text="@string/contact_darurat_1"
+                android:textColor="@color/color_999999"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bg_svg_contact_1" />
+        </LinearLayout>
+
+        <View
+            style="@style/common_input_bottom_line"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginStart="33dp" />
+        <LinearLayout
+            android:id="@+id/ll_chose_1"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="33dp"
+            android:paddingEnd="24dp"
+            tools:ignore="RtlSymmetry">
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:background="@drawable/bg_shape_main_r12" />
+
+            <LinearLayout
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_lineal_name_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contact_nama_kontak"
+                    android:textColor="@color/color_999999"
+                    android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/tv_lineal_mobile_1"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contact_informasi"
+                    android:textColor="@color/color_999999"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bg_svg_contact_2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="@color/color_f4f5f6"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="33dp">
+
+            <View style="@style/contact_title_line_sty" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="21dp"
+                android:layout_marginStart="15dp"
+                android:text="@string/contact_darurat_2"
+                android:textColor="@color/color_333333"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_contact_2"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="33dp"
+            android:paddingEnd="24dp"
+            tools:ignore="RtlSymmetry">
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:background="@drawable/bg_shape_main_r12" />
+
+            <TextView
+                android:id="@+id/tv_contact_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:text="@string/contact_darurat_1"
+                android:textColor="@color/color_999999"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bg_svg_contact_1" />
+        </LinearLayout>
+
+        <View
+            style="@style/common_input_bottom_line"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginStart="33dp" />
+        <LinearLayout
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="33dp"
+            android:paddingEnd="24dp"
+            tools:ignore="RtlSymmetry">
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:background="@drawable/bg_shape_main_r12" />
+
+            <LinearLayout
+                android:id="@+id/ll_chose_2"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_lineal_name_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contact_nama_kontak"
+                    android:textColor="@color/color_999999"
+                    android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/tv_lineal_mobile_2"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contact_informasi"
+                    android:textColor="@color/color_999999"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bg_svg_contact_2" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/bt_submit"
+        style="@style/common_button"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:enabled="false"
+        android:text="@string/auth_face_submit" />
+
+</LinearLayout>

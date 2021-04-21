@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: :liveness_lib_v1.1.7:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c10915e0e020ac2b9bc21850da4b91af/jetified-liveness_lib_v1.1.7/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c10915e0e020ac2b9bc21850da4b91af/jetified-liveness_lib_v1.1.7/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="common_app_name">lib_common</string>
+    <string name="common_dialog_loading_text">正在加载</string>
+
+    <string name="mu_channel_name_short" translatable="false">danakilat_uv</string>
+    <string name="mu_channel_merchant_number" translatable="false">@string/mu_channel_name_short</string>
+    <string name="mu_application_id" translatable="false">com.danakilat_uv.kilat</string>
+    <string name="mu_app_scheme" translatable="false">ksp7://kilat.danakilat_uv.com</string>
+    <string name="mu_app_mark" translatable="false">danakilat-dk</string>
+
+
+</resources>

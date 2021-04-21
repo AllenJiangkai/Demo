@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="120dp"
+    android:layout_height="92dp"
+    android:alpha="0.6"
+    android:background="@drawable/common_shape_ff00000_4_radius"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <ProgressBar
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:indeterminateTint="@color/common_colorWhite" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/tvDialogTitle"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:lineSpacingExtra="22dp"-->
+<!--            android:text="@string/common_dialog_loading_text"-->
+<!--            android:textColor="@color/common_colorWhite"-->
+<!--            android:textSize="16sp" />-->
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.mari.uang.widget.StatusBarView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+
+
+        <RelativeLayout
+            android:id="@+id/rl_back"
+            android:layout_width="56dp"
+            android:layout_height="56dp">
+
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="center"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_back" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_centerInParent="true"
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="CashCashNow"
+            android:textColor="#ff333333"
+            android:textSize="18sp"
+            />
+
+
+        <RelativeLayout
+            android:id="@+id/rightView"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:minWidth="48dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:visibility="invisible"
+                android:scaleType="center"
+                android:id="@+id/ivRight"
+                android:layout_width="@dimen/mu_title_view_height"
+                android:layout_height="@dimen/mu_title_view_height" />
+
+            <TextView
+                android:visibility="invisible"
+                android:paddingRight="@dimen/margin"
+                android:gravity="center"
+                android:id="@+id/tvRight"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
