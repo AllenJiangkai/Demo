@@ -32,11 +32,11 @@ public class ParamsInterceptor implements Interceptor {
                 .addQueryParameter("appVersion", BuildConfig.VERSION_NAME)
                 //设备ID
 //                .addQueryParameter("deviceId", MUMyDevTool.getDeviceId(MUBaseApplication.getInstance()))
-                //google 唯一设备识别码
+////                google 唯一设备识别码
 //                .addQueryParameter("gps_adid", MUMMKVTool.decodeString(MUConstant.SpKey.GPS_ADID))
-                //设备名称
+////                设备名称
 //                .addQueryParameter("deviceName", MUMyDevTool.getDeviceName())
-                //系统版本
+////                系统版本
 //                .addQueryParameter("osVersion", MUMyDevTool.getOsVersion())
                 //渠道
                 .addQueryParameter("channel", ContextUtils.getSharedContext().getString(R.string.mu_channel_name_short))

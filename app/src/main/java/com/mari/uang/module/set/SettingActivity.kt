@@ -42,7 +42,7 @@ class SettingActivity : BaseSimpleActivity() {
                 }
                 .setPositiveButton(strings(R.string.dialog_confirm)){
                     viewModel.loginOut()
-                    false
+                    true
                 }.show ()
         }
     }
