@@ -6,13 +6,14 @@ import android.net.Uri
 import android.provider.Settings
 import com.mari.uang.R
 import com.mari.uang.module.main.MainActivity
-import com.mari.uang.spf.SpConfig
+import com.coupang.common.utils.spf.SpConfig
 import com.mari.uang.util.PermissionUtil.requestPermission
 import com.mari.uang.widget.TipsDialog
 import com.coupang.common.base.BaseSimpleActivity
 import com.coupang.common.utils.isLocationEnabled
 import com.coupang.common.utils.setStatusBarTextColor
 import com.coupang.common.utils.strings
+import com.mari.uang.util.upload.UploadManager
 import com.yanzhenjie.permission.Action
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -23,11 +24,11 @@ import java.util.concurrent.TimeUnit
 class SplashActivity : BaseSimpleActivity() {
 
     private val permissions = arrayOf(
-        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-        Manifest.permission.ACCESS_COARSE_LOCATION,
         Manifest.permission.READ_PHONE_STATE,
-        Manifest.permission.ACCESS_FINE_LOCATION,
-        Manifest.permission.READ_EXTERNAL_STORAGE
+        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        Manifest.permission.READ_EXTERNAL_STORAGE,
+        Manifest.permission.ACCESS_COARSE_LOCATION,
+        Manifest.permission.ACCESS_FINE_LOCATION
     )
     private var disposable: Disposable? = null
 
@@ -64,6 +65,7 @@ class SplashActivity : BaseSimpleActivity() {
     private fun checkPermission() {
         requestPermission(this, permissions, Action {
             if (isLocationEnabled(this)) {
+                UploadManager.uploadDevicesDetail()
                 delayedToMain()
             } else {
                 showPermissionTipsDialog()

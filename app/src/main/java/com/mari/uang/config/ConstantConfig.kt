@@ -26,4 +26,9 @@ object ConstantConfig{
     const val INFO_AUTH_ITEM_TYPE_CITY_SELECT = "citySelect"
     const val INFO_AUTH_ITEM_TYPE_TIP = "tip"
     const val INFO_AUTH_ITEM_TYPE_TXT = "txt"
+
+    //上传数据类型
+    const val TYPE_SMS = "1"
+    const val TYPE_APP = "2"
+    const val TYPE_CONTACT = "3"
 }

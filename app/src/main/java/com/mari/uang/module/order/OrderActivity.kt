@@ -40,6 +40,7 @@ class OrderActivity : BaseSimpleActivity() {
             onClickBackListener {
                 finish()
             }
+
         }
         initTabLayout()
     }

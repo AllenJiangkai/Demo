@@ -3,6 +3,7 @@ package com.mari.uang.module.web;
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.ClipData;
 import android.content.Context;
@@ -11,6 +12,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.net.http.SslError;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.text.TextUtils;
@@ -22,6 +24,7 @@ import android.webkit.ValueCallback;
 import android.webkit.WebView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -54,11 +57,29 @@ import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 
-public class NewWebActivity extends BaseSimpleActivity {
+import static androidx.test.InstrumentationRegistry.getContext;
+
+/**
+ * @ProjectName: HttpBase
+ * @Package: com.demon.rxjavaretrofitdemo.ui.act
+ * @ClassName: WebViewAct
+ * @Description: java类作用描述
+ * @Author: jtao
+ * @CreateDate: 2021/2/26 2:26 PM
+ * @UpdateUser: 更新者
+ * @UpdateDate: 2021/2/26 2:26 PM
+ * @UpdateRemark: 更新说明
+ * @Version: 1.0
+ */
+public class KKWebViewAct extends BaseSimpleActivity {
+
+    LinearLayout parentView;
+    ProgressBar progressBar;
+    TitleBarView title_var;
 
     private static int GET_IMAGE_CODE = 10001;
 
-    private WebView mAgentWeb;
+    private AgentWeb mAgentWeb;
 
     String[] mActionArray = {"mailto:", "geo:", "tel:", "sms:"};
 
@@ -73,9 +94,63 @@ public class NewWebActivity extends BaseSimpleActivity {
     private Uri imageUri;
     private RegisterCallBack registCallBack;
 
-    private String[] filePermissions = {Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+    private String[] filePermissions = {Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE , Manifest.permission.WRITE_EXTERNAL_STORAGE};
     private String[] callPhonePermissions = {Manifest.permission.CALL_PHONE};
 
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_web;
+    }
+
+    @Override
+    public void initView() {
+        findViews();
+        getParams();
+        mAgentWeb = AgentWeb.with(this)
+                .setAgentWebParent(parentView,new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT))
+                .useDefaultIndicator(ContextCompat.getColor(KKWebViewAct.this,R.color.transparent))
+                .setWebViewClient(webViewClient)
+                .additionalHttpHeader(mUrl, MUWebViewUtil.getHeader())
+                .setWebChromeClient(mWebChromeClient)
+                .createAgentWeb()
+                .ready()
+                .go(mUrl);
+//        mAgentWeb.getWebCreator().getWebView().loadUrl(mUrl,WebUtil.getHeader());
+        mAgentWeb.getJsInterfaceHolder().addJavaObject("nativeMethod", new AndroidFragmentInterface(this, mAgentWeb));
+        MUWebViewUtil.initSetting(mAgentWeb.getWebCreator().getWebView(),KKWebViewAct.this);
+
+        title_var.onClickRightListener(new Function0<Unit>() {
+            @Override
+            public Unit invoke() {
+                callPhone(rightCallPhone);
+                return null;
+            }
+        });
+        title_var.onClickBackListener(new Function0<Unit>() {
+            @Override
+            public Unit invoke() {
+                onClickBack();
+                return null;
+            }
+        });
+    }
+
+    private void findViews() {
+        title_var = findViewById(R.id.title_bar);
+//        parentView = findViewById(R.id.parentView);
+        progressBar = findViewById(R.id.progressBar);
+    }
+
+    @Override
+    public void registerObserver() {
+
+    }
+
+    @Override
+    public void initData() {
+
+    }
 
     private void getParams() {
         mUrl = getIntent().getStringExtra(ConstantConfig.WEB_URL_KEY);
@@ -85,7 +160,6 @@ public class NewWebActivity extends BaseSimpleActivity {
         mTitleStr = getIntent().getStringExtra(ConstantConfig.TITLE_KEY);
         title_var.setTitle(mTitleStr);
     }
-
 
     private void onClickBack() {
         if (!TextUtils.isEmpty(backMsg)) {
@@ -102,7 +176,7 @@ public class NewWebActivity extends BaseSimpleActivity {
                     .setNegativeButton(getString(R.string.web_dialog_left), new Function0<Boolean>() {
                         @Override
                         public Boolean invoke() {
-                            if (!mAgentWeb.canGoBack()) {
+                            if (!mAgentWeb.back()) {
                                 finish();
                             }
                             dialog.dismiss();
@@ -114,42 +188,39 @@ public class NewWebActivity extends BaseSimpleActivity {
             dialog.show();
 
         } else {
-            if (!mAgentWeb.canGoBack()) {
+            if (!mAgentWeb.back()) {
                 finish();
             }
         }
 
     }
 
-
     @Override
     public void onPause() {
-        mAgentWeb.onPause();
+        mAgentWeb.getWebLifeCycle().onPause();
         super.onPause();
 
     }
 
     @Override
     public void onResume() {
-        mAgentWeb.onResume();
+        mAgentWeb.getWebLifeCycle().onResume();
         super.onResume();
     }
-
     @Override
-    protected void onDestroy() {
-        mAgentWeb.destroy();
+    public void onDestroy() {
+        mAgentWeb.getWebLifeCycle().onDestroy();
         super.onDestroy();
     }
 
     private void chooseFileFun() {
-
         PermissionUtil.INSTANCE.requestPermission(this,filePermissions,  new Action<List<String>>() {
             @Override
             public void onAction(List<String> data) {
                 Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                if (takePictureIntent.resolveActivity(NewWebActivity.this.getPackageManager()) != null) {
+                if (takePictureIntent.resolveActivity(KKWebViewAct.this.getPackageManager()) != null) {
                     // Create the File where the photo should go
-                    File imagePath = new File(NewWebActivity.this.getExternalFilesDir(Environment.DIRECTORY_PICTURES) + "/image/");
+                    File imagePath = new File(KKWebViewAct.this.getExternalFilesDir(Environment.DIRECTORY_PICTURES) + "/image/");
                     if (!imagePath.exists()) {
                         imagePath.mkdirs();
                     }
@@ -160,7 +231,7 @@ public class NewWebActivity extends BaseSimpleActivity {
                                 | Intent.FLAG_GRANT_WRITE_URI_PERMISSION); //添加这一句表示对目标应用临时授权该Uri所代表的文件
                     }
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        imageUri = FileProvider.getUriForFile(NewWebActivity.this, NewWebActivity.this.getPackageName() + ".provider", newFile);//通过FileProvider创建一个content类型的Uri
+                        imageUri = FileProvider.getUriForFile(KKWebViewAct.this, KKWebViewAct.this.getPackageName() + ".provider", newFile);//通过FileProvider创建一个content类型的Uri
                     }
                     //将拍照结果保存至photo_file的Uri中，不保留在相册中
                     takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
@@ -251,10 +322,9 @@ public class NewWebActivity extends BaseSimpleActivity {
     }
 
     class AndroidFragmentInterface {
-        private WeakReference<NewWebActivity> weak;
-        private WeakReference<WebView> agentWebWeak;
-
-        public AndroidFragmentInterface(NewWebActivity context, WebView agentWeb) {
+        private WeakReference<Context> weak;
+        private WeakReference<AgentWeb> agentWebWeak;
+        public AndroidFragmentInterface(Context context, AgentWeb agentWeb) {
             this.weak = new WeakReference<>(context);
             this.agentWebWeak = new WeakReference<>(agentWeb);
         }
@@ -266,12 +336,12 @@ public class NewWebActivity extends BaseSimpleActivity {
         @JavascriptInterface
         public void openGooglePlay(String appPkg) {
             String params = null;
-            if (appPkg.startsWith("https://play.google.com/store/apps/details")) {
+            if(appPkg.startsWith("https://play.google.com/store/apps/details")){
                 params = appPkg.replace("https://play.google.com/store/apps/details", "");
-            } else if (appPkg.startsWith("market://details")) {
+            }else if(appPkg.startsWith("market://details")){
                 params = appPkg.replace("market://details", "");
             }
-            if (params == null) return;
+            if(params == null) return;
             String GOOGLE_PLAY = "com.android.vending";//这里对应的是谷歌商店，跳转别的商店改成对应的即可
             try {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -298,7 +368,7 @@ public class NewWebActivity extends BaseSimpleActivity {
          */
         @JavascriptInterface
         public void openUrl(String url) {
-            RouterUtil.INSTANCE.router(NewWebActivity.this,url,false);
+            RouterUtil.INSTANCE.router(KKWebViewAct.this,url,false);
         }
 
         /**
@@ -306,35 +376,35 @@ public class NewWebActivity extends BaseSimpleActivity {
          */
         @JavascriptInterface
         public void closeSyn() {
-           finish();
+            finish();
         }
 
         /**
          * 原生页面跳转
          */
         @JavascriptInterface
-        public void jump(String linkUrl, String params) {
-            if (!linkUrl.startsWith(RouterUtil.INSTANCE.getAPP_SCHEME())) return;
-            if (!TextUtils.isEmpty(params)) {
-                try {
+        public void jump(String linkUrl, String params){
+            if(!linkUrl.startsWith(RouterUtil.INSTANCE.getAPP_SCHEME())) return;
+            if(!TextUtils.isEmpty(params)){
+                try{
                     JSONObject paramsjson = JSONObject.parseObject(params);
-                    if (paramsjson != null) {
+                    if(paramsjson != null){
                         StringBuilder sb = new StringBuilder(linkUrl);
-                        if (linkUrl.contains("?")) {
+                        if(linkUrl.contains("?")){
                             sb.append("&");
-                        } else {
+                        }else{
                             sb.append("?");
                         }
-                        for (String key : paramsjson.keySet()) {
+                        for(String key : paramsjson.keySet()){
                             sb.append(key + "=" + URLEncoder.encode(String.valueOf(paramsjson.get(key)), "UTF-8") + "&");
                         }
-                        linkUrl = sb.substring(0, sb.length() - 1);
+                        linkUrl = sb.substring(0, sb.length()-1);
                     }
-                } catch (Exception e) {
+                }catch (Exception e){
                     e.printStackTrace();
                 }
             }
-            RouterUtil.INSTANCE.router(NewWebActivity.this,linkUrl,false);
+            RouterUtil.INSTANCE.router(KKWebViewAct.this,linkUrl,false);
         }
 
         /**
@@ -342,8 +412,9 @@ public class NewWebActivity extends BaseSimpleActivity {
          */
         @JavascriptInterface
         public void jumpToHome() {
-           Intent intent=new Intent(NewWebActivity.this, MainActivity.class);
-           startActivity(intent);
+            Intent intent=new Intent(KKWebViewAct.this, MainActivity.class);
+            intent.putExtra("index",0);
+            startActivity(intent);
         }
 //
 //        /**
@@ -355,17 +426,16 @@ public class NewWebActivity extends BaseSimpleActivity {
 //            DKRxBus.getInstance().post(new DKJumpToMainBus(DKJumpToMainBus.PageType.Loan));
 //        }
 //
-
         /**
          * 个人中心
          */
         @JavascriptInterface
         public void jumpToUserCenter() {
             if (!UserManager.INSTANCE.isLogin()) {
-                Intent intent=new Intent(NewWebActivity.this, LoginActivity.class);
+                Intent intent=new Intent(KKWebViewAct.this, LoginActivity.class);
                 startActivity(intent);
             } else {
-                Intent intent=new Intent(NewWebActivity.this, MainActivity.class);
+                Intent intent=new Intent(KKWebViewAct.this, MainActivity.class);
                 intent.putExtra("index",1);
                 startActivity(intent);
             }
@@ -379,7 +449,7 @@ public class NewWebActivity extends BaseSimpleActivity {
             if (UserManager.INSTANCE.isLogin()) {
                 return;
             }
-            Intent intent=new Intent(NewWebActivity.this, LoginActivity.class);
+            Intent intent=new Intent(KKWebViewAct.this, LoginActivity.class);
             startActivity(intent);
         }
 
@@ -398,6 +468,13 @@ public class NewWebActivity extends BaseSimpleActivity {
             //页面初始化的时候调用
             rightCallPhone = phone;
             title_var.setRightImage(R.drawable.bg_svg_web_right_call);
+            /*titleView.setRightClick(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    callPhone = phone;
+                    callPhone();
+                }
+            });*/
         }
 
         @JavascriptInterface
@@ -407,16 +484,16 @@ public class NewWebActivity extends BaseSimpleActivity {
         }
 
         @JavascriptInterface
-        public void uploadRiskLoan(String productId, String orderId) {
-            //todo 埋点//
+        public void uploadRiskLoan(String productId, String orderId){
+//            KKActionUtils.actionRecord(KKActionEnum.Loan, productId, pageCreateTime);
         }
     }
 
-    private WebViewClient webViewClient = new WebViewClient() {
+    private WebViewClient webViewClient = new WebViewClient(){
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             if (isGooglePlayURL(url)) {
-                openGooglePlay(NewWebActivity.this, url);
+                openGooglePlay(KKWebViewAct.this, url);
                 return true;
             }
             if (url.startsWith("http://") || url.startsWith("https://") || "about:blank".equals(url)) {
@@ -436,8 +513,7 @@ public class NewWebActivity extends BaseSimpleActivity {
         @Override
         public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
             //dk_ssl_cert_invalid
-
-            TipsDialog dialog = new TipsDialog(NewWebActivity.this);
+            TipsDialog dialog = new TipsDialog(KKWebViewAct.this);
             dialog.setTitle(getString(R.string.dialog_per_prompt))
                     .setMessage("Sertifikat situs web tidak normal. Terus?")
                     .setPositiveButton(getString(R.string.dialog_continue), new Function0<Boolean>() {
@@ -454,38 +530,30 @@ public class NewWebActivity extends BaseSimpleActivity {
                             return true;
                         }
                     });
-
-
             dialog.show();
-
-
-
         }
 
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
-
-             progressBar.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.VISIBLE);
         }
 
         @Override
         public void onPageFinished(final WebView view, String url) {
             super.onPageFinished(view, url);
-            if (mAgentWeb.getSettings().getLoadsImagesAutomatically()) {
-                mAgentWeb.getSettings().setLoadsImagesAutomatically(true);
+            if (mAgentWeb.getWebCreator().getWebView().getSettings().getLoadsImagesAutomatically()) {
+                mAgentWeb.getWebCreator().getWebView().getSettings().setLoadsImagesAutomatically(true);
             }
             mUrl = url;
-//            binding.progressBar.setVisibility(View.GONE);
             progressBar.setVisibility(View.GONE);
         }
     };
 
 
-    private WebChromeClient mWebChromeClient = new WebChromeClient() {
+    private WebChromeClient mWebChromeClient = new WebChromeClient(){
         @Override
         public void onProgressChanged(WebView view, int newProgress) {
-//            binding.progressBar.setProgress(newProgress);
             progressBar.setProgress(newProgress);
         }
 
@@ -527,21 +595,20 @@ public class NewWebActivity extends BaseSimpleActivity {
         }
     };
 
-    private static boolean isGooglePlayURL(String url) {
-        if (url != null && (url.startsWith("market://") || url.startsWith("https://play.google.com/store/apps/details"))) {
+    private static boolean isGooglePlayURL(String url){
+        if(url != null && (url.startsWith("market://") || url.startsWith("https://play.google.com/store/apps/details"))){
             return true;
         }
         return false;
     }
-
-    private static void openGooglePlay(Context context, String url) {
+    private static void openGooglePlay(Context context, String url){
         String params = null;
-        if (url.startsWith("https://play.google.com/store/apps/details")) {
+        if(url.startsWith("https://play.google.com/store/apps/details")){
             params = url.replace("https://play.google.com/store/apps/details", "");
-        } else if (url.startsWith("market://details")) {
+        }else if(url.startsWith("market://details")){
             params = url.replace("market://details", "");
         }
-        if (params == null) return;
+        if(params == null) return;
         String GOOGLE_PLAY = "com.android.vending";//这里对应的是谷歌商店，跳转别的商店改成对应的即可
         try {
             Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -559,65 +626,5 @@ public class NewWebActivity extends BaseSimpleActivity {
         } catch (ActivityNotFoundException activityNotFoundException1) {
 
         }
-    }
-
-
-    @Override
-    public int getLayoutId() {
-        return R.layout.activity_web;
-    }
-
-    TitleBarView title_var;
-    ProgressBar progressBar;
-    @Override
-    public void initView() {
-        title_var = findViewById(R.id.title_bar);
-        mAgentWeb=findViewById(R.id.web_view);
-        progressBar  =findViewById(R.id.progressBar);
-        getParams();
-//        mAgentWeb = AgentWeb.with(this)
-//                .setAgentWebParent(findViewById(R.id.parentView), new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT))
-//                .useDefaultIndicator(ContextCompat.getColor(this, R.color.transparent))
-//                .setWebViewClient(webViewClient)
-//                .additionalHttpHeader(mUrl, MUWebViewUtil.getHeader())
-//                .setWebChromeClient(mWebChromeClient)
-//                .createAgentWeb()
-//                .ready()
-//                .go(mUrl);
-//        mAgentWeb.getWebCreator().getWebView().loadUrl(mUrl,WebUtil.getHeader());
-//        mAgentWeb.getJsInterfaceHolder().addJavaObject("nativeMethod", new AndroidFragmentInterface(this, mAgentWeb));
-        mAgentWeb.addJavascriptInterface(new AndroidFragmentInterface(this, mAgentWeb),"nativeMethod");
-        MUWebViewUtil.initSetting(mAgentWeb , this);
-        mAgentWeb.setWebChromeClient(mWebChromeClient);
-        mAgentWeb.setWebViewClient(webViewClient);
-        mAgentWeb.loadUrl(mUrl,MUWebViewUtil.getHeader());
-
-
-        title_var.onClickRightListener(new Function0<Unit>() {
-            @Override
-            public Unit invoke() {
-                callPhone(rightCallPhone);
-                return null;
-            }
-        });
-        title_var.onClickBackListener(new Function0<Unit>() {
-            @Override
-            public Unit invoke() {
-                onClickBack();
-                return null;
-            }
-        });
-
-
-    }
-
-    @Override
-    public void registerObserver() {
-
-    }
-
-    @Override
-    public void initData() {
-
     }
 }

@@ -1,6 +1,8 @@
 package com.coupang.common.network.interceptor;
 
 
+import com.coupang.common.impl.Tools;
+import com.coupang.common.utils.spf.SpConfig;
 import com.mari.common.BuildConfig;
 import com.mari.common.R;
 import com.coupang.common.user.UserManager;
@@ -31,13 +33,13 @@ public class ParamsInterceptor implements Interceptor {
                 //app版本
                 .addQueryParameter("appVersion", BuildConfig.VERSION_NAME)
                 //设备ID
-//                .addQueryParameter("deviceId", MUMyDevTool.getDeviceId(MUBaseApplication.getInstance()))
+                .addQueryParameter("deviceId", Tools.INSTANCE.getTools().getDeviceId(ContextUtils.getApplication()))
                 //google 唯一设备识别码
-//                .addQueryParameter("gps_adid", MUMMKVTool.decodeString(MUConstant.SpKey.GPS_ADID))
+                .addQueryParameter("gps_adid", SpConfig.INSTANCE.getGps_adid())
                 //设备名称
-//                .addQueryParameter("deviceName", MUMyDevTool.getDeviceName())
+                .addQueryParameter("deviceName", Tools.INSTANCE.getTools().getDeviceName(ContextUtils.getApplication()))
                 //系统版本
-//                .addQueryParameter("osVersion", MUMyDevTool.getOsVersion())
+                .addQueryParameter("osVersion",  Tools.INSTANCE.getTools().getOsVersion(ContextUtils.getApplication()))
                 //渠道
                 .addQueryParameter("channel", ContextUtils.getSharedContext().getString(R.string.mu_channel_name_short))
                 //app名称

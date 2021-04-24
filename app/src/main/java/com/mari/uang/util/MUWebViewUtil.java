@@ -13,7 +13,7 @@ import com.coupang.common.user.UserManager;
 import com.coupang.common.utils.ContextUtils;
 import com.mari.uang.R;
 import com.mari.uang.module.web.MUHttpConstants;
-import com.mari.uang.spf.SpConfig;
+import com.coupang.common.utils.spf.SpConfig;
 
 import java.util.HashMap;
 import java.util.Map;

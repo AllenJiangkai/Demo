@@ -4,7 +4,9 @@ import android.content.Context
 import android.os.Process
 import android.util.Log
 import androidx.multidex.MultiDexApplication
+import com.coupang.common.impl.Tools
 import com.coupang.common.utils.ContextUtils
+import com.mari.uang.util.ToolsManager
 import com.tencent.smtt.sdk.QbSdk
 
 
@@ -23,15 +25,21 @@ class MyApplication : MultiDexApplication() {
     override fun onCreate() {
         super.onCreate()
         ContextUtils.init(this)
+        Tools.initData(ToolsManager())
         initX5()
         val displayMetrics = applicationContext.resources.displayMetrics
         screenWidth = displayMetrics.widthPixels
         screenHeight = displayMetrics.heightPixels
+        baseCox = this
     }
 
     companion object {
         var screenWidth = 0
         var screenHeight = 0
+        private var baseCox : Context? = null
+        fun baseCox() : Context? {
+            return baseCox
+        }
     }
     private fun initX5() {
 

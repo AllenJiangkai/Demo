@@ -17,7 +17,7 @@ class TitleBarView : RelativeLayout {
     private lateinit var clickRightListener: () -> Unit
 
     fun onClickRightListener(callback: () -> Unit) {
-        this.clickListener = callback
+        this.clickRightListener = callback
     }
 
 
@@ -42,10 +42,16 @@ class TitleBarView : RelativeLayout {
                 clickListener()
             }
         }
+
+        ivRight.setOnClickListener {
+            if (::clickRightListener.isInitialized) {
+                clickRightListener()
+            }
+        }
     }
 
-    fun setTitle(title: String) {
-        tv_title.text = title
+    fun setTitle(title: String?) {
+        tv_title.text = title?:""
     }
     fun setRightImage(src: Int) {
         ivRight.setImageResource(src)

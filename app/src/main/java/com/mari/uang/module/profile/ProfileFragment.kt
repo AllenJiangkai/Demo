@@ -6,20 +6,21 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.mari.uang.R
-import com.mari.uang.module.order.OrderActivity
-import com.mari.uang.module.order.OrderActivity.Companion.BELUM_SELESAI
-import com.mari.uang.module.order.OrderActivity.Companion.DANA_CAIR
-import com.mari.uang.module.order.OrderActivity.Companion.SUDAH_LUNAS
-import com.mari.uang.spf.SpConfig.orderType1
-import com.mari.uang.spf.SpConfig.orderType2
-import com.mari.uang.spf.SpConfig.redDotData
 import com.alibaba.fastjson.JSON
 import com.alibaba.fastjson.JSONObject
 import com.coupang.common.base.BaseSimpleActivity
 import com.coupang.common.base.LazyLoadFragment
 import com.coupang.common.extentions.createViewModel
 import com.coupang.common.extentions.gone
+import com.coupang.common.user.UserManager
+import com.coupang.common.utils.spf.SpConfig.orderType1
+import com.coupang.common.utils.spf.SpConfig.orderType2
+import com.coupang.common.utils.spf.SpConfig.redDotData
+import com.mari.uang.R
+import com.mari.uang.module.order.OrderActivity
+import com.mari.uang.module.order.OrderActivity.Companion.BELUM_SELESAI
+import com.mari.uang.module.order.OrderActivity.Companion.DANA_CAIR
+import com.mari.uang.module.order.OrderActivity.Companion.SUDAH_LUNAS
 import com.mari.uang.util.RouterUtil
 import kotlinx.android.synthetic.main.fragment_other.*
 
@@ -59,8 +60,22 @@ class ProfileFragment : LazyLoadFragment(), SwipeRefreshLayout.OnRefreshListener
             goOrderActivity(SUDAH_LUNAS)
         }
         swipe_refresh.setOnRefreshListener(this)
+        tv_phone.text=encryptionPhone(UserManager.username)
     }
 
+    override fun isNeedReloadData(): Boolean {
+        return true
+    }
+
+    override fun onResume() {
+        super.onResume()
+        tv_phone.text=encryptionPhone(UserManager.username)
+    }
+    fun encryptionPhone(phone: String?): String? {
+        if (TextUtils.isEmpty(phone)) return ""
+        val sb = StringBuilder(phone!!)
+        return sb.replace(3, 7, "****").toString()
+    }
 
     override fun loadData() {
         viewModel.requestItemList()

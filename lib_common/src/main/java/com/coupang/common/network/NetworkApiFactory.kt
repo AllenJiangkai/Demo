@@ -6,6 +6,7 @@ import com.coupang.common.network.interceptor.HeaderInterceptor
 import com.coupang.common.network.interceptor.ParamsInterceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 
 /**
  * @author zli
@@ -33,6 +34,7 @@ object NetworkApiFactory {
            .baseUrl("http://47.103.73.105:9001")
 //           .addConverterFactory(GsonConverterFactory.create())
            .addConverterFactory(ConverterFactory.create())
+           .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
            .client(httpClient.build())
            .build()
    }

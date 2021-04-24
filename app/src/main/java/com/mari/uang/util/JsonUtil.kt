@@ -23,7 +23,12 @@ import java.io.InputStreamReader
 object JsonUtil {
     
     fun getCityList(context: Context?): MutableList<MUCityModel>? {
-        val jsonStr = context?.let { getJson(it, "cityData.json") }
+        val jsonStr = context?.let {
+            getJson(
+                it,
+                "cityData.json"
+            )
+        }
         return JSONObject.parseArray(jsonStr, MUCityModel::class.java)
     }
 
@@ -41,5 +46,9 @@ object JsonUtil {
             e.printStackTrace()
         }
         return stringBuilder.toString()
+    }
+
+    fun toJsonString(obj: Any?): String? {
+        return if (obj == null) "" else JSONObject.toJSONString(obj)
     }
 }

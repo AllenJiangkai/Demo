@@ -74,6 +74,11 @@
         <activity
             android:name=".module.web.NewWebActivity"
             android:label="@string/app_name" />
+
+        <activity
+            android:name=".module.web.KKWebViewAct"
+            android:label="@string/app_name" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"

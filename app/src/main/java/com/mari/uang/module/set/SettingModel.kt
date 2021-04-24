@@ -23,7 +23,7 @@ class SettingModel : BaseViewModel<SettingRepository>() {
             if (result is Result.Success) {
                 loginOut.value=true
             }else if(result is Result.GeneralError){
-                showToast.value=result.message
+                showToast.value=result.msg?:""
                 networkError.value=true
             }
             hideLoading()
