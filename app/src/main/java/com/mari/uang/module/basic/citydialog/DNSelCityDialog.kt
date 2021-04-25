@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.mari.uang.R
 import com.mari.uang.util.JsonUtil.getCityList
 import com.chad.library.adapter.base.BaseQuickAdapter
-import com.mari.uang.MyApplication
 import kotlinx.android.synthetic.main.dia_city_view.*
 
 /**

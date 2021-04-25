@@ -104,7 +104,7 @@ class HomeModel : BaseViewModel<HomeRepository>() {
                             HomeAdapterItem(
                                 TYPE_RECOMMEND_NOTICE, JSON.parseObject(
                                     item.item,
-                                    object : TypeReference<List<NoticeInfo>>() {})
+                                    object : TypeReference<ArrayList<NoticeInfo>>() {})
                             )
                         )
                     }
@@ -113,7 +113,7 @@ class HomeModel : BaseViewModel<HomeRepository>() {
                             HomeAdapterItem(
                                 TYPE_RECOMMEND_REPAY_NOTICE, JSON.parseObject(
                                     item.item,
-                                    object : TypeReference<List<RepayNoticeInfo>>() {})
+                                    object : TypeReference<ArrayList<RepayNoticeInfo>>() {})
                             )
                         )
                     }

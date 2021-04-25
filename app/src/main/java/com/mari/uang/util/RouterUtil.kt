@@ -15,6 +15,7 @@ import com.mari.uang.module.set.SettingActivity
 import com.coupang.common.network.DTO
 import com.coupang.common.user.UserManager.isLogin
 import com.coupang.common.utils.ContextUtils
+import com.mari.uang.module.web.KKWebViewAct
 import com.mari.uang.module.web.NewWebActivity
 import java.net.URLDecoder
 import java.util.*
@@ -29,16 +30,15 @@ object RouterUtil {
     }
 
     fun goWebActivity(context: Context?, url: String, title: String) {
-        val bundle = Bundle()
-        bundle.putString(WEB_URL_KEY, url)
-        bundle.putString(TITLE_KEY, title)
         var intent = Intent(context,NewWebActivity::class.java)
+        intent.putExtra(WEB_URL_KEY, url)
+        intent.putExtra(TITLE_KEY, title)
         context?.startActivity(intent)
     }
 
 
     fun router(context: Context?, linkUrl: String?, isNeedLogin: Boolean = false) {
-        if (isNeedLogin) {
+        if (isNeedLogin&& !isLogin()) {
             context?.startActivity(Intent(context, LoginActivity::class.java))
             return
         }

@@ -31,7 +31,8 @@ import retrofit2.HttpException
 data class ApiResponse<T>(
     val code: Int = -1,
     val message: String? = null,
-    val data: T? = null
+    val data: T? = null,
+    val msg : String? = null
 ) : DTO
 
 /**
@@ -41,7 +42,7 @@ data class ApiResponse<T>(
 sealed class Result<out R> {
 
     data class Success<out T>(val data: T) : Result<T>()
-    data class GeneralError(val code: Int?, val message: String?) : Result<Nothing>()
+    data class GeneralError(val code: Int?, val message: String?,val msg : String?) : Result<Nothing>()
     data class NetworkError(val exception: Exception) : Result<Nothing>()
     object Loading : Result<Nothing>()
 
@@ -70,13 +71,13 @@ suspend inline fun <reified T : Any> safeApiCall(
             val data = try {
                 TypeUtils.noNullOf(result.data, requiredType, deeply = false)
             } catch (ignore: Exception) {
-                Result.GeneralError(result.code, result.message)
+                Result.GeneralError(result.code, result.message,result.msg)
             }
             assert(null != data) { "create default instance for type $requiredType failure, suggest that require the server to return a no null data" }
             if (ApiCode.BIZ_CODE_SUCCESS == code) {
                 Result.Success(data as T)
             } else{
-                Result.GeneralError(result.code, result.message)
+                Result.GeneralError(result.code, result.message,result.msg)
             }
         } catch (cancel: CancellationException) {
             Result.NetworkError(cancel)

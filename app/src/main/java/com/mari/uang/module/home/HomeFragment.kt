@@ -102,7 +102,7 @@ class HomeFragment : LazyLoadFragment() {
             home_title.initImage(it.iconUrl)
 
             home_title.onClickRightListener {
-                RouterUtil.router(context, it.linkUrl, true)
+                RouterUtil.router(context, it.linkUrl, false)
             }
         })
         viewModel.networkError.observe(this, Observer {

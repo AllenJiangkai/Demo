@@ -1,28 +1,31 @@
 package com.mari.uang
 
+import com.alibaba.fastjson.JSONObject
+import com.coupang.common.network.ApiResponse
+import com.coupang.common.network.EmptyVO
+import com.coupang.common.network.NetworkApiFactory
 import com.mari.uang.module.auth.dto.AuthCardInfo
 import com.mari.uang.module.auth.dto.AuthSubmitInfo
 import com.mari.uang.module.auth.dto.CanClickInfo
 import com.mari.uang.module.auth.dto.FaceAuthInfo
+import com.mari.uang.module.basic.dto.BasicItemInfoList
 import com.mari.uang.module.contact.dto.ContactInfo
 import com.mari.uang.module.home.dto.HomeInfo
 import com.mari.uang.module.home.dto.ProductDialogInfo
 import com.mari.uang.module.login.LoginVO
 import com.mari.uang.module.login.dto.VerificationCodeInfo
-import com.mari.uang.module.profile.ProfileItemInfo
-import com.mari.uang.module.profile.ProfileRedInfo
 import com.mari.uang.module.order.OrderList
 import com.mari.uang.module.product.dto.ProductDetailsInfo
 import com.mari.uang.module.product.dto.ProductUrlInfo
-import com.coupang.common.network.ApiResponse
-import com.coupang.common.network.EmptyVO
-import com.coupang.common.network.NetworkApiFactory
-import com.mari.uang.module.basic.dto.BasicItemInfo
-import com.mari.uang.module.basic.dto.BasicItemInfoList
 import com.mari.uang.module.product.dto.SendProductUrlInfo
+import com.mari.uang.module.profile.ProfileItemInfo
+import com.mari.uang.module.profile.ProfileRedInfo
+import io.reactivex.Observable
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.http.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 interface AppApi {
 
@@ -216,18 +219,18 @@ interface AppApi {
      */
     @FormUrlEncoded
     @POST("credit-info/up-load-contents")
-    suspend fun upLoadContents(
+    fun upLoadContents(
         @Field("data") data: String?,
         @Field("id") id: Long,
         @Field("type") type: String?
-    ): ApiResponse<EmptyVO>
+    ): Observable<ApiResponse<Any>>
 
     /**
      * 场景设备信息上报
      * sceneInfoReport
      */
     @POST("v3/upload-info/device-detail")
-    suspend fun uploadDevicesDetail(@Body body: RequestBody): ApiResponse<Any>
+    fun uploadDevicesDetail(@Body body: RequestBody?): Observable<ApiResponse<Any>>
 
     /**
      * 设备信息上报
@@ -235,7 +238,7 @@ interface AppApi {
      * @return
      */
     @POST("credit-app/device-report")
-    suspend fun uploadDevicesReport(@Body body: RequestBody): ApiResponse<EmptyVO>
+    fun uploadDevicesReport(@Body body: RequestBody): Observable<ApiResponse<Any>>
 
     /**
      * 上传定位信息
@@ -243,7 +246,7 @@ interface AppApi {
      * @return
      */
     @POST("credit-info/upload-location")
-    suspend fun uploadLocation(@Body body: RequestBody): ApiResponse<EmptyVO>
+    fun uploadLocation(@Body body: RequestBody): Observable<ApiResponse<Any>>
 
     /**
      * 上报轮渡设备信息
@@ -251,7 +254,7 @@ interface AppApi {
      */
     @POST("/credit-info/upload-device-new")
     @FormUrlEncoded
-    suspend fun uploadLunDuInfo(@FieldMap map: Map<String, Any>): ApiResponse<EmptyVO>
+    fun uploadLunDuInfo(@FieldMap map: Map<String, Any>): Observable<ApiResponse<JSONObject>>
 
     /**
      * 上报广告渠道信息

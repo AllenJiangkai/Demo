@@ -28,7 +28,7 @@ class HomeAdapter(data: MutableList<MultiItemEntity>? = null) :
         addItemType(TYPE_RECOMMEND_SMALL_CARD, R.layout.item_small_card_view)
         addItemType(TYPE_RECOMMEND_PRODUCT_CARD, R.layout.item_product_card_view)
         addItemType(TYPE_RECOMMEND_NOTICE, R.layout.item_notice_view)
-        addItemType(TYPE_RECOMMEND_REPAY_NOTICE, R.layout.item_notice_view)
+        addItemType(TYPE_RECOMMEND_REPAY_NOTICE, R.layout.item_repay_notice_view)
     }
 
     override fun convert(helper: BaseViewHolder, item: MultiItemEntity?) {

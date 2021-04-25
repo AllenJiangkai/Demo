@@ -31,43 +31,59 @@ object PermissionUtil {
             .onGranted(action)
             .onDenied { permissions: List<String?>? ->
                 if (AndPermission.hasAlwaysDeniedPermission(context, permissions)) {
-                    showPermissionTipsDialog(context, canBackDismiss) {
-                        if (needFinish){
+                    showPermissionTipsDialog(
+                        context,
+                        canBackDismiss
+                    ) {
+                        if (needFinish) {
                             context?.finish()
                         }
                     }
                 } else {
-                    secondShowPermissionTipsDialog(context, canBackDismiss, {
-                        if (needFinish) {
-                            context?.finish()
-                        }
-                    }, {
-                        requestPermission(
-                            context = context,
-                            permission = permission,
-                            action = action,
-                            needFinish = needFinish,
-                            canBackDismiss = canBackDismiss
-                        )
-                    })
+                    secondShowPermissionTipsDialog(
+                        context,
+                        canBackDismiss,
+                        {
+                            if (needFinish) {
+                                context?.finish()
+                            }
+                        },
+                        {
+                            requestPermission(
+                                context = context,
+                                permission = permission,
+                                action = action,
+                                needFinish = needFinish,
+                                canBackDismiss = canBackDismiss
+                            )
+                        })
                 }
             }
             .start()
     }
 
-    fun permissionCheck(context: Activity?, vararg permission: String?): Boolean {
-        var value = false
-        for (element in permission) {
-            if (ContextCompat.checkSelfPermission(
-                    context!!,
-                    element!!
-                ) != PackageManager.PERMISSION_GRANTED
+    /**
+     * 检查是否没有权限
+     * @param context
+     * @param permission
+     * @return false 没有权限
+     */
+    fun checkPermission(
+        context: Context,
+        vararg permission: String
+    ): Boolean {
+        val pm = context.packageManager
+        val perNames: Array<String> = permission as Array<String>
+        for (perName in perNames) {
+            if (PackageManager.PERMISSION_GRANTED != pm.checkPermission(
+                    perName,
+                    context.packageName
+                )
             ) {
-                value = true
-                break
+                return false
             }
         }
-        return value
+        return true
     }
 
     private fun showPermissionTipsDialog(
