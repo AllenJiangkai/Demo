@@ -17,23 +17,18 @@
             android:orientation="vertical">
 
             <RelativeLayout
+                android:paddingTop="60dp"
+                android:paddingBottom="30dp"
+                android:background="@drawable/shape_user_to_bg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="190dp"
-                    android:adjustViewBounds="true"
-                    android:background="@color/main_color"
-                    android:scaleType="fitXY" />
 
 
                 <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="60dp"
                     android:src="@drawable/ic_profile_head" />
 
                 <TextView
