@@ -7,7 +7,7 @@ import android.widget.RelativeLayout
 import com.mari.uang.R
 import com.mari.uang.module.home.dto.CardInfo
 import com.mari.uang.util.TypefaceUtil.setTextTypeface
-import kotlinx.android.synthetic.main.widget_big_card_view.view.*
+import kotlinx.android.synthetic.main.widget_small_card_view.view.*
 
 class SmallCardView : RelativeLayout {
 

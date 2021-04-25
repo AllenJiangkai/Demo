@@ -22,78 +22,111 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <com.mari.uang.widget.TitleBarView
+                    android:id="@+id/title_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/main_color"
+                    android:layout_height="196dp"
+                    android:layout_marginStart="@dimen/dp_17"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="@dimen/dp_17"
+                    android:background="@drawable/bg_product_head"
                     android:orientation="vertical">
 
-                    <com.mari.uang.widget.TitleBarView
-                        android:id="@+id/title_bar"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:id="@+id/tv_amount_desc"
-                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="10dp"
-                        android:textColor="#ffffffff"
-                        android:textSize="12sp"
-                        tools:text="Jumlah(Rp)" />
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/tv_amount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:drawableEnd="@drawable/bg_svg_down"
-                        android:drawablePadding="5dp"
-                        android:textColor="#ffffffff"
-                        android:textSize="32sp"
-                        tools:text="5.000.000" />
 
-                    <TextView
-                        android:id="@+id/tv_cycle_desc"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="12dp"
-                        android:textColor="#ffffffff"
-                        android:textSize="12sp"
-                        tools:text="Waktu(Hari)" />
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/tv_cycle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:drawableEnd="@drawable/bg_svg_down"
-                        android:drawablePadding="5dp"
-                        android:textColor="#ffffffff"
-                        android:textSize="32sp"
-                        tools:text="91" />
+                            <TextView
+                                android:id="@+id/tv_amount_desc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="21dp"
+                                android:textColor="#ffffffff"
+                                android:textSize="12sp"
+                                tools:text="Jumlah(Rp)" />
+
+                            <TextView
+                                android:layout_marginTop="11dp"
+                                android:id="@+id/tv_amount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:drawableEnd="@drawable/bg_svg_down"
+                                android:drawablePadding="5dp"
+                                android:textColor="#ffffffff"
+                                android:textSize="32sp"
+                                tools:text="5.000.000" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_cycle_desc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="21dp"
+                                android:textColor="#ffffffff"
+                                android:textSize="12sp"
+                                tools:text="Waktu(Hari)" />
+
+                            <TextView
+                                android:layout_marginTop="11dp"
+                                android:id="@+id/tv_cycle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:drawableEnd="@drawable/bg_svg_down"
+                                android:drawablePadding="5dp"
+                                android:textColor="#ffffffff"
+                                android:textSize="32sp"
+                                tools:text="91" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
 
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_marginTop="43dp"
+                        android:layout_marginEnd="13dp"
+                        android:layout_marginStart="13dp"
+                        android:background="@drawable/bg_shape_r6"
+                        android:layout_width="match_parent"
+                        android:layout_height="51dp"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginBottom="30dp"
                         android:orientation="horizontal">
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
                             android:gravity="center_horizontal"
                             android:orientation="vertical">
 
                             <TextView
+                                android:layout_marginTop="5dp"
                                 android:id="@+id/tv_tag1_title"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textColor="#ffffffff"
+                                android:textColor="#000000"
                                 android:textSize="10sp"
                                 tools:text="Jumlah(Rp)" />
 
@@ -101,30 +134,33 @@
                                 android:id="@+id/tv_tag1_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textColor="#ffffffff"
+                                android:textColor="#000000"
                                 android:textSize="20sp"
                                 tools:text="5.227.500" />
                         </LinearLayout>
 
                         <View
-                            style="@style/common_input_bottom_line"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginStart="20dp"
+                            android:background="@color/main_color"
                             android:layout_width="1dp"
-                            android:layout_height="24dp"
+                            android:layout_height="26dp"
                             android:layout_gravity="center_vertical"
-                            android:layout_marginStart="50dp"
-                            android:layout_marginEnd="50dp" />
+                             />
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
                             android:gravity="center_horizontal"
                             android:orientation="vertical">
 
                             <TextView
+                                android:layout_marginTop="5dp"
                                 android:id="@+id/tv_tag2_title"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textColor="#ffffffff"
+                                android:textColor="#000000"
                                 android:textSize="10sp"
                                 tools:text="Jumlah(Rp)" />
 
@@ -132,7 +168,7 @@
                                 android:id="@+id/tv_tag2_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textColor="#ffffffff"
+                                android:textColor="#000000"
                                 android:textSize="20sp"
                                 tools:text="5.227.500" />
                         </LinearLayout>
@@ -147,7 +183,8 @@
                     android:layout_marginTop="13dp"
                     android:text="@string/product_proses_peminjaman"
                     android:textColor="#ff4f4f4f"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:visibility="gone" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcv_content"
@@ -165,9 +202,9 @@
 
                     <LinearLayout
                         android:id="@+id/ll_check"
-                        android:orientation="horizontal"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <CheckBox
                             android:id="@+id/check_box"
@@ -189,10 +226,7 @@
                     </LinearLayout>
 
 
-
                     <TextView
-                        tools:visibility="visible"
-                        android:visibility="gone"
                         android:id="@+id/tv_ksp"
                         android:layout_width="241dp"
                         android:layout_height="18dp"
@@ -200,16 +234,19 @@
                         android:layout_marginStart="26dp"
                         android:layout_marginTop="4dp"
                         android:text="@string/product_ksp"
-                        android:textColor="#ff0cce65"
-                        android:textSize="13sp" />
+                        android:textColor="@color/main_color"
+                        android:textSize="13sp"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
 
                     <TextView
+                        android:layout_centerHorizontal="true"
                         android:id="@+id/tv_tips"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/tv_ksp"
-                        android:layout_marginTop="4dp"
                         android:layout_marginStart="26dp"
+                        android:layout_marginTop="4dp"
                         android:textColor="#ff999999"
                         android:textSize="10sp"
                         tools:text="Pinjaman ini disediakan oleh perusahaan xxxxxx" />
@@ -226,9 +263,9 @@
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
-    <Button
+    <TextView
         android:id="@+id/bt_submit"
-        style="@style/common_button"
+        style="@style/common_button_no_radius"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:text="@string/product_submit" />

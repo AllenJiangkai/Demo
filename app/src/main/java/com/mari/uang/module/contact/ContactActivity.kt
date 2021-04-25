@@ -117,7 +117,7 @@ class ContactActivity : BaseSimpleActivity() {
 
     override fun onResume() {
         super.onResume()
-        setStatusBarTextColor(window, false)
+        setStatusBarTextColor(window, true)
     }
 
     private fun initIntent() {

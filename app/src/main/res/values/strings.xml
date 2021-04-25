@@ -6,11 +6,11 @@
     <string name="app_scheme" translatable="false">ksp16://uang.mari.com</string>
     <string name="app_mark" translatable="false">mariuang-mu</string>
 
-    <string name="app_name">Business</string>
+    <string name="app_name">Dana Emas</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First</string>
-    <string name="second_fragment_label">Second</string>
+    <string name="first_fragment_label">HOME</string>
+    <string name="second_fragment_label">AKUN</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
@@ -67,7 +67,7 @@
     <string name="product_proses_peminjaman">Proses Peminjaman</string>
     <string name="product_ksp">Kebijakan Privasi KSP Pinjam Tunai</string>
     <string name="product_submit">Mulai Pinjam</string>
-    <string name="product_tips">Pinjaman ini disediakan oleh perusahaan <Data><![CDATA[<font color="#ffd500"><b>Mari Uang</b></font>]]></Data></string>
+    <string name="product_tips">Pinjaman ini disediakan oleh perusahaan <Data><![CDATA[<font color="#C03CD5"><b>Dana Emas</b></font>]]></Data></string>
     <string name="auth_face_submit">SIMPAN</string>
     <string name="auth_face_nomor">Nomor Telepon</string>
     <string name="auth_face_warning">Informasi identitas tidak dapat dirubah setalah verifikasi</string>

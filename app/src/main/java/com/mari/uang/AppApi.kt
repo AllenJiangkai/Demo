@@ -211,7 +211,7 @@ interface AppApi {
      * 产品详情获取协议跳转地址
      */
     @GET("v3/contract/contract-jump")
-    suspend fun contractJump(@QueryMap maps: Map<String, Any>): ApiResponse<ProductUrlInfo>
+    suspend fun contractJump(@QueryMap maps:@JvmSuppressWildcards Map<String, Any>): ApiResponse<ProductUrlInfo>
 
     /**
      * 上传联系人信息
@@ -254,7 +254,7 @@ interface AppApi {
      */
     @POST("/credit-info/upload-device-new")
     @FormUrlEncoded
-    fun uploadLunDuInfo(@FieldMap map: Map<String, Any>): Observable<ApiResponse<JSONObject>>
+    fun uploadLunDuInfo(@FieldMap maps:@JvmSuppressWildcards Map<String, Any>): Observable<ApiResponse<JSONObject>>
 
     /**
      * 上报广告渠道信息

@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer
 import com.coupang.common.base.BaseSimpleActivity
 import com.coupang.common.extentions.createViewModel
 import com.coupang.common.user.UserManager.cleanUserInfo
+import com.coupang.common.utils.setStatusBarTextColor
 import com.coupang.common.utils.strings
 import com.mari.uang.BuildConfig
 import com.mari.uang.R
@@ -45,6 +46,11 @@ class SettingActivity : BaseSimpleActivity() {
                     true
                 }.show ()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setStatusBarTextColor(window, true)
     }
 
     override fun registerObserver() {

@@ -50,7 +50,7 @@ class AuthFaceActivity : BaseSimpleActivity() {
 
     override fun onResume() {
         super.onResume()
-        setStatusBarTextColor(window, false)
+        setStatusBarTextColor(window, true)
     }
 
 

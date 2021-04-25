@@ -125,7 +125,7 @@
     </LinearLayout>
 
 
-    <Button
+    <TextView
         android:id="@+id/btnConfirm"
         style="@style/common_button"
         android:layout_height="40dp"

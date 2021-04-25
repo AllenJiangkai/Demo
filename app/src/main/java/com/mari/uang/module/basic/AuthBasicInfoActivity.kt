@@ -18,6 +18,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.entity.MultiItemEntity
 import com.coupang.common.base.BaseSimpleActivity
 import com.coupang.common.extentions.createViewModel
+import com.coupang.common.utils.setStatusBarTextColor
 import kotlinx.android.synthetic.main.activity_auth_basic_info.*
 
 /**
@@ -57,6 +58,10 @@ class AuthBasicInfoActivity : BaseSimpleActivity()  {
         initIntent()
         initListener()
         initRecyclerView()
+    }
+    override fun onResume() {
+        super.onResume()
+        setStatusBarTextColor(window, true)
     }
 
     private fun initRecyclerView() {

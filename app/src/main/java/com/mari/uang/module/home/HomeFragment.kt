@@ -99,11 +99,13 @@ class HomeFragment : LazyLoadFragment() {
         })
         viewModel.homeIcon.observe(this, Observer {
             swipe_refresh.isRefreshing = false
-            home_title.initImage(it.iconUrl)
-
-            home_title.onClickRightListener {
-                RouterUtil.router(context, it.linkUrl, false)
-            }
+            adapter.iconUrl=it.iconUrl
+            adapter.linkUrl=it.linkUrl
+//            home_title.initImage(it.iconUrl)
+//
+//            home_title.onClickRightListener {
+//                RouterUtil.router(context, it.linkUrl, false)
+//            }
         })
         viewModel.networkError.observe(this, Observer {
             swipe_refresh.isRefreshing = false

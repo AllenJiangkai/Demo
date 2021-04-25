@@ -265,7 +265,7 @@ class ProductActivity : BaseSimpleActivity(), SwipeRefreshLayout.OnRefreshListen
 
     override fun onResume() {
         super.onResume()
-        setStatusBarTextColor(window, false)
+        setStatusBarTextColor(window, true)
         onRefresh()
     }
 

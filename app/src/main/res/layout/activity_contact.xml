@@ -229,9 +229,9 @@
     </LinearLayout>
 
 
-    <Button
+    <TextView
         android:id="@+id/bt_submit"
-        style="@style/common_button"
+        style="@style/common_button_no_radius"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:enabled="false"

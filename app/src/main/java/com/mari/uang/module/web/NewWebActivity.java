@@ -30,6 +30,7 @@ import androidx.core.content.FileProvider;
 
 import com.alibaba.fastjson.JSONObject;
 import com.coupang.common.base.BaseSimpleActivity;
+import com.coupang.common.impl.Tools;
 import com.coupang.common.user.UserManager;
 import com.coupang.common.utils.ContextUtils;
 import com.just.agentweb.AgentWeb;
@@ -75,6 +76,8 @@ public class NewWebActivity extends BaseSimpleActivity {
 
     private String[] filePermissions = {Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
     private String[] callPhonePermissions = {Manifest.permission.CALL_PHONE};
+
+
 
 
     private void getParams() {

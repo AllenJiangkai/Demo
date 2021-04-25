@@ -17,6 +17,7 @@ import com.mari.uang.module.home.dto.BannerInfo
 import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
 import com.coupang.common.utils.GlideLoadUtils.loadImage
+import com.mari.uang.util.RouterUtil
 import kotlinx.android.synthetic.main.widget_banner_view.view.*
 import kotlin.math.abs
 
@@ -53,6 +54,14 @@ class HomeBannerView : RelativeLayout {
             this@HomeBannerView
         )
         initBannerView()
+    }
+
+
+    fun initRight(iconUrl:String,linkUrl:String){
+        loadImage(context,iconUrl,img_right)
+        img_right.setOnClickListener {
+            RouterUtil.router(context,linkUrl,false)
+        }
     }
 
     fun initBannerViewData(data: ArrayList<BannerInfo>) {

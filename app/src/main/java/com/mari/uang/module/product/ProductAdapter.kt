@@ -13,7 +13,8 @@ class ProductAdapter(layoutResId: Int) : BaseQuickAdapter<VerifyInfo, BaseViewHo
         helper.apply {
            loadImage(mContext, item.log, getView<ImageView>(R.id.img_icon))
             if(!item.title.isNullOrEmpty()){
-                setText(R.id.tv_product, item.title?.replace(" ", "\n"))
+//                setText(R.id.tv_product, item.title?.replace(" ", "\n"))
+                setText(R.id.tv_product, item.title?:"")
             }
             getView<ImageView>(R.id.img_status).isSelected=isPast(item.status)
 

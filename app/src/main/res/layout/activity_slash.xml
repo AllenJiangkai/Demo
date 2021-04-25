@@ -6,11 +6,9 @@
 
 
     <ImageView
-        android:layout_marginBottom="70dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
+        android:scaleType="centerInside"
         android:src="@drawable/ic_splash_logo"
-        android:layout_width="160dp"
-        android:layout_height="160dp" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </RelativeLayout>

@@ -35,7 +35,7 @@ class ProductRepository : BaseRepository<Any?>() {
     }
 
     suspend fun requestProductUrlInfo(bean: AgreementInfo): Result<ProductUrlInfo> = safeApiCall {
-        val map: MutableMap<String, Any> = HashMap()
+        val map:@JvmSuppressWildcards MutableMap<String, Any> = HashMap()
         map["productId"] = bean.productId?:""
         map["scene"] = bean.scene?:""
         map["orderId"] = bean.orderId?:""

@@ -4,8 +4,8 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
 
-    <color name="main_color">#0CCE65</color>
-    <color name="tab_false">#999999</color>
+    <color name="main_color">#C33FCF</color>
+    <color name="tab_false">#B2BDD0</color>
     <color name="main_color_false">#C9C9C9</color>
     <color name="bg_color">#f6f6f6</color>
     <color name="color_666666">#ff666666</color>
@@ -18,6 +18,7 @@
     <color name="color_ff5959">#ff5959</color>
     <color name="color_fa3649">#fa3649</color>
     <color name="color_fff7eb">#fff7eb</color>
+    <color name="color_323232">#ff323232</color>
     <color name="red">#ff0000</color>
     <color name="c_eeeeee">#eeeeee</color>
     <color name="white">#FFFFFF</color>

@@ -22,6 +22,10 @@ import com.mari.uang.module.login.LoginActivity
 class HomeAdapter(data: MutableList<MultiItemEntity>? = null) :
     BaseMultiItemQuickAdapter<MultiItemEntity, BaseViewHolder>(data) {
 
+
+    var iconUrl :String?=null
+    var linkUrl :String?=null
+
     init {
         addItemType(TYPE_RECOMMEND_BANNER, R.layout.item_banner_view)
         addItemType(TYPE_RECOMMEND_BIG_CARD, R.layout.item_big_card_view)
@@ -68,6 +72,8 @@ class HomeAdapter(data: MutableList<MultiItemEntity>? = null) :
                          RouterUtil.router(mContext, bean.url)
                      }
                  }
+
+                initRight(iconUrl?:"",linkUrl?:"")
             }
         }
     }

@@ -83,7 +83,7 @@
             android:orientation="horizontal"
             android:visibility="gone">
 
-            <Button
+            <TextView
                 style="@style/common_button"
                 android:id="@+id/tv_multiple_btn1"
                 android:layout_width="0px"
@@ -96,7 +96,7 @@
                 android:maxLines="1"
                  />
 
-            <Button
+            <TextView
                 style="@style/common_button"
                 android:id="@+id/tv_multiple_btn2"
                 android:layout_width="0px"

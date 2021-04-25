@@ -12,6 +12,9 @@ import com.coupang.common.base.BaseSimpleActivity
 import com.coupang.common.extentions.createViewModel
 import com.coupang.common.utils.setStatusBarTextColor
 import com.coupang.common.utils.strings
+import com.mari.uang.config.ConstantConfig.LOGIN_AGREEMENT_URL
+import com.mari.uang.module.web.MUHttpConstants.H5_SERVICE_URL
+import com.mari.uang.util.RouterUtil
 import com.yanzhenjie.permission.Action
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_order.title_bar
@@ -19,10 +22,6 @@ import kotlinx.android.synthetic.main.activity_order.title_bar
 class LoginActivity : BaseSimpleActivity() {
 
 
-    /**
-    88912345670
-     123456
-     */
     private val mustPermissions = arrayOf(Manifest.permission.READ_CONTACTS)
     private val viewModel by lazy { createViewModel(LoginModel::class.java) }
     override fun getLayoutId(): Int {
@@ -30,12 +29,12 @@ class LoginActivity : BaseSimpleActivity() {
     }
 
     override fun initView() {
-        title_bar.apply {
-            setTitle(strings(R.string.title_order))
-            onClickBackListener {
-                finish()
-            }
-        }
+//        title_bar.apply {
+//            setTitle(strings(R.string.title_order))
+//            onClickBackListener {
+//                finish()
+//            }
+//        }
         initListener()
     }
 
@@ -60,6 +59,10 @@ class LoginActivity : BaseSimpleActivity() {
         }
         ed_code.addTextChangedListener{
             changBtnStyle()
+        }
+
+        tv_link.setOnClickListener {
+            RouterUtil.goWebActivity(this@LoginActivity,H5_SERVICE_URL+LOGIN_AGREEMENT_URL,"")
         }
 
 
@@ -133,7 +136,7 @@ class LoginActivity : BaseSimpleActivity() {
 
     override fun onResume() {
         super.onResume()
-        setStatusBarTextColor(window, false)
+        setStatusBarTextColor(window, true)
     }
 
 

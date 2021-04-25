@@ -12,7 +12,7 @@
   <path
       android:pathData="M-260,-8L12,-8A20,20 0,0 1,32 12L32,12A20,20 0,0 1,12 32L-260,32A20,20 0,0 1,-280 12L-280,12A20,20 0,0 1,-260 -8z"
       android:strokeWidth="1"
-      android:fillColor="#FFFFFF"
+      android:fillColor="@color/color_f4f5f6"
       android:fillType="evenOdd"
       android:strokeColor="#00000000"/>
   <path

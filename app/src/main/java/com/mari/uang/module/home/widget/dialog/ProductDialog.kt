@@ -79,6 +79,7 @@ class ProductDialog(context: Context) : Dialog(context, R.style.TipsDialogTheme)
                 recycler_content.layoutManager = LinearLayoutManager(context)
                 recycler_content.adapter = adapter
                 adapter.setNewData(convertUI())
+                adapter.setMyDialog(this@ProductDialog)
             }
         }
 

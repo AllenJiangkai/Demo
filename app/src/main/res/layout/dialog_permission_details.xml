@@ -159,10 +159,10 @@
 
     <TextView
         android:padding="13dp"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:id="@+id/tvConfirm"
         android:layout_width="match_parent"
-        android:background="@color/main_color"
+        style="@style/common_button_no_radius"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/splash_permission_submit"

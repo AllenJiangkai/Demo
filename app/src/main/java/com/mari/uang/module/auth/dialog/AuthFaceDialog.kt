@@ -21,7 +21,7 @@ class AuthFaceDialog(context: Context) : Dialog(context, R.style.TipsDialogTheme
 
         window?.setGravity(Gravity.CENTER)
         window?.setLayout(
-            dip2px(335),
+            ViewGroup.LayoutParams.WRAP_CONTENT,
             ViewGroup.LayoutParams.WRAP_CONTENT
         )
         setCancelable(false)

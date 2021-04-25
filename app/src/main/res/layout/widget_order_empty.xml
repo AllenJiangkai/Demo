@@ -27,7 +27,7 @@
         />
 
 
-    <Button
+    <TextView
         android:text="@string/order_empty_button"
         android:id="@+id/bt_submit"
         android:layout_marginTop="18dp"

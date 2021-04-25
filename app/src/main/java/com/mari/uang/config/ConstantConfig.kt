@@ -31,4 +31,7 @@ object ConstantConfig{
     const val TYPE_SMS = "1"
     const val TYPE_APP = "2"
     const val TYPE_CONTACT = "3"
+
+
+    const val LOGIN_AGREEMENT_URL = "/#/privacyAgreement"
 }
