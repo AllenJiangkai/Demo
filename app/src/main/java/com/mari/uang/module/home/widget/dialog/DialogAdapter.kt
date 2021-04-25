@@ -16,6 +16,7 @@ import com.mari.uang.module.home.widget.dialog.DialogAdapterItem.Companion.SINGL
 import com.mari.uang.module.home.widget.dialog.StyleUtil.buildButton
 import com.mari.uang.module.home.widget.dialog.dto.*
 import com.alibaba.fastjson.JSON
+import com.alibaba.fastjson.JSONObject
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.chad.library.adapter.base.entity.MultiItemEntity
@@ -72,8 +73,8 @@ class DialogAdapter(data: MutableList<MultiItemEntity>? = null) :
 
     private fun convertMessage(helper: BaseViewHolder, item: DialogAdapterItem<*>) {
         helper.run {
-            val bean = item.data as String
-            val entry: MessageInfo = JSON.parseObject(bean, MessageInfo::class.java)
+            val bean = item.data as JSONObject
+            val entry: MessageInfo = JSON.parseObject(bean.toJSONString(), MessageInfo::class.java)
 
             val params = itemView.layoutParams as RecyclerView.LayoutParams
             params.topMargin = dip2px(entry.topMargin)
@@ -88,8 +89,8 @@ class DialogAdapter(data: MutableList<MultiItemEntity>? = null) :
 
     private fun convertInfo(helper: BaseViewHolder, item: DialogAdapterItem<*>) {
         helper.run {
-            val bean = item.data as String
-            val entry: Info = JSON.parseObject(bean, Info::class.java)
+            val bean = item.data as JSONObject
+            val entry: Info = JSON.parseObject(bean.toJSONString(), Info::class.java)
 
             val params = itemView.layoutParams as RecyclerView.LayoutParams
             params.topMargin = dip2px(entry.topMargin)
@@ -101,8 +102,8 @@ class DialogAdapter(data: MutableList<MultiItemEntity>? = null) :
 
     private fun convertImage(helper: BaseViewHolder, item: DialogAdapterItem<*>) {
         helper.run {
-            val bean = item.data as String
-            val entry: ImgInfo = JSON.parseObject(bean, ImgInfo::class.java)
+            val bean = item.data as JSONObject
+            val entry: ImgInfo = JSON.parseObject(bean.toJSONString(), ImgInfo::class.java)
 
             val params = itemView.layoutParams as RecyclerView.LayoutParams
             params.topMargin = dip2px(entry.topMargin)
@@ -113,8 +114,8 @@ class DialogAdapter(data: MutableList<MultiItemEntity>? = null) :
 
     private fun convertSingleBt(helper: BaseViewHolder, item: DialogAdapterItem<*>) {
         helper.run {
-            val bean = item.data as String
-            val entry: SingleBt = JSON.parseObject(bean, SingleBt::class.java)
+            val bean = item.data as JSONObject
+            val entry: SingleBt = JSON.parseObject(bean.toJSONString(), SingleBt::class.java)
 
             val params = itemView.layoutParams as RecyclerView.LayoutParams
             params.topMargin = dip2px(entry.topMargin)
@@ -135,8 +136,8 @@ class DialogAdapter(data: MutableList<MultiItemEntity>? = null) :
     }
     private fun convertDoubleBt(helper: BaseViewHolder, item: DialogAdapterItem<*>) {
         helper.run {
-            val bean = item.data as String
-            val entry: DoubleBt = JSON.parseObject(bean, DoubleBt::class.java)
+            val bean = item.data as JSONObject
+            val entry: DoubleBt = JSON.parseObject(bean.toJSONString(), DoubleBt::class.java)
 
             val params = itemView.layoutParams as RecyclerView.LayoutParams
             params.topMargin = dip2px(entry.topMargin)

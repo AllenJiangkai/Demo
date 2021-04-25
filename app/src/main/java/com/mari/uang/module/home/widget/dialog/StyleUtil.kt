@@ -38,10 +38,9 @@ object StyleUtil{
         if (isColor(entry.color)) {
             tv.setTextColor(Color.parseColor(entry.color))
         }
-        if (isColor(entry.color)) {
+        if (isColor(entry.bgColor)) {
             try {
-                val bg = tv.background.mutate() as GradientDrawable
-                bg.setTint(Color.parseColor(entry.bgColor))
+                tv.background.mutate().setTint(Color.parseColor(entry.bgColor))
             } catch (e: Exception) {
                 e.printStackTrace()
             }
