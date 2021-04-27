@@ -6,6 +6,10 @@
     android:background="@color/bg_color"
     android:orientation="vertical">
 
+    <com.mari.uang.widget.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh"
         android:layout_width="match_parent"
@@ -22,10 +26,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <com.mari.uang.widget.TitleBarView
-                    android:id="@+id/title_bar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
