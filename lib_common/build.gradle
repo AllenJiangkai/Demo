@@ -31,7 +31,6 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //lib dependent
     api project(':lib_utils')
-    api files('libs/x5-4.3.0.3.jar')
     // core dependent
     implementation dependent.kotlin.stdlib
     api dependent.test.junit
@@ -53,6 +52,7 @@ dependencies {
     api dependent.squareup.retrofit_rxjava
     api dependent.squareup.retrofit_okhttp
     api  "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8"
+    api  "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.8"
     api  "com.github.bumptech.glide:glide:4.9.0"
     api 'com.alibaba:fastjson:1.1.71.android'
     api  'com.just.agentweb:agentweb:4.1.4'

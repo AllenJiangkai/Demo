@@ -7,7 +7,6 @@ import androidx.multidex.MultiDexApplication
 import com.coupang.common.impl.Tools
 import com.coupang.common.utils.ContextUtils
 import com.mari.uang.util.ToolsManager
-import com.tencent.smtt.sdk.QbSdk
 
 
 /**
@@ -26,7 +25,6 @@ class MyApplication : MultiDexApplication() {
         super.onCreate()
         ContextUtils.init(this)
         Tools.initData(ToolsManager())
-        initX5()
         val displayMetrics = applicationContext.resources.displayMetrics
         screenWidth = displayMetrics.widthPixels
         screenHeight = displayMetrics.heightPixels
@@ -40,22 +38,6 @@ class MyApplication : MultiDexApplication() {
         fun baseCox() : Context? {
             return baseCox
         }
-    }
-    private fun initX5() {
-
-        //x5内核初始化接口
-        QbSdk.setDownloadWithoutWifi(true)
-        QbSdk.initX5Environment(applicationContext, object : QbSdk.PreInitCallback {
-            override fun onCoreInitFinished() {
-
-            }
-
-            override fun onViewInitFinished(p0: Boolean) {
-                //x5內核初始化完成的回调，为true表示x5内核加载成功，否则表示x5内核加载失败，会自动切换到系统内核。
-                Log.d("app", " onViewInitFinished is $p0")
-            }
-
-        })
     }
 
 

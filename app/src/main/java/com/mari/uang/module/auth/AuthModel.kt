@@ -1,5 +1,6 @@
 package com.mari.uang.module.auth
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.mari.uang.module.auth.dto.AuthCardInfo
@@ -78,6 +79,8 @@ class AuthModel : BaseViewModel<AuthRepository>() {
             val result = repository.saveBaseInfo(info,orderNo?:"",product_id?:"")
             if (result is Result.Success) {
                 submitCardInfo.value=info
+            }else if (result is Result.GeneralError){
+                showToast.value=result.message?:""
             }
             hideLoading()
         }

@@ -1,15 +1,26 @@
 package com.mari.uang.event
 
+import ai.advance.liveness.lib.LivenessResult
+import android.annotation.SuppressLint
 import android.location.Location
 import com.aitime.android.deviceid.DeviceIdentifier
+import com.coupang.common.network.EmptyVO
 import com.coupang.common.network.ParameterTool
+import com.coupang.common.network.Result
+import com.coupang.common.network.safeApiCall
 import com.coupang.common.utils.ContextUtils
 import com.coupang.common.utils.spf.SpConfig.location_latitude
 import com.coupang.common.utils.spf.SpConfig.location_longitude
 import com.mari.uang.AppApi
+import com.mari.uang.module.auth.AuthFaceActivity
+import com.mari.uang.module.auth.dto.AuthCardInfo
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import java.lang.Exception
 import java.util.*
 import java.util.concurrent.TimeUnit
 
@@ -32,7 +43,8 @@ object ActionUtil {
      * @param productId
      * @param startTime
      */
-    fun actionRecord(
+    @SuppressLint("CheckResult")
+     fun actionRecord(
         sakuActionEnum: ActionEnum,
         productId: String?,
         startTime: Long,
@@ -41,7 +53,11 @@ object ActionUtil {
         val isUpload = booleanArrayOf(false)
         MULocTool.getInstance().startLocation(object : MULocCall {
             override fun error(errorMsg: String?) {}
-            override fun location(location: Location?, addressDetail: String?, addressJson: String?) {
+            override fun location(
+                location: Location?,
+                addressDetail: String?,
+                addressJson: String?
+            ) {
                 if (!isUpload[0]) {
                     isUpload[0] = true
                     upload(sakuActionEnum, productId, startTime, endTime)
@@ -59,7 +75,7 @@ object ActionUtil {
             }
     }
 
-    private fun upload(
+    fun upload(
         sakuActionEnum: ActionEnum,
         productId: String?,
         startTime: Long,
@@ -74,7 +90,15 @@ object ActionUtil {
         map["startTime"] = startTime
         map["endTime"] = endTime
 
-        AppApi.api.uploadActionData(ParameterTool.toRequestBody(map))
+        try {
+            CoroutineScope(Dispatchers.Main).launch {
+                AppApi.api.uploadActionData(ParameterTool.toRequestBody(map))
+            }
+        }catch (ex:Exception){
+            ex.printStackTrace()
+        }
+
     }
+
 
 }

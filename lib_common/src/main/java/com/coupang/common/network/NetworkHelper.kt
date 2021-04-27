@@ -29,7 +29,7 @@ import retrofit2.HttpException
  * A generic response DTO with Coupang network format.
  */
 data class ApiResponse<T>(
-    val code: Int = -1,
+    val code: Int? = -1,
     val message: String? = null,
     val data: T? = null,
     val msg : String? = null

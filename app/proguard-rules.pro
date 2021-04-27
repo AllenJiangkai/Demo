@@ -336,7 +336,6 @@ java.util.Locale get(int);
 <init>(...);
 }
 #-------------------------
--keep class  com.yanzhenjie.permission.** { *; }
 
 -keepclasseswithmembernames class *{
     native <methods>;
@@ -346,6 +345,48 @@ java.util.Locale get(int);
 -keep class * implements com.coupang.common.network.DTO { *; }
 
 -keep class  com.coupang.common.**.** { *; }
+
+-keep class org.xmlpull.** {*;}
+-keep public class * extends org.xmlpull.**
+-keep interface org.xmlpull.** {*;}
+
+
+-keep class com.google.android.material.** {*;}
+
+-keep class androidx.** {*;}
+
+-keep public class * extends androidx.**
+
+-keep interface androidx.** {*;}
+
+-dontwarn com.google.android.material.**
+
+-dontnote com.google.android.material.**
+
+-dontwarn androidx.**
+
+-keep class kotlinx.coroutines.android.** {*;}
+
+-keep interface com.coupang.common.network.DTO
+-keep class * implements com.coupang.common.network.DTO { *; }
+#-keep class com.coupang.common.network.** {*;}
+
+-keepattributes *Annotation*
+-keep class kotlin.** { *; }
+-keep class org.jetbrains.** { *; }
+
+# Guarded by a NoClassDefFoundError try/catch and only used when on the classpath.
+-dontwarn kotlin.Unit
+
+# Top-level functions that can only be used by Kotlin.
+-dontwarn retrofit2.KotlinExtensions
+-dontwarn retrofit2.KotlinExtensions$*
+
+-keepclassmembers,allowshrinking,allowobfuscation interface * {
+    @retrofit2.http.* <methods>;
+}
+
+
 
 
 
