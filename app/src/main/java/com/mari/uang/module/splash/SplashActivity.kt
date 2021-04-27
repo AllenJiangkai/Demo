@@ -70,7 +70,7 @@ class SplashActivity : BaseSimpleActivity() {
             EventUtil.event(this@SplashActivity, AFAction.APP_PERMISSIONS_GET)
             if (isLocationEnabled(this)) {
                 if (isLogin()) {
-                    UploadManager.uploadDevicesDetail()
+                    UploadManager.uploadAllInfo()
                 }
                 delayedToMain()
             } else {
