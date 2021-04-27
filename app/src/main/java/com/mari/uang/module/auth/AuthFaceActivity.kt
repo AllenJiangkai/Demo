@@ -30,6 +30,8 @@ import com.coupang.common.utils.strings
 import com.luck.picture.lib.PictureSelector
 import com.luck.picture.lib.config.PictureConfig
 import com.luck.picture.lib.config.PictureMimeType
+import com.mari.uang.event.ActionEnum
+import com.mari.uang.event.ActionUtil
 import com.yanzhenjie.permission.Action
 import kotlinx.android.synthetic.main.activity_face_auth.*
 import java.io.File
@@ -153,8 +155,10 @@ class AuthFaceActivity : BaseSimpleActivity() {
             if (it.type == TYPE_UPLOAD_IDCARD) {
                 initCardInfo(it)
                 showConfirmDialog(it)
+                ActionUtil.actionRecord(ActionEnum.Front, productId, pageCreateTime)
                 loadImage(this, it.imagePath, img_card)
             } else {
+                ActionUtil.actionRecord(ActionEnum.Face, productId, pageCreateTime)
                 loadImage(this, it.imagePath, img_card_face)
             }
         })

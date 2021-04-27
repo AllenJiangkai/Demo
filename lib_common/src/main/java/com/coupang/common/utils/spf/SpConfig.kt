@@ -12,4 +12,7 @@ object SpConfig : DelegateSharedPreferences("spConfig") {
     var gps_adid by DelegatePreference(this, "GPS_ADID", "")
     var location_longitude by DelegatePreference(this,"LOCATION_LONGITUDE","")
     var location_latitude by DelegatePreference(this,"LOCATION_LATITUDE","")
+
+
+
 }

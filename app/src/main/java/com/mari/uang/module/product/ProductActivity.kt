@@ -32,6 +32,8 @@ import com.mari.uang.config.ConstantConfig.PRODUCT_ID_KEY
 import com.mari.uang.config.ConstantConfig.STATUS_KEY
 import com.mari.uang.config.ConstantConfig.TASK_TYPE_KEY
 import com.mari.uang.config.ConstantConfig.TITLE_KEY
+import com.mari.uang.event.ActionEnum
+import com.mari.uang.event.ActionUtil
 import com.mari.uang.module.auth.AuthFaceActivity
 import com.mari.uang.module.basic.AuthBasicInfoActivity
 import com.mari.uang.module.contact.ContactActivity
@@ -124,6 +126,7 @@ class ProductActivity : BaseSimpleActivity(), SwipeRefreshLayout.OnRefreshListen
         })
 
         viewModel.sendEvent.observe(this, Observer {
+            ActionUtil.actionRecord(ActionEnum.Push, null,0,0)
             RouterUtil.goWebActivity(this,it.url?:"","")
         })
     }

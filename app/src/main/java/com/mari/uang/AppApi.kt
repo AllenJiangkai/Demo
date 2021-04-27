@@ -288,7 +288,7 @@ interface AppApi {
      * sceneInfoReport
      */
     @POST("/v3/buried-point/upload")
-    suspend fun uploadActionData(@Body body: RequestBody): ApiResponse<Any>
+    fun uploadActionData(@Body body: RequestBody): ApiResponse<Any>
     
     
     companion object {

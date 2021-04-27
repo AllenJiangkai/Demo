@@ -15,6 +15,8 @@ import com.coupang.common.base.BaseViewModel
 import com.coupang.common.network.Result
 import com.coupang.common.user.UserManager
 import com.coupang.common.utils.strings
+import com.mari.uang.event.ActionEnum
+import com.mari.uang.event.ActionUtil
 import com.mari.uang.module.basic.dto.BasicItemInfoList
 import kotlinx.coroutines.launch
 import java.util.*
@@ -101,6 +103,7 @@ class BasicInfoModel : BaseViewModel<BasicRepository>() {
                     }else if(result is Result.GeneralError){
                         showToast.value=result.message
                     }
+                    ActionUtil.actionRecord(ActionEnum.BankCard, productId, startTime?:0)
                 }
                 "job" -> {
                     var result = repository.saveJobInfo(map)
@@ -109,6 +112,7 @@ class BasicInfoModel : BaseViewModel<BasicRepository>() {
                     }else if(result is Result.GeneralError){
                         showToast.value=result.message
                     }
+                    ActionUtil.actionRecord(ActionEnum.Job, productId, startTime?:0)
                 }
                 "personal" -> {
                     var result = repository.savePersonalAuthInfo(map)
@@ -118,6 +122,7 @@ class BasicInfoModel : BaseViewModel<BasicRepository>() {
 
                         showToast.value=result.message
                     }
+                    ActionUtil.actionRecord(ActionEnum.Personal, productId, startTime?:0)
                 }
             }
             hideLoading()

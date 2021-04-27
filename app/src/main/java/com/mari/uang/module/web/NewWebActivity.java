@@ -38,6 +38,8 @@ import com.just.agentweb.WebChromeClient;
 import com.just.agentweb.WebViewClient;
 import com.mari.uang.R;
 import com.mari.uang.config.ConstantConfig;
+import com.mari.uang.event.ActionEnum;
+import com.mari.uang.event.ActionUtil;
 import com.mari.uang.module.login.LoginActivity;
 import com.mari.uang.module.main.MainActivity;
 import com.mari.uang.util.MUWebViewUtil;
@@ -411,7 +413,7 @@ public class NewWebActivity extends BaseSimpleActivity {
 
         @JavascriptInterface
         public void uploadRiskLoan(String productId, String orderId) {
-            //todo 埋点//
+            ActionUtil.INSTANCE.actionRecord(ActionEnum.Loan, productId,getPageCreateTime());
         }
     }
 

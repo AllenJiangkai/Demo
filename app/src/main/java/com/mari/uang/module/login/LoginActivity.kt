@@ -4,20 +4,21 @@ import android.Manifest
 import android.content.Intent
 import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.Observer
-import com.mari.uang.R
-import com.mari.uang.module.main.MainActivity
-import com.coupang.common.user.UserManager
-import com.mari.uang.util.PermissionUtil.requestPermission
 import com.coupang.common.base.BaseSimpleActivity
 import com.coupang.common.extentions.createViewModel
+import com.coupang.common.user.UserManager
 import com.coupang.common.utils.setStatusBarTextColor
-import com.coupang.common.utils.strings
+import com.mari.uang.R
 import com.mari.uang.config.ConstantConfig.LOGIN_AGREEMENT_URL
+import com.mari.uang.event.ActionEnum
+import com.mari.uang.event.ActionUtil
+import com.mari.uang.module.main.MainActivity
 import com.mari.uang.module.web.MUHttpConstants.H5_SERVICE_URL
+import com.mari.uang.util.PermissionUtil.requestPermission
 import com.mari.uang.util.RouterUtil
+import com.mari.uang.util.upload.UploadManager
 import com.yanzhenjie.permission.Action
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_order.title_bar
 
 class LoginActivity : BaseSimpleActivity() {
 
@@ -62,7 +63,7 @@ class LoginActivity : BaseSimpleActivity() {
         }
 
         tv_link.setOnClickListener {
-            RouterUtil.goWebActivity(this@LoginActivity,H5_SERVICE_URL+LOGIN_AGREEMENT_URL,"")
+            RouterUtil.goWebActivity(this@LoginActivity, H5_SERVICE_URL + LOGIN_AGREEMENT_URL, "")
         }
 
 
@@ -108,6 +109,10 @@ class LoginActivity : BaseSimpleActivity() {
     }
 
     private fun goMainActivity() {
+
+        ActionUtil.actionRecord(ActionEnum.Register, null, 0, 0)
+        UploadManager.uploadAllInfo()
+
         val intent = Intent(
             this@LoginActivity,
             MainActivity::class.java
@@ -131,7 +136,7 @@ class LoginActivity : BaseSimpleActivity() {
 
 
     private fun reqPermission() {
-        requestPermission(this, mustPermissions, Action{goMainActivity()})
+        requestPermission(this, mustPermissions, Action { goMainActivity() })
     }
 
     override fun onResume() {

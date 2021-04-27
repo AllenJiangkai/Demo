@@ -20,6 +20,8 @@ import com.coupang.common.base.BaseSimpleActivity
 import com.coupang.common.extentions.createViewModel
 import com.coupang.common.network.ParameterTool.toRequestBody
 import com.coupang.common.utils.setStatusBarTextColor
+import com.mari.uang.event.ActionEnum
+import com.mari.uang.event.ActionUtil
 import com.yanzhenjie.permission.Action
 import kotlinx.android.synthetic.main.activity_contact.*
 import kotlinx.android.synthetic.main.activity_order.title_bar
@@ -107,6 +109,8 @@ class ContactActivity : BaseSimpleActivity() {
         })
 
         viewModel.saveInfo.observe(this, Observer {
+
+            ActionUtil.actionRecord(ActionEnum.Contact, productId,pageCreateTime)
             finish()
         })
     }

@@ -4,21 +4,22 @@ import android.graphics.Color
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bigkoo.pickerview.OptionsPickerView
+import com.chad.library.adapter.base.BaseQuickAdapter
+import com.coupang.common.base.BaseSimpleActivity
+import com.coupang.common.extentions.createViewModel
+import com.coupang.common.utils.setStatusBarTextColor
+import com.mari.lib_utils.system.KeymapUtils
 import com.mari.uang.R
 import com.mari.uang.config.ConstantConfig
 import com.mari.uang.config.ConstantConfig.INFO_AUTH_ITEM_TYPE_CITY_SELECT
 import com.mari.uang.config.ConstantConfig.INFO_AUTH_ITEM_TYPE_ENUM
-import com.mari.uang.module.basic.dto.BasicItemInfo
-import com.mari.uang.module.contact.dto.NameTypeInfo
+import com.mari.uang.event.ActionEnum
+import com.mari.uang.event.ActionUtil
 import com.mari.uang.module.basic.citydialog.DNSelCityDialog
 import com.mari.uang.module.basic.citydialog.MUCityModel
-import com.mari.lib_utils.system.KeymapUtils
-import com.bigkoo.pickerview.OptionsPickerView
-import com.chad.library.adapter.base.BaseQuickAdapter
-import com.chad.library.adapter.base.entity.MultiItemEntity
-import com.coupang.common.base.BaseSimpleActivity
-import com.coupang.common.extentions.createViewModel
-import com.coupang.common.utils.setStatusBarTextColor
+import com.mari.uang.module.basic.dto.BasicItemInfo
+import com.mari.uang.module.contact.dto.NameTypeInfo
 import kotlinx.android.synthetic.main.activity_auth_basic_info.*
 
 /**
@@ -74,7 +75,7 @@ class AuthBasicInfoActivity : BaseSimpleActivity()  {
             when (infoAuthItemEntity.cate) {
                 INFO_AUTH_ITEM_TYPE_ENUM -> {
                     KeymapUtils.hideInput(this)
-                    showPickDialog(getBeanList()?.get(position)?.note , position)
+                    showPickDialog(getBeanList()?.get(position)?.note, position)
                 }
                 INFO_AUTH_ITEM_TYPE_CITY_SELECT -> {
                     KeymapUtils.hideInput(this)
@@ -86,7 +87,7 @@ class AuthBasicInfoActivity : BaseSimpleActivity()  {
 
 
 
-    private fun showPickDialog(list: ArrayList<NameTypeInfo>?, position:Int) {
+    private fun showPickDialog(list: ArrayList<NameTypeInfo>?, position: Int) {
         OptionsPickerView.Builder(this) { options1, options2, options3, v ->
             val bean: NameTypeInfo = list!![options1]
             getBeanList()!![position].value = bean.name
@@ -115,7 +116,7 @@ class AuthBasicInfoActivity : BaseSimpleActivity()  {
         registerLiveDataCommonObserver(viewModel)
         viewModel.dataList.observe(this, Observer {
             itemAdapter.setNewData(it)
-            bt_submit.isEnabled=true
+            bt_submit.isEnabled = true
         })
 
         viewModel.saveResult.observe(this, Observer {
@@ -124,7 +125,7 @@ class AuthBasicInfoActivity : BaseSimpleActivity()  {
     }
 
     override fun initData() {
-        viewModel.getData(taskStatus,productId)
+        viewModel.getData(taskStatus, productId)
     }
 
 
@@ -148,7 +149,7 @@ class AuthBasicInfoActivity : BaseSimpleActivity()  {
 
     private fun initListener() {
         bt_submit.setOnClickListener{
-            viewModel.saveInfoData(getBeanList(),taskStatus,productId,0)
+            viewModel.saveInfoData(getBeanList(), taskStatus, productId, pageCreateTime)
         }
     }
 
