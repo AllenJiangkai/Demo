@@ -275,7 +275,7 @@ class AuthFaceActivity : BaseSimpleActivity() {
                     showToast("Gagal menyimpan gambar")
                 }
             } else {
-                val errorMsg = LivenessResult.getErrorMsg()
+                val errorMsg = LivenessResult.getErrorMsg()?:""
                 showToast(errorMsg)
             }
         }

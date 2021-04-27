@@ -104,7 +104,7 @@
         <item name="android:paddingRight">6dp</item>
         <item name="android:paddingTop">@dimen/dp_7</item>
         <item name="android:paddingBottom">@dimen/dp_7</item>
-        <item name="android:background">@drawable/bg_shape_r50</item>
+        <item name="android:background">@drawable/bg_shape_r50_white</item>
         <item name="android:layout_marginTop">6dp</item>
     </style>
 

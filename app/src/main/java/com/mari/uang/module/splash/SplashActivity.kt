@@ -4,16 +4,19 @@ import android.Manifest
 import android.content.Intent
 import android.net.Uri
 import android.provider.Settings
-import com.mari.uang.R
-import com.mari.uang.module.main.MainActivity
-import com.coupang.common.utils.spf.SpConfig
-import com.mari.uang.util.PermissionUtil.requestPermission
-import com.mari.uang.widget.TipsDialog
 import com.coupang.common.base.BaseSimpleActivity
+import com.coupang.common.user.UserManager.isLogin
 import com.coupang.common.utils.isLocationEnabled
 import com.coupang.common.utils.setStatusBarTextColor
+import com.coupang.common.utils.spf.SpConfig
 import com.coupang.common.utils.strings
+import com.mari.uang.R
+import com.mari.uang.config.AFAction
+import com.mari.uang.module.main.MainActivity
+import com.mari.uang.util.EventUtil
+import com.mari.uang.util.PermissionUtil.requestPermission
 import com.mari.uang.util.upload.UploadManager
+import com.mari.uang.widget.TipsDialog
 import com.yanzhenjie.permission.Action
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -64,8 +67,11 @@ class SplashActivity : BaseSimpleActivity() {
 
     private fun checkPermission() {
         requestPermission(this, permissions, Action {
+            EventUtil.event(this@SplashActivity, AFAction.APP_PERMISSIONS_GET)
             if (isLocationEnabled(this)) {
-                UploadManager.uploadDevicesDetail()
+                if (isLogin()) {
+                    UploadManager.uploadDevicesDetail()
+                }
                 delayedToMain()
             } else {
                 showPermissionTipsDialog()

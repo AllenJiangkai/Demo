@@ -61,8 +61,8 @@
     <string name="splash_permission_applist_content">Kami akan mengumpulkan daftar aplikasi yang Anda instal untuk mendapatkan nama aplikasi, nomor versi aplikasi, waktu instalasi aplikasi, dan mengunggahnya ke server kami. Data ini akan digunakan untuk mengidentifikasi pengguna yang melakukan penipuan dan mencegah pengguna melakukan pinjaman dengan maksud jahat. Data tersebut akan dienkripsi dengan ketat dan tidak akan bocor ke pihak ketiga mana pun.</string>
     <string name="splash_permission_submit">Izinkan</string>
     <string name="main_title">INDO</string>
-    <string name="porfile_belum_selesai">Belum selesai</string>
-    <string name="profile_dana_cair">Dana cair</string>
+    <string name="porfile_belum_selesai">Belum\nselesai</string>
+    <string name="profile_dana_cair">Proses\npinjaman</string>
     <string name="profile_sudah">Sudah lunas</string>
     <string name="product_proses_peminjaman">Proses Peminjaman</string>
     <string name="product_ksp">Kebijakan Privasi KSP Pinjam Tunai</string>

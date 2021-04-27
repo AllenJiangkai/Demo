@@ -48,16 +48,12 @@
             android:paddingEnd="24dp"
             tools:ignore="RtlSymmetry">
 
-            <View
-                android:layout_width="5dp"
-                android:layout_height="5dp"
-                android:background="@drawable/bg_shape_main_r12" />
 
             <TextView
                 android:id="@+id/tv_contact_1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
                 android:text="@string/contact_darurat_1"
@@ -67,7 +63,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/bg_svg_contact_1" />
+                android:src="@drawable/svg_info_auth_down_jt" />
         </LinearLayout>
 
         <View
@@ -86,13 +82,9 @@
             android:paddingEnd="24dp"
             tools:ignore="RtlSymmetry">
 
-            <View
-                android:layout_width="5dp"
-                android:layout_height="5dp"
-                android:background="@drawable/bg_shape_main_r12" />
 
             <LinearLayout
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginEnd="10dp"
                 android:orientation="vertical"
                 android:layout_weight="1"
@@ -152,16 +144,11 @@
             android:paddingEnd="24dp"
             tools:ignore="RtlSymmetry">
 
-            <View
-                android:layout_width="5dp"
-                android:layout_height="5dp"
-                android:background="@drawable/bg_shape_main_r12" />
-
             <TextView
                 android:id="@+id/tv_contact_2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
                 android:text="@string/contact_darurat_1"
@@ -171,7 +158,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/bg_svg_contact_1" />
+                android:src="@drawable/svg_info_auth_down_jt" />
         </LinearLayout>
 
         <View
@@ -189,14 +176,9 @@
             android:paddingEnd="24dp"
             tools:ignore="RtlSymmetry">
 
-            <View
-                android:layout_width="5dp"
-                android:layout_height="5dp"
-                android:background="@drawable/bg_shape_main_r12" />
-
             <LinearLayout
                 android:id="@+id/ll_chose_2"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginEnd="10dp"
                 android:orientation="vertical"
                 android:layout_weight="1"

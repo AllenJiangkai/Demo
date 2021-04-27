@@ -4,6 +4,7 @@ import android.content.Context
 import com.mari.uang.R
 import com.coupang.common.base.BaseSimpleActivity
 import com.coupang.common.utils.dip2pxOfFloat
+import com.coupang.common.utils.setStatusBarTextColor
 import com.coupang.common.utils.strings
 import kotlinx.android.synthetic.main.activity_order.*
 import net.lucode.hackware.magicindicator.ViewPagerHelper
@@ -32,6 +33,11 @@ class OrderActivity : BaseSimpleActivity() {
 
     override fun getLayoutId(): Int {
         return R.layout.activity_order
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setStatusBarTextColor(window, true)
     }
 
     override fun initView() {

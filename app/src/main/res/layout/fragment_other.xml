@@ -17,167 +17,172 @@
             android:orientation="vertical">
 
             <RelativeLayout
-                android:paddingTop="60dp"
-                android:paddingBottom="30dp"
-                android:background="@drawable/shape_user_to_bg"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/shape_user_to_bg"
                 android:orientation="vertical">
 
-
                 <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_centerHorizontal="true"
-                    android:src="@drawable/ic_profile_head" />
+                    android:id="@+id/img_hi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginTop="52dp"
+                    android:src="@drawable/ic_profile_hi" />
 
                 <TextView
                     android:id="@+id/tv_phone"
-                    android:layout_width="125dp"
-                    android:layout_height="28dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="140dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/img_hi"
+                    android:layout_marginStart="42dp"
                     android:textColor="#ffffffff"
                     android:textSize="20sp"
                     tools:text="186****1300" />
-            </RelativeLayout>
-
-
-            <RelativeLayout
-                android:id="@+id/rl_order_one"
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:layout_marginTop="20dp"
-                android:background="#ffffff"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp">
 
                 <ImageView
-                    android:id="@+id/img_belum"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_marginTop="13dp"
-                    android:layout_marginBottom="13dp"
-                    android:src="@drawable/ic_belum" />
+                    android:id="@+id/imh_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="41dp"
+                    android:src="@drawable/ic_profile_icon" />
 
-                <View
-                    android:id="@+id/red_view_one"
-                    android:layout_width="10dp"
-                    android:layout_height="10dp"
-                    android:layout_alignTop="@id/img_belum"
-                    android:layout_marginStart="-6dp"
-                    android:layout_toEndOf="@id/img_belum"
-                    android:background="@drawable/bg_red_view"
-                    android:visibility="gone"
-                    tools:visibility="visible" />
 
-                <View
-                    style="@style/common_input_bottom_line"
+                <LinearLayout
+                    android:layout_marginBottom="20dp"
                     android:layout_width="match_parent"
-                    android:layout_height="1px"
-                    android:layout_alignParentBottom="true" />
-
-                <TextView
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"
-                    android:layout_toRightOf="@id/img_belum"
-                    android:text="@string/porfile_belum_selesai"
-                    android:textColor="#ff333333"
-                    android:textSize="12sp" />
+                    android:layout_below="@id/imh_logo"
+                    android:layout_marginTop="60dp"
+                    android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/bg_svg_right_grey" />
-            </RelativeLayout>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
 
-            <RelativeLayout
-                android:id="@+id/rl_order_two"
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:background="#ffffff"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp">
+                    <RelativeLayout
+                        android:id="@+id/rl_order_one"
+                        android:layout_width="64dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
 
-                <ImageView
-                    android:id="@+id/img_dana"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_marginTop="13dp"
-                    android:layout_marginBottom="13dp"
-                    android:src="@drawable/ic_profile_dana" />
+                        <ImageView
+                            android:id="@+id/img_belum"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:src="@drawable/ic_belum" />
 
-                <View
-                    android:id="@+id/red_view_two"
-                    android:layout_width="10dp"
-                    android:layout_height="10dp"
-                    android:layout_alignTop="@id/img_dana"
-                    android:layout_marginStart="-6dp"
-                    android:layout_toEndOf="@id/img_dana"
-                    android:background="@drawable/bg_red_view"
-                    android:visibility="gone"
-                    tools:visibility="visible" />
+                        <View
+                            android:id="@+id/red_view_one"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_alignTop="@id/img_belum"
+                            android:layout_marginStart="-6dp"
+                            android:layout_toEndOf="@id/img_belum"
+                            android:background="@drawable/bg_red_view"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
 
-                <View
-                    style="@style/common_input_bottom_line"
-                    android:layout_width="match_parent"
-                    android:layout_height="1px"
-                    android:layout_alignParentBottom="true" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"
-                    android:layout_toRightOf="@id/img_dana"
-                    android:text="@string/profile_dana_cair"
-                    android:textColor="#ff333333"
-                    android:textSize="12sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/img_belum"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:text="@string/porfile_belum_selesai"
+                            android:textColor="#ffffff"
+                            android:textSize="12sp" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/bg_svg_right_grey" />
-            </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/rl_order_three"
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:background="#ffffff"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp">
+                    </RelativeLayout>
 
-                <ImageView
-                    android:id="@+id/img_sudah"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_marginTop="13dp"
-                    android:layout_marginBottom="13dp"
-                    android:src="@drawable/ic_sudah" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"
-                    android:layout_toRightOf="@id/img_sudah"
-                    android:text="@string/profile_sudah"
-                    android:textColor="#ff333333"
-                    android:textSize="12sp" />
+                    <RelativeLayout
+                        android:id="@+id/rl_order_two"
+                        android:layout_width="64dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/bg_svg_right_grey" />
+                        <ImageView
+                            android:id="@+id/img_dana"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:src="@drawable/ic_profile_dana" />
+
+                        <View
+                            android:id="@+id/red_view_two"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_alignTop="@id/img_dana"
+                            android:layout_marginStart="-6dp"
+                            android:layout_toEndOf="@id/img_dana"
+                            android:background="@drawable/bg_red_view"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/img_dana"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:text="@string/profile_dana_cair"
+                            android:textColor="#ffffff"
+                            android:textSize="12sp" />
+
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_order_three"
+                        android:layout_width="64dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <ImageView
+                            android:id="@+id/img_sudah"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:src="@drawable/ic_sudah" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/img_sudah"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:text="@string/profile_sudah"
+                            android:textColor="#ffffff"
+                            android:textSize="12sp" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+
             </RelativeLayout>
 
 
@@ -185,7 +190,7 @@
                 android:id="@+id/rcv_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp" />
+                />
 
         </LinearLayout>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

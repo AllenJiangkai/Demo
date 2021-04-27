@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="58dp"
+    android:layout_height="72dp"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#ffffff"
-    android:paddingStart="30dp"
-    android:paddingEnd="30dp">
+    android:paddingStart="40dp"
+    android:paddingEnd="40dp">
 
     <ImageView
         android:id="@+id/img_icon"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
         android:layout_marginTop="13dp"
         android:layout_marginBottom="13dp"
         tools:src="@drawable/ic_sudah" />
@@ -20,18 +20,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="12dp"
         android:layout_toRightOf="@id/img_icon"
         tools:text="@string/profile_sudah"
-        android:textColor="#ff333333"
-        android:textSize="12sp" />
+        android:textColor="#ff000000"
+        android:textSize="12sp"/>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/bg_svg_right_grey" />
 
 
 </RelativeLayout>
