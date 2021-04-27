@@ -77,7 +77,6 @@ object UploadManager{
         }
         RXGetAppInfo.getContactsList(MyApplication.baseCox()!!,object : RXGetAppInfo.InfoDataCallBack<JSONArray>{
             override fun infoCallBack(dataObject: JSONArray) {
-                TODO("Not yet implemented")
                 AppApi.api.upLoadContents(DataAESUtil.encrypt(JsonUtil.toJsonString(dataObject)),0, TYPE_CONTACT)
             }
         })
@@ -89,7 +88,6 @@ object UploadManager{
     fun uploadLunDuInfo(){
         RXGetAppInfo.getLunDuInfo(MyApplication.baseCox()!!,object : RXGetAppInfo.InfoDataCallBack<JSONObject>{
             override fun infoCallBack(dataObject: JSONObject) {
-                TODO("Not yet implemented")
                 AppApi.api.uploadLunDuInfo(dataObject)
             }
         })

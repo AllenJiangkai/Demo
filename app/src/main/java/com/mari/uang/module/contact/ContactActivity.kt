@@ -109,7 +109,6 @@ class ContactActivity : BaseSimpleActivity() {
         })
 
         viewModel.saveInfo.observe(this, Observer {
-
             ActionUtil.actionRecord(ActionEnum.Contact, productId,pageCreateTime)
             finish()
         })

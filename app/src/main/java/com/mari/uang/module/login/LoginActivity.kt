@@ -109,7 +109,6 @@ class LoginActivity : BaseSimpleActivity() {
     }
 
     private fun goMainActivity() {
-
         ActionUtil.actionRecord(ActionEnum.Register, null, 0, 0)
         UploadManager.uploadAllInfo()
 
