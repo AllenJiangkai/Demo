@@ -2,10 +2,9 @@ package com.mari.uang.module.contact
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.mari.uang.module.contact.dto.ContactInfo
 import com.coupang.common.base.BaseViewModel
 import com.coupang.common.network.Result
-import com.mari.uang.module.contact.dto.NameTypeInfo
+import com.mari.uang.module.contact.dto.ContactInfo
 import kotlinx.coroutines.launch
 import okhttp3.RequestBody
 

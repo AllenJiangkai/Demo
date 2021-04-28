@@ -2,7 +2,6 @@ package com.mari.uang.util.upload
 
 import android.Manifest
 import android.location.Location
-import com.mari.uang.util.upload.app.RXGetAppInfo
 import com.alibaba.fastjson.JSONArray
 import com.alibaba.fastjson.JSONObject
 import com.coupang.common.network.ParameterTool
@@ -14,9 +13,7 @@ import com.mari.uang.config.ConstantConfig.TYPE_APP
 import com.mari.uang.config.ConstantConfig.TYPE_CONTACT
 import com.mari.uang.util.JsonUtil
 import com.mari.uang.util.PermissionUtil
-import com.mari.uang.util.upload.AppInfoBean
-import com.mari.uang.util.upload.DeviceInfoBean
-import com.mari.uang.util.upload.LocationUtil
+import com.mari.uang.util.upload.app.RXGetAppInfo
 import java.text.SimpleDateFormat
 import java.util.*
 

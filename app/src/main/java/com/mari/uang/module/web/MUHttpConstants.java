@@ -1,8 +1,6 @@
 package com.mari.uang.module.web;
 
 
-import ai.advance.common.BuildConfig;
-
 public class MUHttpConstants {
 
     /**

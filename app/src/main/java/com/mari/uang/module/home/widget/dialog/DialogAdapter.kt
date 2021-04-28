@@ -7,6 +7,13 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.alibaba.fastjson.JSON
+import com.alibaba.fastjson.JSONObject
+import com.chad.library.adapter.base.BaseMultiItemQuickAdapter
+import com.chad.library.adapter.base.BaseViewHolder
+import com.chad.library.adapter.base.entity.MultiItemEntity
+import com.coupang.common.utils.GlideLoadUtils.loadImage
+import com.coupang.common.utils.dip2px
 import com.mari.uang.R
 import com.mari.uang.module.home.widget.dialog.DialogAdapterItem.Companion.IMG
 import com.mari.uang.module.home.widget.dialog.DialogAdapterItem.Companion.INFO
@@ -15,14 +22,6 @@ import com.mari.uang.module.home.widget.dialog.DialogAdapterItem.Companion.MULTI
 import com.mari.uang.module.home.widget.dialog.DialogAdapterItem.Companion.SINGLE_BTN
 import com.mari.uang.module.home.widget.dialog.StyleUtil.buildButton
 import com.mari.uang.module.home.widget.dialog.dto.*
-import com.alibaba.fastjson.JSON
-import com.alibaba.fastjson.JSONObject
-import com.chad.library.adapter.base.BaseMultiItemQuickAdapter
-import com.chad.library.adapter.base.BaseViewHolder
-import com.chad.library.adapter.base.entity.MultiItemEntity
-import com.coupang.common.utils.GlideLoadUtils.loadImage
-import com.coupang.common.utils.dip2px
-import kotlinx.android.synthetic.main.activity_order.view.*
 
 
 class DialogAdapter(data: MutableList<MultiItemEntity>? = null) :

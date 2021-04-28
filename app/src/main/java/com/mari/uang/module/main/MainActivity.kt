@@ -2,14 +2,14 @@ package com.mari.uang.module.main
 
 import android.content.Intent
 import androidx.viewpager.widget.ViewPager
-import com.mari.uang.R
-import com.mari.uang.module.profile.ProfileFragment
-import com.mari.uang.module.home.HomeFragment
-import com.mari.uang.module.login.LoginActivity
-import com.coupang.common.user.UserManager.isLogin
 import com.coupang.common.base.BaseSimpleActivity
+import com.coupang.common.user.UserManager.isLogin
 import com.coupang.common.utils.setStatusBarTextColor
 import com.coupang.common.utils.strings
+import com.mari.uang.R
+import com.mari.uang.module.home.HomeFragment
+import com.mari.uang.module.login.LoginActivity
+import com.mari.uang.module.profile.ProfileFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import net.lucode.hackware.magicindicator.ViewPagerHelper
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator

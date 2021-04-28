@@ -1,9 +1,9 @@
 package com.mari.uang.module.basic.citydialog
 
-import com.mari.uang.R
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.coupang.common.utils.colors
+import com.mari.uang.R
 
 /**
  *

@@ -1,8 +1,8 @@
 package com.mari.uang.util
 
 import android.content.Context
-import com.mari.uang.module.basic.citydialog.MUCityModel
 import com.alibaba.fastjson.JSONObject
+import com.mari.uang.module.basic.citydialog.MUCityModel
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader

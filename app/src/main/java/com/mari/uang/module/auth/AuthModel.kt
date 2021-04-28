@@ -1,14 +1,13 @@
 package com.mari.uang.module.auth
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.coupang.common.base.BaseViewModel
+import com.coupang.common.network.Result
 import com.mari.uang.module.auth.dto.AuthCardInfo
 import com.mari.uang.module.auth.dto.AuthSubmitInfo
 import com.mari.uang.module.auth.dto.CanClickInfo
 import com.mari.uang.module.auth.dto.FaceAuthInfo
-import com.coupang.common.base.BaseViewModel
-import com.coupang.common.network.Result
 import kotlinx.coroutines.launch
 
 class AuthModel : BaseViewModel<AuthRepository>() {

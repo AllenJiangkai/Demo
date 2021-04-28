@@ -8,11 +8,11 @@ import android.graphics.Color
 import android.net.Uri
 import android.provider.Settings
 import androidx.core.content.ContextCompat
-import com.mari.uang.R
-import com.mari.uang.widget.TipsDialog
 import com.bigkoo.pickerview.OptionsPickerView
 import com.bigkoo.pickerview.OptionsPickerView.OnOptionsSelectListener
 import com.coupang.common.utils.strings
+import com.mari.uang.R
+import com.mari.uang.widget.TipsDialog
 import com.yanzhenjie.permission.Action
 import com.yanzhenjie.permission.AndPermission
 import com.yanzhenjie.permission.runtime.PermissionDef

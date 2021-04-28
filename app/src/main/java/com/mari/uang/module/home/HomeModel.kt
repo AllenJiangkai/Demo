@@ -2,6 +2,11 @@ package com.mari.uang.module.home
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.alibaba.fastjson.JSON
+import com.alibaba.fastjson.TypeReference
+import com.chad.library.adapter.base.entity.MultiItemEntity
+import com.coupang.common.base.BaseViewModel
+import com.coupang.common.network.Result
 import com.mari.uang.module.home.HomeAdapterItem.Companion.TYPE_RECOMMEND_BANNER
 import com.mari.uang.module.home.HomeAdapterItem.Companion.TYPE_RECOMMEND_BIG_CARD
 import com.mari.uang.module.home.HomeAdapterItem.Companion.TYPE_RECOMMEND_NOTICE
@@ -9,17 +14,9 @@ import com.mari.uang.module.home.HomeAdapterItem.Companion.TYPE_RECOMMEND_PRODUC
 import com.mari.uang.module.home.HomeAdapterItem.Companion.TYPE_RECOMMEND_REPAY_NOTICE
 import com.mari.uang.module.home.HomeAdapterItem.Companion.TYPE_RECOMMEND_SMALL_CARD
 import com.mari.uang.module.home.dto.*
-import com.alibaba.fastjson.JSON
-import com.alibaba.fastjson.TypeReference
-import com.chad.library.adapter.base.entity.MultiItemEntity
-import com.coupang.common.base.BaseViewModel
-import com.coupang.common.network.Result
 import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.collections.ArrayList
-import kotlin.collections.List
-import kotlin.collections.MutableMap
-import kotlin.collections.forEach
 import kotlin.collections.set
 
 class HomeModel : BaseViewModel<HomeRepository>() {

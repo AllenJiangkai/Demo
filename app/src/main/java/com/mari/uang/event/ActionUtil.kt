@@ -1,26 +1,19 @@
 package com.mari.uang.event
 
-import ai.advance.liveness.lib.LivenessResult
 import android.annotation.SuppressLint
 import android.location.Location
 import com.aitime.android.deviceid.DeviceIdentifier
-import com.coupang.common.network.EmptyVO
 import com.coupang.common.network.ParameterTool
-import com.coupang.common.network.Result
-import com.coupang.common.network.safeApiCall
 import com.coupang.common.utils.ContextUtils
 import com.coupang.common.utils.spf.SpConfig.location_latitude
 import com.coupang.common.utils.spf.SpConfig.location_longitude
 import com.mari.uang.AppApi
-import com.mari.uang.module.auth.AuthFaceActivity
-import com.mari.uang.module.auth.dto.AuthCardInfo
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.lang.Exception
 import java.util.*
 import java.util.concurrent.TimeUnit
 

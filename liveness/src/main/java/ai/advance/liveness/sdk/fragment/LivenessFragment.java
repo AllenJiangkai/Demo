@@ -15,6 +15,12 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+
 import ai.advance.common.IMediaPlayer;
 import ai.advance.liveness.lib.Detector;
 import ai.advance.liveness.lib.LivenessResult;
@@ -23,13 +29,6 @@ import ai.advance.liveness.lib.http.entity.ResultEntity;
 import ai.advance.liveness.lib.impl.LivenessCallback;
 import ai.advance.liveness.lib.impl.LivenessGetFaceDataCallback;
 import ai.advance.liveness.sdk.R;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-
-import static ai.advance.liveness.lib.Detector.DetectionType.POS_YAW;
 
 /**
  * fragment of liveness detection

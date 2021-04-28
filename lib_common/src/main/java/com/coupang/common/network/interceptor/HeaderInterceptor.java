@@ -1,8 +1,6 @@
 package com.coupang.common.network.interceptor;
 
 
-import android.util.Log;
-
 import com.coupang.common.user.UserManager;
 
 import org.jetbrains.annotations.NotNull;

@@ -1,10 +1,10 @@
 package com.mari.uang.module.order
 
-import com.mari.uang.AppApi
 import com.coupang.common.base.BaseRepository
 import com.coupang.common.network.ParameterTool
 import com.coupang.common.network.Result
 import com.coupang.common.network.safeApiCall
+import com.mari.uang.AppApi
 
 class OrderRepository : BaseRepository<Any?>() {
 

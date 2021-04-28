@@ -6,11 +6,11 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.mari.uang.R
-import com.mari.uang.module.auth.dto.AuthCardInfo
 import com.coupang.common.utils.dip2px
 import com.coupang.common.utils.shortToast
 import com.coupang.common.utils.strings
+import com.mari.uang.R
+import com.mari.uang.module.auth.dto.AuthCardInfo
 import kotlinx.android.synthetic.main.dialog_confirm.*
 
 class CardConfirmDialog(context: Context) : Dialog(context, R.style.TipsDialogTheme) {

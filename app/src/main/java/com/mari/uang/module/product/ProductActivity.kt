@@ -45,7 +45,6 @@ import com.mari.uang.util.TypefaceUtil
 import kotlinx.android.synthetic.main.fragment_other.rcv_content
 import kotlinx.android.synthetic.main.fragment_other.swipe_refresh
 import kotlinx.android.synthetic.main.fragment_productr.*
-import okhttp3.Route
 
 
 class ProductActivity : BaseSimpleActivity(), SwipeRefreshLayout.OnRefreshListener {

@@ -1,6 +1,5 @@
 package com.coupang.common.widget.dialog.ext
 
-import android.app.Dialog
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver

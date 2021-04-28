@@ -11,9 +11,9 @@ import android.webkit.WebView;
 
 import com.coupang.common.user.UserManager;
 import com.coupang.common.utils.ContextUtils;
+import com.coupang.common.utils.spf.SpConfig;
 import com.mari.uang.R;
 import com.mari.uang.module.web.MUHttpConstants;
-import com.coupang.common.utils.spf.SpConfig;
 
 import java.util.HashMap;
 import java.util.Map;

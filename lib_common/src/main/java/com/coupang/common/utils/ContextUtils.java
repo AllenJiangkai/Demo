@@ -3,7 +3,6 @@ package com.coupang.common.utils;
 import android.app.Application;
 import android.content.Context;
 
-
 import org.jetbrains.annotations.NotNull;
 
 public class ContextUtils {

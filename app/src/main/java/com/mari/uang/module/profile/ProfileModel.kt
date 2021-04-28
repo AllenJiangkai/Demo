@@ -3,8 +3,8 @@ package com.mari.uang.module.profile
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.coupang.common.base.BaseViewModel
-import kotlinx.coroutines.launch
 import com.coupang.common.network.Result
+import kotlinx.coroutines.launch
 
 class ProfileModel : BaseViewModel<ProfileRepository>() {
 

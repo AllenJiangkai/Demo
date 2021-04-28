@@ -5,8 +5,8 @@ import android.graphics.Typeface
 import android.view.LayoutInflater
 import android.widget.ImageView
 import android.widget.TextView
-import com.mari.uang.R
 import com.coupang.common.utils.colors
+import com.mari.uang.R
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.CommonNavigatorAdapter
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerIndicator
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerTitleView

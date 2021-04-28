@@ -3,8 +3,10 @@ package com.mari.uang.util
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import android.os.Bundle
 import android.util.Log
+import com.coupang.common.network.DTO
+import com.coupang.common.user.UserManager.isLogin
+import com.coupang.common.utils.ContextUtils
 import com.mari.uang.R
 import com.mari.uang.config.ConstantConfig.TITLE_KEY
 import com.mari.uang.config.ConstantConfig.WEB_URL_KEY
@@ -12,10 +14,6 @@ import com.mari.uang.module.login.LoginActivity
 import com.mari.uang.module.main.MainActivity
 import com.mari.uang.module.product.ProductActivity
 import com.mari.uang.module.set.SettingActivity
-import com.coupang.common.network.DTO
-import com.coupang.common.user.UserManager.isLogin
-import com.coupang.common.utils.ContextUtils
-import com.mari.uang.module.web.KKWebViewAct
 import com.mari.uang.module.web.NewWebActivity
 import java.net.URLDecoder
 import java.util.*

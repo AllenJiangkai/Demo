@@ -1,7 +1,7 @@
 package com.mari.uang.module.basic.dto
 
-import com.mari.uang.module.contact.dto.NameTypeInfo
 import com.coupang.common.network.DTO
+import com.mari.uang.module.contact.dto.NameTypeInfo
 
 /**
  *

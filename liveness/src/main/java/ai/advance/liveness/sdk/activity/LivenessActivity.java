@@ -5,13 +5,14 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import ai.advance.common.utils.ScreenUtil;
 import ai.advance.liveness.lib.GuardianLivenessDetectionSDK;
 import ai.advance.liveness.sdk.R;
 import ai.advance.liveness.sdk.fragment.LivenessFragment;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 
 public class LivenessActivity extends AppCompatActivity {
 

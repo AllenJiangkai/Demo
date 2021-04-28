@@ -2,7 +2,6 @@ package com.mari.uang
 
 import android.content.Context
 import android.os.Process
-import android.util.Log
 import androidx.multidex.MultiDexApplication
 import com.coupang.common.impl.Tools
 import com.coupang.common.utils.ContextUtils

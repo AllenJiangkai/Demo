@@ -1,6 +1,7 @@
 package com.coupang.common.widget.dialog.ext
 
-import com.coupang.common.widget.dialog.*
+import com.coupang.common.widget.dialog.MDDialogCallback
+import com.coupang.common.widget.dialog.TextButtonStyleDialog
 
 
 /**

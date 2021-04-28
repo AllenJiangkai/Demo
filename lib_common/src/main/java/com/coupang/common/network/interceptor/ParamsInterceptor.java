@@ -2,11 +2,11 @@ package com.coupang.common.network.interceptor;
 
 
 import com.coupang.common.impl.Tools;
+import com.coupang.common.user.UserManager;
+import com.coupang.common.utils.ContextUtils;
 import com.coupang.common.utils.spf.SpConfig;
 import com.mari.common.BuildConfig;
 import com.mari.common.R;
-import com.coupang.common.user.UserManager;
-import com.coupang.common.utils.ContextUtils;
 
 import java.io.IOException;
 

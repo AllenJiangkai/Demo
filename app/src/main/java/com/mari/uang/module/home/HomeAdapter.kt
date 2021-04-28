@@ -1,7 +1,10 @@
 package com.mari.uang.module.home
 
 import android.content.Intent
-import androidx.core.content.ContextCompat.startActivity
+import com.chad.library.adapter.base.BaseMultiItemQuickAdapter
+import com.chad.library.adapter.base.BaseViewHolder
+import com.chad.library.adapter.base.entity.MultiItemEntity
+import com.coupang.common.user.UserManager
 import com.mari.uang.R
 import com.mari.uang.module.home.HomeAdapterItem.Companion.TYPE_RECOMMEND_BANNER
 import com.mari.uang.module.home.HomeAdapterItem.Companion.TYPE_RECOMMEND_BIG_CARD
@@ -11,12 +14,8 @@ import com.mari.uang.module.home.HomeAdapterItem.Companion.TYPE_RECOMMEND_REPAY_
 import com.mari.uang.module.home.HomeAdapterItem.Companion.TYPE_RECOMMEND_SMALL_CARD
 import com.mari.uang.module.home.dto.*
 import com.mari.uang.module.home.widget.*
-import com.mari.uang.util.RouterUtil
-import com.chad.library.adapter.base.BaseMultiItemQuickAdapter
-import com.chad.library.adapter.base.BaseViewHolder
-import com.chad.library.adapter.base.entity.MultiItemEntity
-import com.coupang.common.user.UserManager
 import com.mari.uang.module.login.LoginActivity
+import com.mari.uang.util.RouterUtil
 
 
 class HomeAdapter(data: MutableList<MultiItemEntity>? = null) :

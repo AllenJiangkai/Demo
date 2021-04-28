@@ -1,7 +1,6 @@
 package com.coupang.common.network.abc;
 
 import com.alibaba.fastjson.JSON;
-import com.coupang.common.network.EmptyVO;
 
 import java.io.IOException;
 import java.lang.reflect.Type;

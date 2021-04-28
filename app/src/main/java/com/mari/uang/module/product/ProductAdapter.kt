@@ -1,11 +1,11 @@
 package com.mari.uang.module.product
 
 import android.widget.ImageView
-import com.mari.uang.R
-import com.mari.uang.module.product.dto.VerifyInfo
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.coupang.common.utils.GlideLoadUtils.loadImage
+import com.mari.uang.R
+import com.mari.uang.module.product.dto.VerifyInfo
 
 class ProductAdapter(layoutResId: Int) : BaseQuickAdapter<VerifyInfo, BaseViewHolder>(layoutResId) {
 

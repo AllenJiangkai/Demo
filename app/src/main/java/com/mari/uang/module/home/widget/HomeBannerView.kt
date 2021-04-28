@@ -11,12 +11,12 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.mari.uang.MyApplication
-import com.mari.uang.R
-import com.mari.uang.module.home.dto.BannerInfo
 import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
 import com.coupang.common.utils.GlideLoadUtils.loadImage
+import com.mari.uang.MyApplication
+import com.mari.uang.R
+import com.mari.uang.module.home.dto.BannerInfo
 import com.mari.uang.util.RouterUtil
 import kotlinx.android.synthetic.main.widget_banner_view.view.*
 import kotlin.math.abs

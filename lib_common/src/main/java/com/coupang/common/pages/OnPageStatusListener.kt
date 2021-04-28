@@ -1,7 +1,6 @@
 package com.coupang.common.pages
 
 import android.view.View
-import com.coupang.common.pages.PageStatusManager
 
 abstract class OnPageStatusListener {
 

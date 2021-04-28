@@ -1,10 +1,10 @@
 package com.mari.uang.module.order
 
 import android.widget.ImageView
-import com.mari.uang.R
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.coupang.common.utils.GlideLoadUtils
+import com.mari.uang.R
 
 class OrderListAdapter(layoutResId: Int) : BaseQuickAdapter<OrderInfo, BaseViewHolder>(layoutResId) {
 

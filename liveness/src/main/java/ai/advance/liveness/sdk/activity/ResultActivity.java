@@ -5,11 +5,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import ai.advance.common.IMediaPlayer;
 import ai.advance.liveness.lib.LivenessResult;
 import ai.advance.liveness.sdk.R;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 public class ResultActivity extends AppCompatActivity {
     private ImageView mResultImageView;

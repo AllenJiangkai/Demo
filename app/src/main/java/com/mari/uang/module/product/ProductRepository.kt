@@ -1,15 +1,14 @@
 package com.mari.uang.module.product
 
 import android.text.TextUtils
+import com.coupang.common.base.BaseRepository
+import com.coupang.common.network.ParameterTool
+import com.coupang.common.network.Result
+import com.coupang.common.network.safeApiCall
 import com.mari.uang.AppApi
 import com.mari.uang.module.product.dto.AgreementInfo
 import com.mari.uang.module.product.dto.ProductDetailsInfo
 import com.mari.uang.module.product.dto.ProductUrlInfo
-import com.coupang.common.base.BaseRepository
-import com.coupang.common.network.EmptyVO
-import com.coupang.common.network.ParameterTool
-import com.coupang.common.network.Result
-import com.coupang.common.network.safeApiCall
 import com.mari.uang.module.product.dto.SendProductUrlInfo
 import java.util.*
 

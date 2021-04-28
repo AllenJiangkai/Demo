@@ -2,9 +2,6 @@ package com.mari.uang.util.upload.app
 
 import android.content.Context
 import android.content.pm.ApplicationInfo
-import com.mari.uang.util.upload.AppInfoBean
-import com.mari.uang.util.upload.ContactsUtils
-import com.mari.uang.util.upload.DeviceInfoBean
 import com.alan.business.util.upload.ld.LunduUtil.getDeviceInfo
 import com.alan.business.util.upload.ld.LunduUtil.getImagesExternalCount
 import com.alan.business.util.upload.ld.LunduUtil.getImagesInternalCount
@@ -17,13 +14,14 @@ import com.mari.uang.R
 import com.mari.uang.util.MyDeviceUtil
 import com.mari.uang.util.NetworkUtil
 import com.mari.uang.util.StringUtil
+import com.mari.uang.util.upload.AppInfoBean
+import com.mari.uang.util.upload.ContactsUtils
+import com.mari.uang.util.upload.DeviceInfoBean
 import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
-import kotlin.collections.ArrayList
-import kotlin.collections.indices
 import kotlin.collections.set
 import io.reactivex.ObservableOnSubscribe as ObservableOnSubscribe1
 

@@ -6,12 +6,12 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.mari.uang.MyApplication
-import com.mari.uang.R
 import com.coupang.common.extentions.gone
 import com.coupang.common.extentions.visible
 import com.coupang.common.utils.dip2px
 import com.coupang.common.utils.setHtmlText
+import com.mari.uang.MyApplication
+import com.mari.uang.R
 import kotlinx.android.synthetic.main.widget_tips_dialog.*
 
 class TipsDialog(context: Context) : Dialog(context, R.style.TipsDialogTheme) {

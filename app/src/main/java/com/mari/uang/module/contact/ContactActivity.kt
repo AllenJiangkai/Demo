@@ -10,22 +10,22 @@ import android.text.TextUtils
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
-import com.mari.uang.R
-import com.mari.uang.config.ConstantConfig
-import com.mari.uang.module.contact.dto.ContactInfo
-import com.mari.uang.module.contact.dto.NameTypeInfo
-import com.mari.uang.util.PermissionUtil
 import com.bigkoo.pickerview.OptionsPickerView
 import com.coupang.common.base.BaseSimpleActivity
 import com.coupang.common.extentions.createViewModel
 import com.coupang.common.network.ParameterTool.toRequestBody
 import com.coupang.common.utils.setStatusBarTextColor
+import com.mari.uang.R
+import com.mari.uang.config.ConstantConfig
 import com.mari.uang.event.ActionEnum
 import com.mari.uang.event.ActionUtil
+import com.mari.uang.module.contact.dto.ContactInfo
+import com.mari.uang.module.contact.dto.NameTypeInfo
+import com.mari.uang.util.PermissionUtil
 import com.yanzhenjie.permission.Action
 import kotlinx.android.synthetic.main.activity_contact.*
 import kotlinx.android.synthetic.main.activity_order.title_bar
-import java.util.HashMap
+import java.util.*
 import java.util.regex.Pattern
 
 class ContactActivity : BaseSimpleActivity() {

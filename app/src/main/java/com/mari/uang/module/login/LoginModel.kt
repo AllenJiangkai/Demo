@@ -2,11 +2,11 @@ package com.mari.uang.module.login
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.mari.uang.R
-import com.mari.uang.module.login.dto.VerificationCodeInfo
 import com.coupang.common.base.BaseViewModel
 import com.coupang.common.network.Result
 import com.coupang.common.utils.strings
+import com.mari.uang.R
+import com.mari.uang.module.login.dto.VerificationCodeInfo
 import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers

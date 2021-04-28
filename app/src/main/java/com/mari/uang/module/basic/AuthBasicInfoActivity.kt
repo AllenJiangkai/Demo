@@ -14,8 +14,6 @@ import com.mari.uang.R
 import com.mari.uang.config.ConstantConfig
 import com.mari.uang.config.ConstantConfig.INFO_AUTH_ITEM_TYPE_CITY_SELECT
 import com.mari.uang.config.ConstantConfig.INFO_AUTH_ITEM_TYPE_ENUM
-import com.mari.uang.event.ActionEnum
-import com.mari.uang.event.ActionUtil
 import com.mari.uang.module.basic.citydialog.DNSelCityDialog
 import com.mari.uang.module.basic.citydialog.MUCityModel
 import com.mari.uang.module.basic.dto.BasicItemInfo

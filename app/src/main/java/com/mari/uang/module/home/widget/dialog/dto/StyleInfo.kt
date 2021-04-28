@@ -1,8 +1,8 @@
 package com.mari.uang.module.home.widget.dialog.dto
 
+import com.coupang.common.network.DTO
 import com.mari.uang.module.home.dto.DialogButtonInfo
 import com.mari.uang.module.home.dto.DialogTextInfo
-import com.coupang.common.network.DTO
 
 
 open class BaseDialogInfo :DTO{

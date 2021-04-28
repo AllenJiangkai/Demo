@@ -1,11 +1,11 @@
 package com.mari.uang.module.login
 
-import com.mari.uang.AppApi
-import com.mari.uang.module.login.dto.VerificationCodeInfo
 import com.coupang.common.base.BaseRepository
 import com.coupang.common.network.ParameterTool
 import com.coupang.common.network.Result
 import com.coupang.common.network.safeApiCall
+import com.mari.uang.AppApi
+import com.mari.uang.module.login.dto.VerificationCodeInfo
 import java.util.*
 
 class LoginRepository : BaseRepository<Any?>() {

@@ -8,6 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.coupang.common.base.BaseSimpleActivity
+import com.coupang.common.base.LazyLoadFragment
+import com.coupang.common.extentions.createViewModel
 import com.mari.uang.R
 import com.mari.uang.config.ConstantConfig.MODULE_ID_KEY
 import com.mari.uang.config.ConstantConfig.MODULE_ORDER
@@ -16,11 +19,8 @@ import com.mari.uang.config.ConstantConfig.POSITION_KEY
 import com.mari.uang.config.ConstantConfig.PRODUCT_ID_KEY
 import com.mari.uang.module.main.MainActivity
 import com.mari.uang.module.product.ProductActivity
-import com.mari.uang.widget.OrderEmptyView
-import com.coupang.common.base.BaseSimpleActivity
-import com.coupang.common.base.LazyLoadFragment
-import com.coupang.common.extentions.createViewModel
 import com.mari.uang.util.RouterUtil
+import com.mari.uang.widget.OrderEmptyView
 import kotlinx.android.synthetic.main.fragment_order.*
 
 class OrderFragment : LazyLoadFragment() {

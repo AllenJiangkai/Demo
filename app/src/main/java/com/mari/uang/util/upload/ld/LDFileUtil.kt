@@ -13,12 +13,12 @@ import android.text.TextUtils
 import com.alibaba.fastjson.JSONArray
 import com.alibaba.fastjson.JSONException
 import com.alibaba.fastjson.JSONObject
+import com.mari.uang.util.upload.ld.LDComUtil.getNonNullText
+import com.mari.uang.util.upload.ld.LDComUtil.haveSelfPermission
 import java.lang.ref.WeakReference
 import java.lang.reflect.InvocationTargetException
 import java.text.SimpleDateFormat
 import java.util.*
-import com.mari.uang.util.upload.ld.LDComUtil.getNonNullText
-import com.mari.uang.util.upload.ld.LDComUtil.haveSelfPermission
 
 /**
  *

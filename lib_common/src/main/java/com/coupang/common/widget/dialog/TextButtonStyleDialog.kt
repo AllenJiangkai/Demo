@@ -8,12 +8,14 @@ import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.GradientDrawable
 import android.util.TypedValue
 import android.view.*
-import android.widget.*
+import android.widget.FrameLayout
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.annotation.ColorRes
-import com.mari.common.R
 import com.coupang.common.extentions.dip2px
 import com.coupang.common.widget.dialog.ext.invokeAll
 import com.coupang.common.widget.textview.FullLineLayoutTextView
+import com.mari.common.R
 import kotlin.math.min
 
 

@@ -6,6 +6,9 @@ import android.text.TextUtils
 import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.TextView
+import com.chad.library.adapter.base.BaseMultiItemQuickAdapter
+import com.chad.library.adapter.base.BaseViewHolder
+import com.chad.library.adapter.base.entity.MultiItemEntity
 import com.mari.uang.R
 import com.mari.uang.config.ConstantConfig.INFO_AUTH_ITEM_TYPE_CITY_SELECT
 import com.mari.uang.module.basic.BasicInfoAdapterItem.Companion.TYPE_CITY
@@ -13,9 +16,6 @@ import com.mari.uang.module.basic.BasicInfoAdapterItem.Companion.TYPE_ENUM
 import com.mari.uang.module.basic.BasicInfoAdapterItem.Companion.TYPE_TEXT
 import com.mari.uang.module.basic.BasicInfoAdapterItem.Companion.TYPE_TIPS
 import com.mari.uang.module.basic.dto.BasicItemInfo
-import com.chad.library.adapter.base.BaseMultiItemQuickAdapter
-import com.chad.library.adapter.base.BaseViewHolder
-import com.chad.library.adapter.base.entity.MultiItemEntity
 
 /**
  *

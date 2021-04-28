@@ -2,7 +2,6 @@ package ai.advance.liveness.sdk.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 

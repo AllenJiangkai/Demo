@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.chad.library.adapter.base.BaseQuickAdapter
 import com.mari.uang.R
 import com.mari.uang.util.JsonUtil.getCityList
-import com.chad.library.adapter.base.BaseQuickAdapter
 import kotlinx.android.synthetic.main.dia_city_view.*
 
 /**

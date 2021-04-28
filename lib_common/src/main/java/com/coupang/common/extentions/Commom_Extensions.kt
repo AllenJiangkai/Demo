@@ -1,14 +1,11 @@
 package com.coupang.common.extentions
 
 import android.content.Context
-import android.os.Build
-import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
-import android.widget.TextView
 import androidx.core.content.ContextCompat
 import java.text.DecimalFormat
 

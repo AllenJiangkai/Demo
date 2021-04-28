@@ -4,8 +4,8 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import android.widget.RelativeLayout
-import com.mari.uang.R
 import com.coupang.common.extentions.visible
+import com.mari.uang.R
 import kotlinx.android.synthetic.main.widget_common_title_bar.view.*
 
 class TitleBarView : RelativeLayout {

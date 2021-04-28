@@ -1,14 +1,14 @@
 package com.mari.uang.module.contact
 
-import com.mari.uang.AppApi
-import com.mari.uang.module.contact.dto.ContactInfo
-import com.coupang.common.user.UserManager.isLogin
-import com.coupang.common.user.UserManager.username
 import com.coupang.common.base.BaseRepository
 import com.coupang.common.network.EmptyVO
 import com.coupang.common.network.ParameterTool.toRequestBody
 import com.coupang.common.network.Result
 import com.coupang.common.network.safeApiCall
+import com.coupang.common.user.UserManager.isLogin
+import com.coupang.common.user.UserManager.username
+import com.mari.uang.AppApi
+import com.mari.uang.module.contact.dto.ContactInfo
 import okhttp3.RequestBody
 import java.util.*
 

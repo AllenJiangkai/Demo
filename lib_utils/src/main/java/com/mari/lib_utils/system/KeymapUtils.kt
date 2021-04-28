@@ -2,8 +2,6 @@ package com.mari.lib_utils.system
 
 import android.app.Activity
 import android.content.Context
-import android.graphics.Rect
-import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 

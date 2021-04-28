@@ -2,12 +2,12 @@ package com.mari.uang.module.product
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.coupang.common.base.BaseViewModel
+import com.coupang.common.network.Result
 import com.mari.uang.module.product.dto.AgreementInfo
 import com.mari.uang.module.product.dto.ProductDetailsInfo
-import com.coupang.common.base.BaseViewModel
-import kotlinx.coroutines.launch
-import com.coupang.common.network.Result
 import com.mari.uang.module.product.dto.SendProductUrlInfo
+import kotlinx.coroutines.launch
 
 class ProductModel : BaseViewModel<ProductRepository>() {
 

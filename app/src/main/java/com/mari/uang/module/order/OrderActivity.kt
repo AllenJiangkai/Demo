@@ -1,11 +1,11 @@
 package com.mari.uang.module.order
 
 import android.content.Context
-import com.mari.uang.R
 import com.coupang.common.base.BaseSimpleActivity
 import com.coupang.common.utils.dip2pxOfFloat
 import com.coupang.common.utils.setStatusBarTextColor
 import com.coupang.common.utils.strings
+import com.mari.uang.R
 import kotlinx.android.synthetic.main.activity_order.*
 import net.lucode.hackware.magicindicator.ViewPagerHelper
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator

@@ -4,7 +4,13 @@ import android.content.Intent
 import android.text.TextUtils
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.alibaba.fastjson.JSON
+import com.coupang.common.base.BaseSimpleActivity
+import com.coupang.common.base.LazyLoadFragment
+import com.coupang.common.extentions.createViewModel
+import com.coupang.common.user.UserManager.isLogin
 import com.mari.uang.R
+import com.mari.uang.config.ConstantConfig.MODULE_DIALOG
 import com.mari.uang.config.ConstantConfig.MODULE_HOME
 import com.mari.uang.config.ConstantConfig.POSITION_LARGE
 import com.mari.uang.config.ConstantConfig.PRODUCT_ID_KEY
@@ -14,16 +20,10 @@ import com.mari.uang.module.home.HomeAdapterItem.Companion.TYPE_RECOMMEND_SMALL_
 import com.mari.uang.module.home.dto.CardInfo
 import com.mari.uang.module.home.dto.DialogInfo
 import com.mari.uang.module.home.dto.ProductInfo
-import com.mari.uang.module.product.ProductActivity
-import com.mari.uang.util.RouterUtil
-import com.alibaba.fastjson.JSON
-import com.coupang.common.base.BaseSimpleActivity
-import com.coupang.common.base.LazyLoadFragment
-import com.coupang.common.extentions.createViewModel
-import com.coupang.common.user.UserManager.isLogin
-import com.mari.uang.config.ConstantConfig.MODULE_DIALOG
 import com.mari.uang.module.home.widget.dialog.ProductDialog
 import com.mari.uang.module.login.LoginActivity
+import com.mari.uang.module.product.ProductActivity
+import com.mari.uang.util.RouterUtil
 import kotlinx.android.synthetic.main.fragment_recommend.*
 
 

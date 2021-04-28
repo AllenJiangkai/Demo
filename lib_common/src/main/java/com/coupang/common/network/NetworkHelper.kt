@@ -17,7 +17,10 @@
 package com.coupang.common.network
 
 import com.coupang.common.network.impl.MockManager
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 
 /**

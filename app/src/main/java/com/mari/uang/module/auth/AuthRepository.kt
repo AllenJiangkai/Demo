@@ -1,6 +1,15 @@
 package com.mari.uang.module.auth
 
 import ai.advance.liveness.lib.LivenessResult
+import com.coupang.common.base.BaseRepository
+import com.coupang.common.network.EmptyVO
+import com.coupang.common.network.ParameterTool.fileCreate
+import com.coupang.common.network.ParameterTool.toRequestBody
+import com.coupang.common.network.Result
+import com.coupang.common.network.safeApiCall
+import com.coupang.common.user.UserManager.isLogin
+import com.coupang.common.user.UserManager.username
+import com.mari.lib_utils.tools.front.StringUtils.isSpace
 import com.mari.uang.AppApi
 import com.mari.uang.module.auth.AuthFaceActivity.Companion.TO_IDCARD_REQUEST_CODE
 import com.mari.uang.module.auth.AuthFaceActivity.Companion.TO_LIVENESS_REQUEST_CODE
@@ -10,16 +19,6 @@ import com.mari.uang.module.auth.dto.AuthCardInfo
 import com.mari.uang.module.auth.dto.AuthSubmitInfo
 import com.mari.uang.module.auth.dto.CanClickInfo
 import com.mari.uang.module.auth.dto.FaceAuthInfo
-import com.coupang.common.user.UserManager.isLogin
-import com.coupang.common.user.UserManager.username
-import com.mari.lib_utils.tools.front.StringUtils.isSpace
-import com.coupang.common.base.BaseRepository
-import com.coupang.common.network.EmptyVO
-import com.coupang.common.network.ParameterTool
-import com.coupang.common.network.ParameterTool.fileCreate
-import com.coupang.common.network.ParameterTool.toRequestBody
-import com.coupang.common.network.Result
-import com.coupang.common.network.safeApiCall
 import java.io.File
 import java.util.*
 

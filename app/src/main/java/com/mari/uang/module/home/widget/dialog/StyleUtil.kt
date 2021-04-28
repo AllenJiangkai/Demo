@@ -1,7 +1,6 @@
 package com.mari.uang.module.home.widget.dialog
 
 import android.graphics.Color
-import android.graphics.drawable.GradientDrawable
 import android.text.TextUtils
 import android.view.View
 import android.widget.TextView
