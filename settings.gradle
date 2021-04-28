@@ -1,5 +1,4 @@
 rootProject.name='Business'
 include ':app'
 include ':lib_common'
-include ':lib_utils'
 include ':liveness'
