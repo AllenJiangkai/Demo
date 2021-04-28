@@ -8,8 +8,8 @@ import com.bigkoo.pickerview.OptionsPickerView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.coupang.common.base.BaseSimpleActivity
 import com.coupang.common.extentions.createViewModel
+import com.coupang.common.utils.KeymapUtils
 import com.coupang.common.utils.setStatusBarTextColor
-import com.mari.lib_utils.system.KeymapUtils
 import com.mari.uang.R
 import com.mari.uang.config.ConstantConfig
 import com.mari.uang.config.ConstantConfig.INFO_AUTH_ITEM_TYPE_CITY_SELECT
@@ -20,19 +20,6 @@ import com.mari.uang.module.basic.dto.BasicItemInfo
 import com.mari.uang.module.contact.dto.NameTypeInfo
 import kotlinx.android.synthetic.main.activity_auth_basic_info.*
 
-/**
- *
- * @ProjectName:    Business
- * @Package:        com.alan.business.module.auth
- * @ClassName:      AuthBasicInfoActivity
- * @Description:     java类作用描述
- * @Author:         jtao
- * @CreateDate:     2021/4/17 1:11 PM
- * @UpdateUser:     更新者
- * @UpdateDate:     2021/4/17 1:11 PM
- * @UpdateRemark:   更新说明
- * @Version:        1.0
- */
 
 class AuthBasicInfoActivity : BaseSimpleActivity()  {
 

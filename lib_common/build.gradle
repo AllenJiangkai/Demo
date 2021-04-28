@@ -29,8 +29,6 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    //lib dependent
-    api project(':lib_utils')
     // core dependent
     implementation dependent.kotlin.stdlib
     api dependent.test.junit

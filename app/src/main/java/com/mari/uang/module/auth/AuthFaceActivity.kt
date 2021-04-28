@@ -12,13 +12,13 @@ import com.coupang.common.base.BaseSimpleActivity
 import com.coupang.common.extentions.createViewModel
 import com.coupang.common.utils.ContextUtils
 import com.coupang.common.utils.GlideLoadUtils.loadImage
+import com.coupang.common.utils.SDCardUtils.*
 import com.coupang.common.utils.setHtmlText
 import com.coupang.common.utils.setStatusBarTextColor
 import com.coupang.common.utils.strings
 import com.luck.picture.lib.PictureSelector
 import com.luck.picture.lib.config.PictureConfig
 import com.luck.picture.lib.config.PictureMimeType
-import com.mari.lib_utils.cache.SDCardUtils.*
 import com.mari.uang.BuildConfig
 import com.mari.uang.R
 import com.mari.uang.config.ConstantConfig.ORDER_NO_KEY

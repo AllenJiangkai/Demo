@@ -9,7 +9,6 @@ import com.coupang.common.network.Result
 import com.coupang.common.network.safeApiCall
 import com.coupang.common.user.UserManager.isLogin
 import com.coupang.common.user.UserManager.username
-import com.mari.lib_utils.tools.front.StringUtils.isSpace
 import com.mari.uang.AppApi
 import com.mari.uang.module.auth.AuthFaceActivity.Companion.TO_IDCARD_REQUEST_CODE
 import com.mari.uang.module.auth.AuthFaceActivity.Companion.TO_LIVENESS_REQUEST_CODE
@@ -45,7 +44,7 @@ class AuthRepository : BaseRepository<Any?>() {
             map["ocrtype"] = TO_IDCARD_REQUEST_CODE
         }
 
-        AppApi.api.uploadImage(fileCreate(getFileByPath(filePath)),map)
+        AppApi.api.uploadImage(fileCreate(getFileByPath(filePath)), map)
     }
 
     suspend fun advanceLog(): Result<CanClickInfo> = safeApiCall {
@@ -57,7 +56,7 @@ class AuthRepository : BaseRepository<Any?>() {
         AppApi.api.submitAuth()
     }
 
-    suspend fun saveBaseInfo(bean: AuthCardInfo,orderNo:String,product_id :String): Result<EmptyVO> = safeApiCall {
+    suspend fun saveBaseInfo(bean: AuthCardInfo, orderNo: String, product_id: String): Result<EmptyVO> = safeApiCall {
         val map: MutableMap<String, Any> = HashMap()
         map["product_id"] = product_id
         map["order_no"] = orderNo
@@ -74,4 +73,16 @@ class AuthRepository : BaseRepository<Any?>() {
     }
 
 
+    private fun isSpace(s: String?): Boolean {
+        if (s == null) return true
+        var i = 0
+        val len = s.length
+        while (i < len) {
+            if (!Character.isWhitespace(s[i])) {
+                return false
+            }
+            ++i
+        }
+        return true
+    }
 }
