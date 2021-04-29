@@ -11,7 +11,6 @@ import androidx.lifecycle.Observer
 import com.coupang.common.base.BaseSimpleActivity
 import com.coupang.common.extentions.createViewModel
 import com.coupang.common.utils.ContextUtils
-import com.coupang.common.utils.GlideLoadUtils.loadImage
 import com.coupang.common.utils.SDCardUtils.*
 import com.coupang.common.utils.setHtmlText
 import com.coupang.common.utils.setStatusBarTextColor
@@ -30,6 +29,7 @@ import com.mari.uang.event.ActionUtil
 import com.mari.uang.module.auth.dialog.AuthFaceDialog
 import com.mari.uang.module.auth.dialog.CardConfirmDialog
 import com.mari.uang.module.auth.dto.AuthCardInfo
+import com.mari.uang.util.GlideLoadUtils.loadImage
 import com.mari.uang.util.PermissionUtil.requestPermission
 import com.mari.uang.widget.TipsDialog
 import com.yanzhenjie.permission.Action
@@ -89,8 +89,6 @@ class AuthFaceActivity : BaseSimpleActivity() {
             pageCreateTime = System.currentTimeMillis()
             requestPermission(this, mustPermissions, Action {
                 viewModel.sendLog()
-                startActivityForResult( Intent(this@AuthFaceActivity, LivenessActivity::class.java), TO_LIVENESS_REQUEST_CODE)
-
             })
         }
 
@@ -147,19 +145,23 @@ class AuthFaceActivity : BaseSimpleActivity() {
 
         })
         viewModel.canClickInfo.observe(this, Observer {
-//            if (it.ifCanClick.equals("1")) {
-//                startActivityForResult( Intent(this@AuthFaceActivity, LivenessActivity::class.java), TO_LIVENESS_REQUEST_CODE)
-//            }
+            if (it.ifCanClick.equals("1")) {
+                startActivityForResult( Intent(this@AuthFaceActivity, LivenessActivity::class.java), TO_LIVENESS_REQUEST_CODE)
+            }
         })
         viewModel.authCardInfo.observe(this, Observer {
             if (it.type == TYPE_UPLOAD_IDCARD) {
                 initCardInfo(it)
                 showConfirmDialog(it)
                 ActionUtil.actionRecord(ActionEnum.Front, productId, pageCreateTime)
-                loadImage(this, it.imagePath, img_card)
+                if( it.imagePath.isNotEmpty()){
+                    loadImage(this, it.imagePath, img_card)
+                }
             } else {
                 ActionUtil.actionRecord(ActionEnum.Face, productId, pageCreateTime)
-                loadImage(this, it.imagePath, img_card_face)
+                if( it.imagePath.isNotEmpty()) {
+                    loadImage(this, it.imagePath, img_card_face)
+                }
             }
         })
         viewModel.submitCardInfo.observe(this, Observer {
@@ -185,7 +187,7 @@ class AuthFaceActivity : BaseSimpleActivity() {
                 if (!TextUtils.isEmpty(it.item?.id_number_z_picture)) {
                     loadImage(this, it.item?.id_number_z_picture, img_card)
                 }
-                if (!TextUtils.isEmpty(it.item?.id_number_z_picture)) {
+                if (!TextUtils.isEmpty(it.item?.face_recognition_picture)) {
                     loadImage(this, it.item?.face_recognition_picture, img_card_face)
                 }
             }
@@ -230,7 +232,7 @@ class AuthFaceActivity : BaseSimpleActivity() {
             PictureSelector.create(this@AuthFaceActivity)
                 .openCamera(PictureMimeType.ofImage())
                 .isCompress(true)
-                .compressQuality(50)
+                .compressQuality(30)
                 .forResult(PictureConfig.REQUEST_CAMERA)
         })
     }

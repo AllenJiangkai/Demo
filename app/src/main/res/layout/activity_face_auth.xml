@@ -138,8 +138,8 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/img_card"
                     android:background="@color/color_f4f5f6"
+                    android:id="@+id/img_card"
                     android:layout_width="170dp"
                     android:layout_height="110dp"
                     android:src="@drawable/ic_face_auth_card"
@@ -189,8 +189,8 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/img_card_face"
                     android:background="@color/color_f4f5f6"
+                    android:id="@+id/img_card_face"
                     android:layout_width="170dp"
                     android:layout_height="110dp"
                     android:src="@drawable/ic_face_auth_face"

@@ -12,7 +12,7 @@ import com.alibaba.fastjson.JSONObject
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.chad.library.adapter.base.entity.MultiItemEntity
-import com.coupang.common.utils.GlideLoadUtils.loadImage
+import com.mari.uang.util.GlideLoadUtils.loadImage
 import com.coupang.common.utils.dip2px
 import com.mari.uang.R
 import com.mari.uang.module.home.widget.dialog.DialogAdapterItem.Companion.IMG

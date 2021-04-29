@@ -4,8 +4,8 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import android.widget.RelativeLayout
-import com.coupang.common.utils.GlideLoadUtils
 import com.mari.uang.R
+import com.mari.uang.util.GlideLoadUtils
 import kotlinx.android.synthetic.main.widget_home_title_bar.view.*
 
 class HomeTitleBarView : RelativeLayout {

@@ -13,7 +13,7 @@ import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
-import com.coupang.common.utils.GlideLoadUtils.loadImage
+import com.mari.uang.util.GlideLoadUtils.loadImage
 import com.mari.uang.MyApplication
 import com.mari.uang.R
 import com.mari.uang.module.home.dto.BannerInfo

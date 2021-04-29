@@ -3,7 +3,7 @@ package com.mari.uang.module.product
 import android.widget.ImageView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
-import com.coupang.common.utils.GlideLoadUtils.loadImage
+import com.mari.uang.util.GlideLoadUtils.loadImage
 import com.mari.uang.R
 import com.mari.uang.module.product.dto.VerifyInfo
 

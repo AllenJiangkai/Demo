@@ -1,4 +1,4 @@
-package com.coupang.common.utils
+package com.mari.uang.util
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -7,11 +7,11 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.SimpleTarget
+import com.mari.uang.R
 
 object GlideLoadUtils {
 
     private val options: RequestOptions = RequestOptions()
-        .placeholder(0)
         .error(0)
         .diskCacheStrategy(DiskCacheStrategy.ALL)
         .skipMemoryCache(true)

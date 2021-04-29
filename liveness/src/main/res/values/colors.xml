@@ -18,8 +18,8 @@
     <color name="liveness_ripple_color">#cc000000</color>
     <color name="liveness_dialog_content_text_color">#2C2E38</color>
     <color name="liveness_dialog_perform_text_color">#5981FF</color>
-    <color name="liveness_shadow_start_color">#5BC414</color>
-    <color name="liveness_shadow_end_color">#0FA80B</color>
+    <color name="liveness_shadow_start_color">#C33FCF</color>
+    <color name="liveness_shadow_end_color">#C33FCF</color>
     <color name="liveness_color_gray">#666666</color>
     <color name="liveness_tip_text_color">#666666</color>
 

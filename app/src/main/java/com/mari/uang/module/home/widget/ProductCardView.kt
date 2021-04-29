@@ -5,7 +5,7 @@ import android.text.TextUtils
 import android.util.AttributeSet
 import android.view.View
 import android.widget.RelativeLayout
-import com.coupang.common.utils.GlideLoadUtils.loadImage
+import com.mari.uang.util.GlideLoadUtils.loadImage
 import com.mari.uang.R
 import com.mari.uang.module.home.dto.ProductInfo
 import com.mari.uang.util.TypefaceUtil.setTextTypeface
