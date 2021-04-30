@@ -7,6 +7,7 @@
 
     <com.mari.uang.widget.TitleBarView
         android:id="@+id/title_bar"
+        android:background="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

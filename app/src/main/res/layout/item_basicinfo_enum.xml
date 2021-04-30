@@ -19,6 +19,7 @@
         style="@style/face_item_text"
         android:paddingLeft="@dimen/dp_7"
         android:paddingRight="@dimen/dp_27"
+        android:background="@drawable/bg_shape_r50_white"
         android:textColor="@color/color_333333"
         android:textColorHint="@color/color_999999"
         android:textSize="12sp"
