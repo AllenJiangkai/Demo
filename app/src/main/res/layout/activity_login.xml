@@ -17,13 +17,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ImageView
+            android:background="@drawable/bg_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
         <com.mari.uang.widget.StatusBarView
             android:id="@+id/status_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <ImageView
-            android:visibility="gone"
+            android:id="@+id/img_back"
+            android:layout_marginStart="12dp"
             android:layout_below="@id/status_view"
             android:layout_width="50dp"
             android:layout_height="50dp"

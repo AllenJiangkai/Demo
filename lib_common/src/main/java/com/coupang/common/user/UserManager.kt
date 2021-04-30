@@ -12,6 +12,7 @@ object UserManager : DelegateSharedPreferences("userInfo") {
     var sessionid by DelegatePreference(this, "sessionid", "")
     var isOld by DelegatePreference(this, "isOld", "")
     var smsMaxId by DelegatePreference(this, "smsMaxId", 0L)
+    var phone by DelegatePreference(this, "phone", "")
 
 
     fun saveUserInfo(userInfo: UserInfo){

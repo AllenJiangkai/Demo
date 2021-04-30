@@ -26,6 +26,7 @@
 
 
         <com.mari.uang.widget.ScrollViewPager
+            android:overScrollMode="never"
             android:id="@+id/tabContainerView"
             android:layout_width="match_parent"
             android:background="#ffffff"

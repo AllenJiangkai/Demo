@@ -273,8 +273,8 @@ class AuthFaceActivity : BaseSimpleActivity() {
         if (requestCode == TO_LIVENESS_REQUEST_CODE) {
             if (LivenessResult.isSuccess()) { // 活体检测成功
                 val livenessBitmap = LivenessResult.getLivenessBitmap() // 本次活体图片
-                val filePath: String = getImageDataPath() + System.currentTimeMillis() + ".jpg"
-                createOrExistsDir(File(getImageDataPath()))
+                val filePath: String = getImagePath() + System.currentTimeMillis() + ".jpg"
+                createOrExistsDir(File(getImagePath()))
                 if (saveImage(filePath, livenessBitmap)) {
                     viewModel.uploadImage(filePath, TYPE_UPLOAD_LIVENESS)
                 } else {

@@ -13,6 +13,12 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 public class SDCardUtils {
+    private static final String IMG_PATH = "/IMG/";
+    private static final String CACHE_PATH = "/cache/";
+    private static File cacheDir = !isExternalStorageWritable() ? ContextUtils.getApplication().getFilesDir() : ContextUtils.getApplication().getExternalCacheDir();
+    public static String getImagePath(){
+        return cacheDir.getPath() + IMG_PATH;
+    }
 
     private SDCardUtils() {
         throw new UnsupportedOperationException("u can't instantiate me...");
@@ -27,6 +33,13 @@ public class SDCardUtils {
         return Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState());
     }
 
+    public static boolean isExternalStorageWritable() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            return true;
+        }
+        return false;
+    }
 
 
     /**
@@ -39,17 +52,6 @@ public class SDCardUtils {
             throw new RuntimeException("sdcard disabled!");
         }
         return Environment.getDataDirectory().getPath() + File.separator;
-    }
-    /**
-     * 获取SD卡Data路径
-     *
-     * @return SD卡Data路径，即："/data/"
-     */
-    public static String getImageDataPath() {
-        if (!isSDCardEnable()) {
-            throw new RuntimeException("sdcard disabled!");
-        }
-        return Environment.getDataDirectory().getPath() + File.separator+"/IMG/";
     }
 
     /**

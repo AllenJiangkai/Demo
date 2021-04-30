@@ -12,6 +12,7 @@
         android:layout_height="wrap_content" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:overScrollMode="never"
         android:layout_weight="1"
         android:paddingBottom="20dp"
         android:clipToPadding="false"

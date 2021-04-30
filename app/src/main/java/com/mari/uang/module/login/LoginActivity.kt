@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer
 import com.coupang.common.base.BaseSimpleActivity
 import com.coupang.common.extentions.createViewModel
 import com.coupang.common.user.UserManager
+import com.coupang.common.user.UserManager.phone
 import com.coupang.common.utils.setStatusBarTextColor
 import com.mari.uang.R
 import com.mari.uang.config.ConstantConfig.LOGIN_AGREEMENT_URL
@@ -44,6 +45,10 @@ class LoginActivity : BaseSimpleActivity() {
             viewModel.sendVerificationCode(ed_phone.text.toString())
         }
 
+        img_back.setOnClickListener {
+            finish()
+        }
+
         tv_sms.setOnClickListener {
             viewModel.sendVoiceCode(ed_phone.text.toString())
         }
@@ -79,6 +84,9 @@ class LoginActivity : BaseSimpleActivity() {
 //            }
 //
 //        })
+
+
+        ed_phone.setText(UserManager.phone)
     }
 
 
@@ -99,6 +107,7 @@ class LoginActivity : BaseSimpleActivity() {
 
         viewModel.userInfo.observe(this, Observer {
             UserManager.saveUserInfo(it.item)
+            phone=ed_phone.text.toString()
             reqPermission()
         })
     }

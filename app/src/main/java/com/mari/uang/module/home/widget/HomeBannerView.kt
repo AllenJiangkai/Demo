@@ -108,7 +108,7 @@ class HomeBannerView : RelativeLayout {
 
 
         (view_page.layoutParams).also {
-            it.height = (MyApplication.screenWidth / 2.343f).toInt()
+            it.height = (MyApplication.screenWidth / 1.3992f).toInt()
             layoutParams = it
         }
 
