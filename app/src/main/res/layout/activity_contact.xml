@@ -56,8 +56,9 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
-                android:text="@string/contact_darurat_1"
-                android:textColor="@color/color_999999"
+                android:hint="@string/contact_darurat_1"
+                android:textColorHint="@color/color_999999"
+                android:textColor="@color/color_333333"
                 android:textSize="12sp" />
 
             <ImageView
@@ -91,19 +92,21 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:textColorHint="@color/color_999999"
+                    android:textColor="@color/color_333333"
                     android:id="@+id/tv_lineal_name_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/contact_nama_kontak"
-                    android:textColor="@color/color_999999"
+                    android:hint="@string/contact_nama_kontak"
                     android:textSize="12sp" />
                 <TextView
                     android:id="@+id/tv_lineal_mobile_1"
                     android:layout_marginTop="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/contact_informasi"
-                    android:textColor="@color/color_999999"
+                    android:hint="@string/contact_informasi"
+                    android:textColorHint="@color/color_999999"
+                    android:textColor="@color/color_333333"
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -145,14 +148,15 @@
             tools:ignore="RtlSymmetry">
 
             <TextView
+                android:textColorHint="@color/color_999999"
+                android:textColor="@color/color_333333"
                 android:id="@+id/tv_contact_2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
-                android:text="@string/contact_darurat_1"
-                android:textColor="@color/color_999999"
+                android:hint="@string/contact_darurat_1"
                 android:textSize="12sp" />
 
             <ImageView
@@ -185,19 +189,21 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:textColorHint="@color/color_999999"
+                    android:textColor="@color/color_333333"
                     android:id="@+id/tv_lineal_name_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/contact_nama_kontak"
-                    android:textColor="@color/color_999999"
+                    android:hint="@string/contact_nama_kontak"
                     android:textSize="12sp" />
                 <TextView
                     android:id="@+id/tv_lineal_mobile_2"
                     android:layout_marginTop="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/contact_informasi"
-                    android:textColor="@color/color_999999"
+                    android:hint="@string/contact_informasi"
+                    android:textColorHint="@color/color_999999"
+                    android:textColor="@color/color_333333"
                     android:textSize="12sp" />
             </LinearLayout>
 
