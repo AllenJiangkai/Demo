@@ -73,7 +73,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:includeFontPadding="false"
-                android:textColor="@color/main_color"
+                android:textColor="@color/color_333333"
                 android:textSize="21sp"
                 />
 
@@ -146,7 +146,7 @@
             <TextView
                 android:layout_marginStart="2dp"
                 android:textSize="10sp"
-                android:textColor="@color/main_color"
+                android:textColor="#F2B249"
                 android:drawablePadding="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0px"
+    android:layout_height="0px"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:visibility="gone" >
+
+    <ProgressBar
+        style="@style/Permission.Widget.Progress.Wait"
+        android:layout_width="@dimen/permission_dp_30"
+        android:layout_height="@dimen/permission_dp_30"
+        android:visibility="gone"/>
+
+    <TextView
+        style="@style/Permission.WrapContent"
+        android:layout_marginStart="@dimen/permission_dp_10"
+        android:layout_marginLeft="@dimen/permission_dp_10"
+        android:text="@string/permission_requesting"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/permission_sp_16"
+        android:visibility="gone"/>
+
+</LinearLayout>
