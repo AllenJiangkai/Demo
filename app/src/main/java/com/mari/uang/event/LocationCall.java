@@ -14,7 +14,7 @@ import android.location.Location;
  * @UpdateRemark: 更新说明
  * @Version: 1.0
  */
-public interface MULocCall {
+public interface LocationCall {
     void error(String errorMsg);
     void location(Location location, String addressDetail, String addressJson);
 }

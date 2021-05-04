@@ -25,14 +25,14 @@ import kotlinx.android.synthetic.main.dia_city_view.*
  * @UpdateRemark:   更新说明
  * @Version:        1.0
  */
-class DNSelCityDialog(context: Context) : Dialog(context, R.style.TipsDialogTheme),
+class SelCityDialog(context: Context) : Dialog(context, R.style.TipsDialogTheme),
     View.OnClickListener {
 
     interface CityCallBack {
         fun callItemSel(
-            pBean: MUCityModel?,
-            cBean: MUCityModel?,
-            aBean: MUCityModel?,
+            pBean: CityModel?,
+            cBean: CityModel?,
+            aBean: CityModel?,
             address: String?
         )
     }
@@ -43,18 +43,18 @@ class DNSelCityDialog(context: Context) : Dialog(context, R.style.TipsDialogThem
     private val TYPE_CITY = 1
     private val TYPE_AREA = 2
     private var listType: Int = TYPE_PROVINCE
-    private var provinceList: List<MUCityModel>? = null
-    private var cityList: ArrayList<MUCityModel>? = null
-    private var areaList: ArrayList<MUCityModel>? = null
+    private var provinceList: List<CityModel>? = null
+    private var cityList: ArrayList<CityModel>? = null
+    private var areaList: ArrayList<CityModel>? = null
 
-    private var pBean: MUCityModel? = null
-    private var cBean: MUCityModel? = null
-    private var aBean: MUCityModel? = null
+    private var pBean: CityModel? = null
+    private var cBean: CityModel? = null
+    private var aBean: CityModel? = null
 
     private var defSel: String? = null
 
     private val cityAdapter by lazy { CityAdapter() }
-    private var currentList: List<MUCityModel>? = null
+    private var currentList: List<CityModel>? = null
 
     init {
 
@@ -75,7 +75,7 @@ class DNSelCityDialog(context: Context) : Dialog(context, R.style.TipsDialogThem
         provinceList = cityAdapter.data
         cityAdapter.onItemClickListener =
             BaseQuickAdapter.OnItemClickListener { adapter, view, position ->
-                var currentBen = cityAdapter.data[position] as MUCityModel
+                var currentBen = cityAdapter.data[position] as CityModel
 
                 when (listType) {
                     TYPE_PROVINCE -> {

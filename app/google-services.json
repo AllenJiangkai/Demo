@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "644693098954",
+    "project_id": "mariuang-1827c",
+    "storage_bucket": "mariuang-1827c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:644693098954:android:db572c1b6613189ee24f33",
+        "android_client_info": {
+          "package_name": "com.mari.uang"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "644693098954-4pli9ktagjarh73qodhfkaqbcj3bge3a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCneETGmHk7nEaucuzVesr_ER-_Xpd87hg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "644693098954-4pli9ktagjarh73qodhfkaqbcj3bge3a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

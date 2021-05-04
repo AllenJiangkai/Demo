@@ -19,11 +19,11 @@ import com.mari.uang.R
  * @Version:        1.0
  */
 class CityAdapter(layoutResId: Int = R.layout.item_city) :
-    BaseQuickAdapter<MUCityModel, BaseViewHolder>(layoutResId) {
+    BaseQuickAdapter<CityModel, BaseViewHolder>(layoutResId) {
 
-    var selBean : MUCityModel? = null
+    var selBean : CityModel? = null
 
-    override fun convert(helper: BaseViewHolder, item: MUCityModel) {
+    override fun convert(helper: BaseViewHolder, item: CityModel) {
         helper.setText(R.id.tvName,item.name)
         if (selBean != null && selBean?.code === item.code){
             helper.setTextColor(R.id.tvName,colors(R.color.main_color))

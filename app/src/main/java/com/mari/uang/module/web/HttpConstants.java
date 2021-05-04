@@ -1,7 +1,7 @@
 package com.mari.uang.module.web;
 
 
-public class MUHttpConstants {
+public class HttpConstants {
 
     /**
      * app service url //    http://120.53.206.11

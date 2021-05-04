@@ -5,7 +5,9 @@ import android.os.Process
 import androidx.multidex.MultiDexApplication
 import com.coupang.common.impl.Tools
 import com.coupang.common.utils.ContextUtils
+import com.mari.uang.util.MySystemUtil.getCurrentProcessName
 import com.mari.uang.util.ToolsManager
+import com.mari.uang.util.upload.UploadManager
 
 
 /**
@@ -28,6 +30,13 @@ class MyApplication : MultiDexApplication() {
         screenWidth = displayMetrics.widthPixels
         screenHeight = displayMetrics.heightPixels
         baseCox = this
+
+        val processName = getCurrentProcessName(this,android.os.Process.myPid())
+        processName.let {
+            if (processName.equals(packageName)){
+                UploadManager.uploadGoogleMarket()
+            }
+        }
     }
 
     companion object {

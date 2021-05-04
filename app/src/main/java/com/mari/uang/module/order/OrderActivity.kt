@@ -69,7 +69,7 @@ class OrderActivity : BaseSimpleActivity() {
                 val simplePagerTitleView = ColorFlipPagerTitleView(context)
                 simplePagerTitleView.text = fragmentList[index].tabName
                 simplePagerTitleView.textSize = dip2pxOfFloat(6f)
-                simplePagerTitleView.normalColor = getColor(R.color.tab_false)
+                simplePagerTitleView.normalColor = getColor(R.color.color_333333)
                 simplePagerTitleView.selectedColor = getColor(R.color.main_color)
                 simplePagerTitleView.setOnClickListener {
                     tabContainerView.currentItem = index

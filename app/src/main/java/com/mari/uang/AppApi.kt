@@ -217,18 +217,18 @@ interface AppApi {
      */
     @FormUrlEncoded
     @POST("credit-info/up-load-contents")
-    fun upLoadContents(
+    suspend fun upLoadContents(
         @Field("data") data: String?,
         @Field("id") id: Long,
         @Field("type") type: String?
-    ): Observable<ApiResponse<Any>>
+    ): ApiResponse<EmptyVO>
 
     /**
      * 场景设备信息上报
      * sceneInfoReport
      */
     @POST("v3/upload-info/device-detail")
-    fun uploadDevicesDetail(@Body body: RequestBody?): Observable<ApiResponse<Any>>
+    suspend fun uploadDevicesDetail(@Body body: RequestBody?): ApiResponse<EmptyVO>
 
     /**
      * 设备信息上报
@@ -236,7 +236,7 @@ interface AppApi {
      * @return
      */
     @POST("credit-app/device-report")
-    fun uploadDevicesReport(@Body body: RequestBody): Observable<ApiResponse<Any>>
+    suspend fun uploadDevicesReport(@Body body: RequestBody): ApiResponse<EmptyVO>
 
     /**
      * 上传定位信息
@@ -244,7 +244,7 @@ interface AppApi {
      * @return
      */
     @POST("credit-info/upload-location")
-    fun uploadLocation(@Body body: RequestBody): Observable<ApiResponse<Any>>
+    suspend fun uploadLocation(@Body body: RequestBody): ApiResponse<EmptyVO>
 
     /**
      * 上报轮渡设备信息
@@ -252,7 +252,7 @@ interface AppApi {
      */
     @POST("/credit-info/upload-device-new")
     @FormUrlEncoded
-    fun uploadLunDuInfo(@FieldMap maps:@JvmSuppressWildcards Map<String, Any>): Observable<ApiResponse<JSONObject>>
+    suspend fun uploadLunDuInfo(@FieldMap maps:@JvmSuppressWildcards Map<String, Any>): ApiResponse<EmptyVO>
 
     /**
      * 上报广告渠道信息
@@ -260,7 +260,7 @@ interface AppApi {
      * @return
      */
     @POST("v3/loan-confirm/google-market")
-    suspend fun upLoadGoogleMarket(@Body body: RequestBody): ApiResponse<EmptyVO>
+    fun upLoadGoogleMarket(@Body body: RequestBody): Observable<ApiResponse<JSONObject>>
 
     /**
      * 用户中心第二个订单状态是否显示
@@ -272,7 +272,7 @@ interface AppApi {
      * crashReport
      */
     @POST("/v3/upload-info/upload-fcm-token")
-    suspend fun fcmToken(@Body body: RequestBody): ApiResponse<Any>
+    fun fcmToken(@Body body: RequestBody): Observable<ApiResponse<Any>>
 
     /**
      * 首页TAB

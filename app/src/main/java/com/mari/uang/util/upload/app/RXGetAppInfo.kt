@@ -2,26 +2,36 @@ package com.mari.uang.util.upload.app
 
 import android.content.Context
 import android.content.pm.ApplicationInfo
+import android.os.Build
+import android.os.RemoteException
+import android.text.TextUtils
+import android.util.Log
 import com.alan.business.util.upload.ld.LunduUtil.getDeviceInfo
 import com.alan.business.util.upload.ld.LunduUtil.getImagesExternalCount
 import com.alan.business.util.upload.ld.LunduUtil.getImagesInternalCount
 import com.alibaba.fastjson.JSONArray
 import com.alibaba.fastjson.JSONObject
+import com.android.installreferrer.api.InstallReferrerClient
+import com.android.installreferrer.api.InstallReferrerStateListener
 import com.coupang.common.user.UserManager
 import com.coupang.common.utils.shortToast
+import com.coupang.common.utils.spf.SpConfig
 import com.mari.uang.MyApplication
 import com.mari.uang.R
+import com.mari.uang.util.JsonUtil
 import com.mari.uang.util.MyDeviceUtil
 import com.mari.uang.util.NetworkUtil
 import com.mari.uang.util.StringUtil
-import com.mari.uang.util.upload.AppInfoBean
-import com.mari.uang.util.upload.ContactsUtils
-import com.mari.uang.util.upload.DeviceInfoBean
+import com.mari.uang.util.upload.*
 import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
+import io.reactivex.functions.BiFunction
+import io.reactivex.functions.Consumer
 import io.reactivex.schedulers.Schedulers
+import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.collections.set
 import io.reactivex.ObservableOnSubscribe as ObservableOnSubscribe1
 
@@ -40,7 +50,101 @@ import io.reactivex.ObservableOnSubscribe as ObservableOnSubscribe1
  */
 object RXGetAppInfo {
 
-    fun uploadDevicesReport(context : Context,callBack: InfoDataCallBack<JSONObject>){
+    fun getGoogleMarketInfo(context: Context,callBack: InfoDataCallBack<Map<String, Any>>){
+        val googlePlayIdObservable = Observable.create<String> {
+            val playId = GoogleInfoUtil.getPlayAdId(context)
+            if (!TextUtils.isEmpty(playId)) {
+                SpConfig.gps_adid = playId
+                it.onNext(playId)
+            }
+        }
+
+        val installIdObservable = Observable.create<String> {
+
+            val mReferrerClient =
+                InstallReferrerClient.newBuilder(context).build()
+            mReferrerClient.startConnection(object : InstallReferrerStateListener {
+                override fun onInstallReferrerSetupFinished(responseCode: Int) {
+                    when (responseCode) {
+                        InstallReferrerClient.InstallReferrerResponse.OK ->                                 // Connection established, get referrer
+                            try {
+                                val response = mReferrerClient.installReferrer
+                                var installReferrer = response.installReferrer
+                                val referrerClickTimestampSeconds =
+                                    response.referrerClickTimestampSeconds
+                                installReferrer =
+                                    "$installReferrer&referrerClickTimestampSeconds=$referrerClickTimestampSeconds"
+                                val installBeginTimestampSeconds =
+                                    response.installBeginTimestampSeconds
+                                installReferrer =
+                                    "$installReferrer&installBeginTimestampSeconds=$installBeginTimestampSeconds"
+                                SpConfig.googleReferrerId = installReferrer
+                                it.onNext(installReferrer)
+                            } catch (e: RemoteException) {
+                                e.printStackTrace()
+                            }
+                        InstallReferrerClient.InstallReferrerResponse.FEATURE_NOT_SUPPORTED ->                                 // API not available on the current Play Store app
+                            Log.d("InstallReferrerHelper", "FEATURE_NOT_SUPPORTED")
+                        InstallReferrerClient.InstallReferrerResponse.SERVICE_UNAVAILABLE ->                                 // Connection could not be established
+                            Log.d("InstallReferrerHelper", "SERVICE_UNAVAILABLE")
+                    }
+                }
+
+                override fun onInstallReferrerServiceDisconnected() {
+                    // Try to restart the connection on the next request to
+                    // Google Play by calling the startConnection() method.
+                }
+            })
+
+        }
+
+        Observable.zip(
+            googlePlayIdObservable,
+            installIdObservable,
+            BiFunction<String, String, Map<String, Any>> { googlePlayId, installReferrerId ->
+                val facebookReferrer: String = SpConfig.faceBookReferrerId
+                val deviceInfo = ("(Android " + Build.VERSION.RELEASE + "; "
+                        + Locale.getDefault().toString() + "; "
+                        + Build.MODEL + "; "
+                        + "Build/" + Build.ID + "; "
+                        + "Proxy)")
+                val extinfo: String = FaceBookInfoUtil.getExtinfo(context)
+
+                /**
+                 * @Field("market") String market, @Field("fb_market") String fbMarket, @Field("device_info") String deviceInfo, @Field("extinfo") String extinfo
+                 */
+
+                /**
+                 * @Field("market") String market, @Field("fb_market") String fbMarket, @Field("device_info") String deviceInfo, @Field("extinfo") String extinfo
+                 */
+                /**
+                 * @Field("market") String market, @Field("fb_market") String fbMarket, @Field("device_info") String deviceInfo, @Field("extinfo") String extinfo
+                 */
+                /**
+                 * @Field("market") String market, @Field("fb_market") String fbMarket, @Field("device_info") String deviceInfo, @Field("extinfo") String extinfo
+                 */
+                val map: MutableMap<String, Any> =
+                    HashMap()
+                map["market"] = installReferrerId
+                map["fb_market"] = facebookReferrer
+                map["device_info"] = deviceInfo
+                map["extinfo"] = extinfo
+                Log.e(
+                    "谷歌信息",
+                    "googlePlayId = $googlePlayId || installReferrerId = $installReferrerId || ReferrerInfo = " + JsonUtil.toJsonString(
+                        map
+                    )
+                )
+                map
+            }).subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(Consumer {
+                callBack.infoCallBack(it)
+            })
+
+    }
+
+    fun getDevicesReportInfo(context : Context, callBack: InfoDataCallBack<JSONObject>){
         rxTaskUtil(ObservableOnSubscribe1{
             val jsonObject = JSONObject()
             jsonObject["device_id"] = MyDeviceUtil.getDeviceId(MyApplication.baseCox()!!)

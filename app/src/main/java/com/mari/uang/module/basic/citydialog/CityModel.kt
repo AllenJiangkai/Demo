@@ -13,7 +13,7 @@ package com.mari.uang.module.basic.citydialog
  * @UpdateRemark:   更新说明
  * @Version:        1.0
  */
-class MUCityModel{
+class CityModel{
     /**
      * id : 1
      * code : 0001
@@ -23,6 +23,6 @@ class MUCityModel{
     var id: String? = null
     var code: String? = null
     var name: String? = null
-    var listData: ArrayList<MUCityModel>? = null
+    var listData: ArrayList<CityModel>? = null
 
 }

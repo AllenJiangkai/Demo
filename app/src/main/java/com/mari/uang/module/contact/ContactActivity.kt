@@ -22,6 +22,7 @@ import com.mari.uang.event.ActionUtil
 import com.mari.uang.module.contact.dto.ContactInfo
 import com.mari.uang.module.contact.dto.NameTypeInfo
 import com.mari.uang.util.PermissionUtil
+import com.mari.uang.util.upload.UploadManager
 import com.yanzhenjie.permission.Action
 import kotlinx.android.synthetic.main.activity_contact.*
 import kotlinx.android.synthetic.main.activity_order.title_bar
@@ -167,8 +168,7 @@ class ContactActivity : BaseSimpleActivity() {
             //联系人全量数据上报一次
             if (!firstUpload) {
                 firstUpload = true
-                //todo
-//                MUInfoUploadUtil.uploadContacts()
+                UploadManager.uploadContacts()
             }
         }
     }

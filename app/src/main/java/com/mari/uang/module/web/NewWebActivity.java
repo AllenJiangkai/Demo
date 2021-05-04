@@ -37,7 +37,7 @@ import com.mari.uang.event.ActionEnum;
 import com.mari.uang.event.ActionUtil;
 import com.mari.uang.module.login.LoginActivity;
 import com.mari.uang.module.main.MainActivity;
-import com.mari.uang.util.MUWebViewUtil;
+import com.mari.uang.util.WebViewUtil;
 import com.mari.uang.util.PermissionUtil;
 import com.mari.uang.util.RouterUtil;
 import com.mari.uang.widget.TipsDialog;
@@ -80,7 +80,7 @@ public class NewWebActivity extends BaseSimpleActivity {
     private void getParams() {
         mUrl = getIntent().getStringExtra(ConstantConfig.WEB_URL_KEY);
         if (!TextUtils.isEmpty(mUrl)) {
-            mUrl = MUWebViewUtil.getUrl(mUrl);
+            mUrl = WebViewUtil.getUrl(mUrl);
         }
         mTitleStr = getIntent().getStringExtra(ConstantConfig.TITLE_KEY);
         title_var.setTitle(mTitleStr);
@@ -587,10 +587,10 @@ public class NewWebActivity extends BaseSimpleActivity {
 //        mAgentWeb.getWebCreator().getWebView().loadUrl(mUrl,WebUtil.getHeader());
 //        mAgentWeb.getJsInterfaceHolder().addJavaObject("nativeMethod", new AndroidFragmentInterface(this, mAgentWeb));
         mAgentWeb.addJavascriptInterface(new AndroidFragmentInterface(this, mAgentWeb),"nativeMethod");
-        MUWebViewUtil.initSetting(mAgentWeb , this);
+        WebViewUtil.initSetting(mAgentWeb , this);
         mAgentWeb.setWebChromeClient(mWebChromeClient);
         mAgentWeb.setWebViewClient(webViewClient);
-        mAgentWeb.loadUrl(mUrl,MUWebViewUtil.getHeader());
+        mAgentWeb.loadUrl(mUrl, WebViewUtil.getHeader());
 
 
         title_var.onClickRightListener(new Function0<Unit>() {

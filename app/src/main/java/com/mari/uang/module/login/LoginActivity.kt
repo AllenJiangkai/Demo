@@ -8,13 +8,16 @@ import com.coupang.common.base.BaseSimpleActivity
 import com.coupang.common.extentions.createViewModel
 import com.coupang.common.user.UserManager
 import com.coupang.common.user.UserManager.phone
+import com.coupang.common.utils.ContextUtils
 import com.coupang.common.utils.setStatusBarTextColor
 import com.mari.uang.R
+import com.mari.uang.config.AFAction
 import com.mari.uang.config.ConstantConfig.LOGIN_AGREEMENT_URL
 import com.mari.uang.event.ActionEnum
 import com.mari.uang.event.ActionUtil
 import com.mari.uang.module.main.MainActivity
-import com.mari.uang.module.web.MUHttpConstants.H5_SERVICE_URL
+import com.mari.uang.module.web.HttpConstants.H5_SERVICE_URL
+import com.mari.uang.util.EventUtil
 import com.mari.uang.util.PermissionUtil.requestPermission
 import com.mari.uang.util.RouterUtil
 import com.mari.uang.util.upload.UploadManager
@@ -31,6 +34,7 @@ class LoginActivity : BaseSimpleActivity() {
     }
 
     override fun initView() {
+        EventUtil.event(this, AFAction.LOGIN_PAGE_INIT)
 //        title_bar.apply {
 //            setTitle(strings(R.string.title_order))
 //            onClickBackListener {
@@ -70,21 +74,6 @@ class LoginActivity : BaseSimpleActivity() {
         tv_link.setOnClickListener {
             RouterUtil.goWebActivity(this@LoginActivity, H5_SERVICE_URL + LOGIN_AGREEMENT_URL, "")
         }
-
-
-//        ed_code.addTextChangedListener(object:TextWatcher{
-//            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-//            }
-//
-//            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-//            }
-//
-//            override fun afterTextChanged(p0: Editable?) {
-//
-//            }
-//
-//        })
-
 
         ed_phone.setText(UserManager.phone)
     }
@@ -152,5 +141,8 @@ class LoginActivity : BaseSimpleActivity() {
         setStatusBarTextColor(window, true)
     }
 
-
+    override fun onBackPressed() {
+        super.onBackPressed()
+        EventUtil.event(ContextUtils.getApplication(), AFAction.LOGIN_CLICK_BACK)
+    }
 }

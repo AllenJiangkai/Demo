@@ -20,30 +20,30 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-public class MULocTool {
+public class LocationTool {
     
-    private static MULocTool locTool;
+    private static LocationTool locTool;
     private LocationManager locationManager;
     private LocationListener locationListener;
     private Location locationInfo;
     
-    public static MULocTool getInstance(){
+    public static LocationTool getInstance(){
         if (locTool == null){
-            locTool = new MULocTool();
+            locTool = new LocationTool();
         }
         return locTool;
     }
     
     
-    private MULocTool(){
+    private LocationTool(){
         locationManager = (LocationManager) ContextUtils.getApplication().getSystemService(Context.LOCATION_SERVICE);
     }
 
 
-    public void startLocation(MULocCall locCall){
+    public void startLocation(LocationCall locCall){
 
         try {
-            if (PermissionUtil.INSTANCE.checkPermission(ContextUtils.getApplication(), Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION)){
+            if (!PermissionUtil.INSTANCE.checkPermission(ContextUtils.getApplication(), Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION)){
                 return;
             }
 
@@ -83,7 +83,7 @@ public class MULocTool {
     
     public void startLocation(LocationListener locationListener){
         try{
-            if (PermissionUtil.INSTANCE.checkPermission(ContextUtils.getApplication(), Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION)){
+            if (!PermissionUtil.INSTANCE.checkPermission(ContextUtils.getApplication(), Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION)){
                 return;
             }
             this.locationListener = locationListener;
@@ -97,7 +97,7 @@ public class MULocTool {
     /**********
      * 解析定位信息
      */
-    public static void location(Location location, MULocCall callBack) {
+    public static void location(Location location, LocationCall callBack) {
         Geocoder gc = new Geocoder(ContextUtils.getApplication(), Locale.getDefault());
         Log.e("onLocationChanged", "onLocationChanged: " + location.getLatitude() + "   " + location.getLongitude());
         List<Address> locationList = null;

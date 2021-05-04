@@ -2,7 +2,7 @@ package com.mari.uang.util
 
 import android.content.Context
 import com.alibaba.fastjson.JSONObject
-import com.mari.uang.module.basic.citydialog.MUCityModel
+import com.mari.uang.module.basic.citydialog.CityModel
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
@@ -22,14 +22,14 @@ import java.io.InputStreamReader
  */
 object JsonUtil {
     
-    fun getCityList(context: Context?): MutableList<MUCityModel>? {
+    fun getCityList(context: Context?): MutableList<CityModel>? {
         val jsonStr = context?.let {
             getJson(
                 it,
                 "cityData.json"
             )
         }
-        return JSONObject.parseArray(jsonStr, MUCityModel::class.java)
+        return JSONObject.parseArray(jsonStr, CityModel::class.java)
     }
 
     fun getJson(context: Context, fileName: String?): String? {

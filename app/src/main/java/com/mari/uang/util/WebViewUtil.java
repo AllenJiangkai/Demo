@@ -13,7 +13,7 @@ import com.coupang.common.user.UserManager;
 import com.coupang.common.utils.ContextUtils;
 import com.coupang.common.utils.spf.SpConfig;
 import com.mari.uang.R;
-import com.mari.uang.module.web.MUHttpConstants;
+import com.mari.uang.module.web.HttpConstants;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,7 +32,7 @@ import ai.advance.common.BuildConfig;
  * @UpdateRemark: 更新说明
  * @Version: 1.0
  */
-public class MUWebViewUtil {
+public class WebViewUtil {
     public static void initSetting(WebView mWebView, Context context){
         mWebView.setDownloadListener(new DownloadListener() {
             @Override
@@ -84,7 +84,7 @@ public class MUWebViewUtil {
         String ret_url = "";
 
         /**** 第三方的webview请求不带参数，自己的请求需要带参数 ****/
-        if (url.startsWith(MUHttpConstants.H5_SERVICE_URL)) {  //不是第三方
+        if (url.startsWith(HttpConstants.H5_SERVICE_URL)) {  //不是第三方
             if (url.contains("clientType=android&appVersion=")) {
                 return url;
             } else {

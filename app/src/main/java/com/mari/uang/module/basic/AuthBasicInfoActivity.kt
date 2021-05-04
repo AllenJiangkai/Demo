@@ -14,8 +14,8 @@ import com.mari.uang.R
 import com.mari.uang.config.ConstantConfig
 import com.mari.uang.config.ConstantConfig.INFO_AUTH_ITEM_TYPE_CITY_SELECT
 import com.mari.uang.config.ConstantConfig.INFO_AUTH_ITEM_TYPE_ENUM
-import com.mari.uang.module.basic.citydialog.DNSelCityDialog
-import com.mari.uang.module.basic.citydialog.MUCityModel
+import com.mari.uang.module.basic.citydialog.SelCityDialog
+import com.mari.uang.module.basic.citydialog.CityModel
 import com.mari.uang.module.basic.dto.BasicItemInfo
 import com.mari.uang.module.contact.dto.NameTypeInfo
 import kotlinx.android.synthetic.main.activity_auth_basic_info.*
@@ -140,12 +140,12 @@ class AuthBasicInfoActivity : BaseSimpleActivity()  {
 
 
     private fun showCityDialog(position: Int) {
-        val selCityDialog= DNSelCityDialog(this)
-        selCityDialog.cityCallBack = object: DNSelCityDialog.CityCallBack{
+        val selCityDialog= SelCityDialog(this)
+        selCityDialog.cityCallBack = object: SelCityDialog.CityCallBack{
             override fun callItemSel(
-                pBean: MUCityModel?,
-                cBean: MUCityModel?,
-                aBean: MUCityModel?,
+                pBean: CityModel?,
+                cBean: CityModel?,
+                aBean: CityModel?,
                 address: String?
             ) {
                 getBeanList()?.get(position)?.value = address

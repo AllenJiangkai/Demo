@@ -44,7 +44,8 @@ object ActionUtil {
         endTime: Long
     ) {
         val isUpload = booleanArrayOf(false)
-        MULocTool.getInstance().startLocation(object : MULocCall {
+        LocationTool.getInstance().startLocation(object :
+            LocationCall {
             override fun error(errorMsg: String?) {}
             override fun location(
                 location: Location?,

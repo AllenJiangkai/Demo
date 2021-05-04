@@ -35,6 +35,7 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
 
     @SuppressLint("ObsoleteSdkInt")
     override fun onCreate(savedInstanceState: Bundle?) {
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
         hideSystemActionBar()
         setStatusBarTranslucent(false)
         super.onCreate(savedInstanceState)

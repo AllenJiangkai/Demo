@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Intent
 import android.net.Uri
 import android.provider.Settings
+import android.text.TextUtils
 import com.coupang.common.base.BaseSimpleActivity
 import com.coupang.common.user.UserManager.isLogin
 import com.coupang.common.utils.isLocationEnabled
@@ -12,7 +13,9 @@ import com.coupang.common.utils.spf.SpConfig
 import com.coupang.common.utils.strings
 import com.mari.uang.R
 import com.mari.uang.config.AFAction
+import com.mari.uang.config.ConstantConfig
 import com.mari.uang.module.main.MainActivity
+import com.mari.uang.util.EventBusAction
 import com.mari.uang.util.EventUtil
 import com.mari.uang.util.PermissionUtil.requestPermission
 import com.mari.uang.util.upload.UploadManager
@@ -22,6 +25,7 @@ import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.functions.Consumer
+import org.greenrobot.eventbus.EventBus
 import java.util.concurrent.TimeUnit
 
 class SplashActivity : BaseSimpleActivity() {
@@ -45,6 +49,19 @@ class SplashActivity : BaseSimpleActivity() {
     }
 
     override fun initView() {
+        EventUtil.event(this@SplashActivity, AFAction.APP_SPLASH)
+
+        val pushData = intent.getStringExtra(ConstantConfig.PUSH_DATA_GET_KEY)
+        if (!isTaskRoot && !TextUtils.isEmpty(pushData)){
+            EventBus.getDefault().post(EventBusAction<String>(ConstantConfig.PUSH_JUMP_URL_KEY,pushData))
+            finish()
+            return
+        }
+
+        if (!TextUtils.isEmpty(pushData)){
+            SpConfig.pushData = pushData
+        }
+
         if (!SpConfig.isShowPerDialog) {
             PermissionDialog(this).onClickSubmitListener {
                 SpConfig.isShowPerDialog=true
@@ -69,9 +86,7 @@ class SplashActivity : BaseSimpleActivity() {
         requestPermission(this, permissions, Action {
             EventUtil.event(this@SplashActivity, AFAction.APP_PERMISSIONS_GET)
             if (isLocationEnabled(this)) {
-                if (isLogin()) {
-                    UploadManager.uploadAllInfo()
-                }
+                UploadManager.uploadAllInfo()
                 delayedToMain()
             } else {
                 showPermissionTipsDialog()

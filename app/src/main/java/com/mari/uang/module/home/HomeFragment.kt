@@ -10,6 +10,7 @@ import com.coupang.common.base.LazyLoadFragment
 import com.coupang.common.extentions.createViewModel
 import com.coupang.common.user.UserManager.isLogin
 import com.mari.uang.R
+import com.mari.uang.config.AFAction
 import com.mari.uang.config.ConstantConfig.MODULE_DIALOG
 import com.mari.uang.config.ConstantConfig.MODULE_HOME
 import com.mari.uang.config.ConstantConfig.POSITION_LARGE
@@ -23,6 +24,7 @@ import com.mari.uang.module.home.dto.ProductInfo
 import com.mari.uang.module.home.widget.dialog.ProductDialog
 import com.mari.uang.module.login.LoginActivity
 import com.mari.uang.module.product.ProductActivity
+import com.mari.uang.util.EventUtil
 import com.mari.uang.util.RouterUtil
 import kotlinx.android.synthetic.main.fragment_recommend.*
 
@@ -71,6 +73,7 @@ class HomeFragment : LazyLoadFragment() {
             val item = adapter.data[position] as HomeAdapterItem<*>
             if (!isLogin()) {
                 goLoginActivity()
+                EventUtil.event(context, AFAction.APP_CLICK_PRODUCT)
                 return@setOnItemClickListener
             }
 
