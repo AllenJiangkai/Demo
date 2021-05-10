@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <com.mari.uang.widget.StatusBarView
+        <com.de.danaemas.widget.StatusBarView
             android:id="@+id/status_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

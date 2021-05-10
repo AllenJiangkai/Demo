@@ -5,8 +5,8 @@ import com.coupang.common.impl.Tools;
 import com.coupang.common.user.UserManager;
 import com.coupang.common.utils.ContextUtils;
 import com.coupang.common.utils.spf.SpConfig;
-import com.mari.common.BuildConfig;
-import com.mari.common.R;
+import com.de.common.BuildConfig;
+import com.de.common.R;
 
 import java.io.IOException;
 

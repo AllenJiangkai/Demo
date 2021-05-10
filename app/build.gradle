@@ -9,7 +9,7 @@ android {
     buildToolsVersion build_versions.build_tools
 
     defaultConfig {
-        applicationId "com.mari.uang"
+        applicationId "com.de.danaemas"
         minSdkVersion build_versions.min_sdk
         targetSdkVersion build_versions.target_sdk
         compileSdkVersion build_versions.target_sdk
@@ -30,7 +30,7 @@ android {
         multiDexEnabled true //防止方法数超过65536
 
         ndk {
-            abiFilters 'armeabi-v7a' //只生成armv7的so
+            abiFilters 'armeabi', 'arm64-v8a' //只生成armv7的so
         }
 
         signingConfigs{

@@ -55,7 +55,7 @@
             android:textSize="16sp"
             android:visibility="gone" />
 
-        <com.mari.uang.module.home.widget.dialog.MaxRecyclerView
+        <com.de.danaemas.module.home.widget.dialog.MaxRecyclerView
             android:id="@+id/recycler_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -9,7 +9,7 @@
     android:background="@drawable/bg_shape_r12"
     android:padding="@dimen/dp_23">
 
-    <com.mari.uang.widget.MaxImgView
+    <com.de.danaemas.widget.MaxImgView
         android:id="@+id/img_close"
         app:ratio="0.911"
         android:layout_width="match_parent"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.mari.uang">
+    package="com.de.danaemas">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -22,9 +22,9 @@
 
 
     <application
-        android:name="com.mari.uang.MyApplication"
+        android:name="com.de.danaemas.MyApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:requestLegacyExternalStorage="true"
@@ -33,14 +33,14 @@
 <!--        android:theme="@style/SplashTheme"-->
         <activity
             android:theme="@style/AppTheme.NoActionBar"
-            android:name="com.mari.uang.module.main.MainActivity"
+            android:name="com.de.danaemas.module.main.MainActivity"
             android:launchMode="singleTask"
             android:label="@string/app_name" >
         </activity>
 
         <activity
             android:theme="@style/Splash"
-            android:name="com.mari.uang.module.splash.SplashActivity"
+            android:name="com.de.danaemas.module.splash.SplashActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -50,28 +50,28 @@
         </activity>
 
         <activity
-            android:name="com.mari.uang.module.order.OrderActivity"
+            android:name="com.de.danaemas.module.order.OrderActivity"
             android:label="@string/app_name"/>
         <activity
-            android:name="com.mari.uang.module.login.LoginActivity"
+            android:name="com.de.danaemas.module.login.LoginActivity"
             android:label="@string/app_name" />
         <activity
-            android:name="com.mari.uang.module.auth.AuthFaceActivity"
+            android:name="com.de.danaemas.module.auth.AuthFaceActivity"
             android:label="@string/app_name" />
         <activity
-            android:name="com.mari.uang.module.product.ProductActivity"
+            android:name="com.de.danaemas.module.product.ProductActivity"
             android:label="@string/app_name" />
         <activity
-            android:name="com.mari.uang.module.contact.ContactActivity"
+            android:name="com.de.danaemas.module.contact.ContactActivity"
             android:label="@string/app_name" />
         <activity
-            android:name=".module.set.SettingActivity"
+            android:name="com.de.danaemas.module.set.SettingActivity"
             android:label="@string/app_name" />
         <activity
-            android:name=".module.basic.AuthBasicInfoActivity"
+            android:name="com.de.danaemas.module.basic.AuthBasicInfoActivity"
             android:label="@string/app_name" />
         <activity
-            android:name=".module.web.NewWebActivity"
+            android:name="com.de.danaemas.module.web.NewWebActivity"
             android:label="@string/app_name" />
 
         <provider
@@ -87,7 +87,7 @@
 
         <!--谷歌推送-->
         <service
-            android:name=".fire.FireService"
+            android:name="com.de.danaemas.fire.FireService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

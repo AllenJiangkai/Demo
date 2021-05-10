@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import com.coupang.common.base.BaseDialogFragment
-import com.mari.common.R
+import com.de.common.R
 
 /**
  * @author Allen

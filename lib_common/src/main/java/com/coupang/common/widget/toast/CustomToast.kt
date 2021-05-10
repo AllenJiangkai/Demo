@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import com.coupang.common.utils.dip2px
-import com.mari.common.R
+import com.de.common.R
 
 /**
  * Created by tomwang on 2020-03-20

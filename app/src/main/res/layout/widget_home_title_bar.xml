@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:background="@color/main_color">
 
-    <com.mari.uang.widget.StatusBarView
+    <com.de.danaemas.widget.StatusBarView
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

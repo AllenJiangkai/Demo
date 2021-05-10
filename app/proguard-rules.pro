@@ -315,7 +315,7 @@ java.util.Locale get(int);
 }
 -dontwarn com.just.agentweb.**
 
--keepclassmembers class com.mari.dk.utils.web.AndroidInterface{ *; }
+-keepclassmembers class com.de.dk.utils.web.AndroidInterface{ *; }
 
 
 #**********************头条屏幕适配

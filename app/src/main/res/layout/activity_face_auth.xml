@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
 
-    <com.mari.uang.widget.TitleBarView
+    <com.de.danaemas.widget.TitleBarView
         android:id="@+id/title_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

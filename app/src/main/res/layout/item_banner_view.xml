@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.mari.uang.module.home.widget.HomeBannerView
+    <com.de.danaemas.module.home.widget.HomeBannerView
         android:id="@+id/banner_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

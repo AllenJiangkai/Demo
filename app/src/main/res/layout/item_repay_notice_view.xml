@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.mari.uang.module.home.widget.RepayNoticeView
+    <com.de.danaemas.module.home.widget.RepayNoticeView
         android:id="@+id/repay_notice_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

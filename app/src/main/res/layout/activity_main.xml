@@ -12,7 +12,7 @@
        android:layout_height="match_parent"
        android:orientation="vertical">
 
-      <com.mari.uang.widget.ScrollViewPager
+      <com.de.danaemas.widget.ScrollViewPager
           android:id="@+id/tabContainerView"
           android:layout_width="match_parent"
           android:background="#ffffff"
